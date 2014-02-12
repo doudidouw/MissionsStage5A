@@ -5,7 +5,7 @@ $(document).on('pageinit', '#portalLogin', function(){
 				console.log("Ajax call...");
 				// Send data to server through ajax call
 				// action is functionality we want to call and outputJSON is our data
-				$.ajax({url: 'js/checkUserIdentity.php',
+				$.ajax({url: 'DB/checkUserIdentity.php',
 					data: {action : 'login', formData : $('#frmLogin').serialize()}, 
 					type: 'post',                   
 					async: true,
