@@ -7,8 +7,8 @@
 
 	
 	// Get data from object
-    $username = $userData['username']; 
+    $login = $userData['login']; 
     $password = $userData['password']; 
 	
-	echo $username;
+	echo json_encode(1);
 ?>

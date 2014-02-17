@@ -39,6 +39,10 @@
 		<script src="assets/js/html5shiv.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+        
+        <!-- javascript external files related to this page -->
+        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
+        <script src="ressources/jquery-validation-1.11.1/dist/jquery.validate.js"></script>
 	</head>
 
 	<body class="login-layout">
@@ -49,8 +53,8 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<i class="icon-lock white"></i>
-                                    <span class="white">Intranet</span>
+									<i class="icon-lock black"></i>
+                                    <span class="black">Intranet</span>
 									<span class="orange">ifrSKEYES</span>
 								</h1>
 								<h5 class="blue">&copy; 2013, ifrSKEYES</h5>
@@ -69,18 +73,20 @@
 
 											<div class="space-6"></div>
 
-											<form>
+											<form action ="" id="frmLogin" method="get">
 												<fieldset>
+                                                    <div id="usernameError" class="alert alert-danger hide">Veuillez entrer un login</div>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="text" class="form-control" placeholder="Login" />
+															<input type="text" class="form-control" placeholder="Login" name="login" id="login" class="required"/>
 															<i class="icon-user"></i>
 														</span>
 													</label>
 
+                                                    <div class="alert alert-danger hide" id="passwordError">Veuillez entrer un mot de passe</div>
 													<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
-															<input type="password" class="form-control" placeholder="Mot de passe" />
+															<input type="password" class="form-control" placeholder="Mot de passe" name="password" id="password" required/>
 															<i class="icon-lock"></i>
 														</span>
 													</label>
@@ -93,7 +99,7 @@
 															<span class="lbl"> Mémoriser mes identifiants</span>
 														</label>
 
-														<button type="button" class="width-40 pull-right btn btn-sm btn-primary">
+														<button type="button" class="width-40 pull-right btn btn-sm btn-primary" id="submitLoginForm" type="submit">
 															<i class="icon-key"></i>
 															Connexion
 														</button>
@@ -245,6 +251,7 @@
 				</div><!-- /.row -->
 			</div>
 		</div><!-- /.main-container -->
+        
 
 		<!-- basic scripts -->
 
@@ -273,6 +280,43 @@
 			 jQuery('.widget-box.visible').removeClass('visible');
 			 jQuery('#'+id).addClass('visible');
 			}
+            
+            
+            $('#editProfile').on('click', function(e){
+					$('#user-profile-1').parent().addClass('hide');
+					$('#user-profile-3').parent().removeClass('hide');
+				});
+            
+            $('#submitLoginForm').on('click', function(e){
+                console.log("You just clicked 'Connexion'");
+                if((document.forms['frmLogin']['login'].value == "")&&(document.forms['frmLogin']['password'].value == "")){
+                    $('#usernameError').removeClass('hide');
+                    $('#passwordError').removeClass('hide');
+                } else if(document.forms['frmLogin']['password'].value == ""){
+                    $('#passwordError').removeClass('hide');
+                } else {
+                    console.log("Ajax call...");
+                    req = $.ajax({
+                        url: 'DB/checkUserIdentity.php',
+                        data: {
+                            action : 'login', 
+                            formData : $('#frmLogin').serialize()
+                        }, 
+                        type: 'post',                   
+                        async: true   
+                    });
+                    req.done(function(res) {
+                        res = $.parseJSON(res);
+                        if(res == 1){
+                            alert("Welcome " + $('#login').val() + "!"); 
+                            window.open("index.php","_self");
+                        } else {
+                            alert("Sorry, we couldn't log you in. Try again or contact the support team.")   
+                        }
+                    });
+                }
+            });
+            
 		</script>
 	</body>
 </html>

@@ -170,7 +170,7 @@
 
 						<li class="light-blue">
 							<a data-toggle="dropdown" href="#" class="dropdown-toggle">
-								<img class="nav-user-photo" src="assets/avatars/avatar3.png" alt="Dounia's Photo" />
+								<img class="nav-user-photo" src="assets/avatars/avatar2.png" alt="Dounia's Photo" />
 								<span class="user-info">
 									<small>Bonjour,</small>
 									Dounia
@@ -188,7 +188,7 @@
 								</li>
 
 								<li>
-									<a href="#">
+									<a href="profile.php">
 										<i class="icon-user"></i>
 										Profil
 									</a>
