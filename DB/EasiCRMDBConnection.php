@@ -1,21 +1,9 @@
 <?php
 
-	function connect(){
-		$serverName = "SRVEASICRM";
-		$database = "ifr";
-		$username = "fdu";
-		$password = "beneditro";
-		$conn = null;
-		
-		try{
-			$conn = new PDO("sqlsrv:Server=$serverName;Database=" .$database, $username, $password);
-			$conn->setAttribute( PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION );
-			echo "You're now connected to ". $serverName ." SQL Server.<br />";
-		}
-		catch(Exception $e)     {
-			die( print_r( $e->getMessage() ) ); 
-		}
-	}
+	require_once('easiCRMDB.php');
+
+	$easiDB = easiCRMDB::getInstance();
+	$easiDB->connect();
 	
 	/***** RETRIEVE LIST OF CLIENTS *****/
 	
