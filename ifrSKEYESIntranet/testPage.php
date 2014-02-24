@@ -62,62 +62,17 @@
                 <?php include("navlist.php"); ?>
 
 				<div class="main-content">
-					<div class="breadcrumbs" id="breadcrumbs">
-						<script type="text/javascript">
-							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-						</script>
+                    
 
-						<ul class="breadcrumb">
-							<li>
-								<i class="icon-home home-icon"></i>
-								<a href="#">Portail</a>
-							</li>
-							<li class="active">Accueil</li>
-						</ul><!-- .breadcrumb -->
+					<div class="page-content" id="page-content">
 
-						<?php include("navsearch.php"); ?>
-					</div>
-
-					<div class="page-content">
-						<div class="page-header">
-							<h1>
-								Accueil
-								<small>
-									<i class="icon-double-angle-right"></i>
-									Actualités
-								</small>
-							</h1>
-						</div><!-- /.page-header -->
-
-						<div class="row">
-							<div class="col-xs-12">
+						
 								<!-- PAGE CONTENT BEGINS -->
-
-								<div class="alert alert-block alert-success">
-									<button type="button" class="close" data-dismiss="alert">
-										<i class="icon-remove"></i>
-									</button>
-
-									<i class="icon-ok green"></i>
-
-									Bienvenue sur la nouvelle version de votre Intranet
-									<strong class="blue">
-										ifrSKEYES
-									</strong>
-									,
-	plus riche, plus facile d'utilisation et d'accès.
-								</div>
-
-								<div class="hr hr32 hr-dotted"></div>
-
-
-
-									<div class="col-sm-6">
+                                
 									
-								</div><!-- /row -->
-
+								
 								<!-- PAGE CONTENT ENDS -->
-							</div><!-- /.col -->
+							
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
@@ -130,6 +85,8 @@
 				<i class="icon-double-angle-up icon-only bigger-110"></i>
 			</a>
 		</div><!-- /.main-container -->
+        
+        
 
 		<!-- basic scripts -->
 
@@ -177,9 +134,14 @@
 
 		<script type="text/javascript">
 			jQuery(function($) {
-				
-			
-			})
+			});
+            
+            function gotoOutlook(){
+                console.log("Clicked outlook!");
+				document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"https://mail.ifrskeyes.com/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.ifrskeyes.com%2fowa%2f\" name=\"iframe_wiki\"></iframe>";
+            };
+            
+            
 		</script>
 	</body>
 </html>

@@ -1,9 +1,8 @@
 <?php
 
-	require_once('easiCRMDB.php');
+	require_once('../DB/EasiCRMDB.php');
 
-	$easiDB = easiCRMDB::getInstance();
-	$easiDB->connect();
+	$easiDB = EasiCRMDB::getInstance();
 	
 	/***** RETRIEVE LIST OF CLIENTS *****/
 	

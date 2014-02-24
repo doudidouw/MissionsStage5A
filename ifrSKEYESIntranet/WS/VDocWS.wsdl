@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<definitions name="VDocWS" targetNamespace="http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/VDocWS.php"
+             xmlns:tns="http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/VDocWS.php"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+    <message name="getNewsTitles" />
+    <message name="getNewsTitlesResponse">
+        <part name="getNewsTitlesReturn" />
+    </message>
+
+    <portType name="VDocWSPortType">
+        <operation name="getNewsTitles">
+            <input message="typens:getNewsTitles" />
+            <output message="typens:getNewsTitlesResponse" />
+        </operation>
+    </portType>
+
+    <binding name="VDocWSBinding" type="typens:VDocWSPortType">
+        <soap:binding style="rpc"
+                              transport="http://schemas.xmlsoap.org/soap/http" />
+
+        <operation name="getNewsTitles">
+            <soap:operation soapAction="urn:getNewsTitlesAction" />
+            <input>
+                <soap:body namespace="urn:VDocWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:VDocWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+
+    <service name="VDocWSService">
+        <port name="VDocWSPort" binding="typens:VDocWSBinding">
+            <soap:address location="http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/VDocWS.php"/>			
+        </port>
+    </service>
+</definitions>
