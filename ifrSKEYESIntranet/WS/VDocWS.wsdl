@@ -12,11 +12,21 @@
     <message name="getNewsTitlesResponse">
         <part name="getNewsTitlesReturn" />
     </message>
+    
+    <message name="getContacts" />
+    <message name="getContactsResponse">
+        <part name="getContactsReturn" />
+    </message>
 
     <portType name="VDocWSPortType">
         <operation name="getNewsTitles">
             <input message="typens:getNewsTitles" />
             <output message="typens:getNewsTitlesResponse" />
+        </operation>
+        
+         <operation name="getContacts">
+            <input message="typens:getContacts" />
+            <output message="typens:getContactsResponse" />
         </operation>
     </portType>
 
@@ -26,6 +36,18 @@
 
         <operation name="getNewsTitles">
             <soap:operation soapAction="urn:getNewsTitlesAction" />
+            <input>
+                <soap:body namespace="urn:VDocWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:VDocWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        
+        <operation name="getContacts">
+            <soap:operation soapAction="urn:getContactsAction" />
             <input>
                 <soap:body namespace="urn:VDocWS" use="encoded"
                                            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />

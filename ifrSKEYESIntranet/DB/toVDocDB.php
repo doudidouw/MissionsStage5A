@@ -9,6 +9,9 @@ if (isset($_REQUEST['method'])) {
     if ($_REQUEST['method'] == 'getNewsTitles' /*&& isset($_REQUEST['username'], $_REQUEST['password'])*/) {
         $res = $service->getNewsTitles();
         echo json_encode($res);
-    } 
+    } else if($_REQUEST['method'] == 'getContacts'){
+        $res = $service->getContacts();
+        echo json_encode($res);
+    }
 }
 ?>

@@ -24,7 +24,7 @@
 
 		<!-- ace styles -->
 
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/uncompressed/ace.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
 
@@ -44,9 +44,12 @@
 		<script src="assets/js/html5shiv.js"></script>
 		<script src="assets/js/respond.min.js"></script>
 		<![endif]-->
+        
+        <script src="js/checkIfMobileScript.js"></script>
 	</head>
 
 	<body>
+        <?php include("modals.php"); ?>
         <?php include("navbar.php"); ?>
 
 		<div class="main-container" id="main-container">
@@ -63,21 +66,62 @@
 
 				<div class="main-content">
                     
+					<div class="breadcrumbs" id="breadcrumbs">
+						<script type="text/javascript">
+							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+						</script>
+
+						<ul class="breadcrumb" id="context-nav-bar">
+							<li>
+								<i class="icon-home home-icon"></i>
+								<a href="#">Portail</a>
+							</li>
+							<li class="active">Accueil</li>
+						</ul><!-- .breadcrumb -->
+
+						<?php include("navsearch.php"); ?>
+					</div>
 
 					<div class="page-content" id="page-content">
+						<div class="page-header" id="page-header">
+							<h1>
+								Accueil
+							</h1>
+						</div><!-- /.page-header -->
 
-						
-								<!-- PAGE CONTENT BEGINS -->
-                                
-									
-								
+						<div class="row">
+                            <div class="space-6"></div>
+                            
+							<div class="col-xs-12">
+                                        <!-- PAGE CONTENT BEGINS -->
+
+                                    <div class="alert alert-block alert-success">
+                                        <button type="button" class="close" data-dismiss="alert">
+                                            <i class="icon-remove"></i>
+                                        </button>
+
+                                        <i class="icon-ok green"></i>
+
+                                        Bienvenue sur la nouvelle version de votre Intranet
+                                        <strong class="blue">
+                                            ifrSKEYES
+                                        </strong>
+                                        ,
+                                        plus riche, plus facile d'utilisation et d'accès.
+                                    </div>
+
+                                   
+                                    
+                                    
+                                    
+                                    
 								<!-- PAGE CONTENT ENDS -->
-							
+							</div><!-- /.col -->
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
 
-				<?php include("ace-settings.php");?>
+				<!--?php include("ace-settings.php");?--> 
                 
 			</div><!-- /.main-container-inner -->
 
@@ -88,59 +132,12 @@
         
         
 
-		<!-- basic scripts -->
-
-		<!--[if !IE]> -->
-
-		<script type="text/javascript">
-			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
-		</script>
-
-		<!-- <![endif]-->
-
-		<!--[if IE]>
-<script type="text/javascript">
- window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
-</script>
-<![endif]-->
-
-		<script type="text/javascript">
-			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
-		</script>
-		<script src="assets/js/bootstrap.min.js"></script>
-		<script src="assets/js/typeahead-bs2.min.js"></script>
-
-		<!-- page specific plugin scripts -->
-
-		<!--[if lte IE 8]>
-		  <script src="assets/js/excanvas.min.js"></script>
-		<![endif]-->
-
-		<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
-		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
-		<script src="assets/js/jquery.slimscroll.min.js"></script>
-		<script src="assets/js/jquery.easy-pie-chart.min.js"></script>
-		<script src="assets/js/jquery.sparkline.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.pie.min.js"></script>
-		<script src="assets/js/flot/jquery.flot.resize.min.js"></script>
-
-		<!-- ace scripts -->
-
-		<script src="assets/js/ace-elements.min.js"></script>
-		<script src="assets/js/ace.min.js"></script>
-
 		<!-- inline scripts related to this page -->
 
 		<script type="text/javascript">
-			jQuery(function($) {
-			});
+            $.getScript('conf/conf.js');
             
-            function gotoOutlook(){
-                console.log("Clicked outlook!");
-				document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"https://mail.ifrskeyes.com/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.ifrskeyes.com%2fowa%2f\" name=\"iframe_wiki\"></iframe>";
-            };
-            
+        
             
 		</script>
 	</body>

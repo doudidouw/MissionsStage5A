@@ -52,9 +52,16 @@
 
         <ul class="submenu">
             <li>
-                <a href="#">
+                <a href="#" id="goToVdocTODO">
                     <i class="icon-folder-open-alt"></i>
-                    <span class="menu-text"> VDoc </span>
+                    <span class="menu-text"> Mes TODO listes </span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#" id="goToVdocNotesDeFrais">
+                    <i class="icon-folder-open-alt"></i>
+                    <span class="menu-text"> Mes notes de frais </span>
                 </a>
             </li>
 
@@ -66,30 +73,51 @@
             </li>
 
             <li>
-                <a href="#">
+                <a href="#" id="goToEasi">
                     <i class="icon-bar-chart"></i>
-                    <span class="menu-text"> EasiCRM </span>
+                    <span class="menu-text"> Mes affaires </span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="#" id="goToEasi">
+                    <i class="icon-bar-chart"></i>
+                    <span class="menu-text"> Mes contacts affaires </span>
                 </a>
             </li>
 
+            <li>
+                <a href="#" id="goToSIRH">
+                    <i class="icon-envelope"></i>
+                    <span class="menu-text"> Mes dossiers du personnel </span>
+                </a>
+            </li>
+            
             <li>
                 <a href="#" id="goToOutlook">
                     <i class="icon-envelope"></i>
-                    <span class="menu-text"> Outlook </span>
+                    <span class="menu-text"> Mes mails &amp; calendriers </span>
                 </a>
             </li>
 
             <li>
-                <a href="#">
+                <a href="#" id="goToSciforma" onclick="$('#sciformaModal').modal('show');">
                     <i class="icon-info-sign"></i>
-                    <span class="menu-text"> Sciforma/PSNext </span>
+                    <span class="menu-text"> Mes projets </span>
                 </a>
             </li>
 
             <li>
-                <a href="#" onclick="$('#myModal').modal('show');">
+                <a href="#" onclick="$('#ifrWebsiteModal').modal('show');">
                     <i class="icon-calendar"></i>
                     <span class="menu-text">ifrSKEYES.com</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="organigrammesIFR.php" id="goToOrganigrammes">
+                    <i class="icon-group"></i>
+                    <span class="menu-text"> Mes organigrammes </span>
                 </a>
             </li>
         </ul>
@@ -163,7 +191,8 @@
                 + "<a href=\"#\">Portail</a>"
                 + "</li>"
                 + "<li class=\"active\">Outlook</li>";
-        document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"https://mail.ifrskeyes.com/owa/auth/logon.aspx?replaceCurrent=1&url=https%3a%2f%2fmail.ifrskeyes.com%2fowa%2f\" name=\"iframe\" frameBorder=\"0\"></iframe>";
+        document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"https://mail.ifrskeyes.com/owa/auth/logon.aspx\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
+        
     });
 
     $('#goToKelio').click(function(event){
@@ -176,34 +205,73 @@
                 + "<li class=\"active\">Mes absences</li>";
         if(checkIfMobile() == false){
             console.log("No mobile KELIO!");
-            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"?ACTION=ACTION_VALIDER_LOGIN&j_username=msi&j_password=ifrmsi9\" name=\"iframe\" frameBorder=\"0\"></iframe>";
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"http://srvkelio:8089/open/login?ACTION=ACTION_VALIDER_LOGIN&j_username=msi&j_password=ifrmsi9\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
 
 
         } else if(checkIfMobile() == true){
             console.log("Mobile KELIO!");
-            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"http://webapp.ifrskeyes.com/open/mobile/login\" name=\"iframe\" frameBorder=\"0\"></iframe>";
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"http://webapp.ifrskeyes.com/open/mobile/login\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
         } 
     });
 
-    $('#getSlurped').click(function(event){
+    $('#goToVdocTODO').click(function(event){
         event.preventDefault();
-        console.log("Clicked VDoc!");
-        document.getElementById("context-nav-bar").innerHTML = "<li>" 
+        console.log("Clicked VDoc TODO listes!");
+        window.open ('pageEnCours.php','_self',false);
+        /*document.getElementById("context-nav-bar").innerHTML = "<li>" 
                 + "<i class=\"icon-home home-icon\"></i>"
                 + "<a href=\"#\">Portail</a>"
                 + "</li>"
-                + "<li class=\"active\">VDoc</li>";
+                + "<li class=\"active\">Mes TODO Listes</li>";
         if(checkIfMobile() == false){
             console.log("No mobile VDoc!");
-            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\"></iframe>";
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
 
         } else if(checkIfMobile() == true){
             console.log("Mobile VDoc!");
-            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\"></iframe>";
-        } 
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
+        }*/ 
     });     
+    
+    $('#goToVdocNotesDeFrais').click(function(event){
+        event.preventDefault();
+        console.log("Clicked VDoc Notes de frais!");
+        window.open ('pageEnCours.php','_self',false);
+        /*document.getElementById("context-nav-bar").innerHTML = "<li>" 
+                + "<i class=\"icon-home home-icon\"></i>"
+                + "<a href=\"#\">Portail</a>"
+                + "</li>"
+                + "<li class=\"active\">Mes Notes de frais</li>";
+        if(checkIfMobile() == false){
+            console.log("No mobile VDoc!");
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
 
-    $('#getSlurped').click(function(event){
+        } else if(checkIfMobile() == true){
+            console.log("Mobile VDoc!");
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
+        }*/ 
+    });     
+    
+    $('#goToSIRH').click(function(event){
+        event.preventDefault();
+        console.log("Clicked mes dossiers du personnel!");
+        window.open ('pageEnCours.php','_self',false);
+        /*document.getElementById("context-nav-bar").innerHTML = "<li>" 
+                + "<i class=\"icon-home home-icon\"></i>"
+                + "<a href=\"#\">Portail</a>"
+                + "</li>"
+                + "<li class=\"active\">Mes dossier du personnel</li>";
+        if(checkIfMobile() == false){
+            console.log("No mobile SI RH!");
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
+
+        } else if(checkIfMobile() == true){
+            console.log("Mobile SI RH!");
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
+        }*/ 
+    });    
+
+    $('#goToEasi').click(function(event){
         event.preventDefault();
         console.log("Clicked EasiCRM!");
         document.getElementById("context-nav-bar").innerHTML = "<li>" 
@@ -213,15 +281,16 @@
                 + "<li class=\"active\">EasiCRM</li>";
         if(checkIfMobile() == false){
             console.log("No mobile EasiCRM!");
-            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\"></iframe>";
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"http://srveasicrm.ifrfrance.com/ifr/\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
 
         } else if(checkIfMobile() == true){
             console.log("Mobile EasiCRM!");
-            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\"></iframe>";
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
         } 
     });  
 
-    $('#getSlurped').click(function(event){
+    /*
+    $('#goToSciforma').click(function(event){
         event.preventDefault();
         console.log("Clicked Sciforma!");
         document.getElementById("context-nav-bar").innerHTML = "<li>" 
@@ -231,13 +300,23 @@
                 + "<li class=\"active\">Sciforma/PSNext</li>";
         if(checkIfMobile() == false){
             console.log("No mobile Sciforma!");
-            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\"></iframe>";
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"http://srvsciforma01:8080/sciformaprod/main.html#Login\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
+            
+            //create popup window
+            var domain = 'http://srvsciforma01:8080';
+            var iframe = document.getElementById('iframe').contentWindow;
+            
+            window.addEventListener('message',function(event) {
+                if(event.origin !== 'http://srvsciforma01:8080') return;
+                console.log('received response:  ',event.data);
+            },false);
 
         } else if(checkIfMobile() == true){
             console.log("Mobile Sciforma!");
-            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\"></iframe>";
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"http://srvsciforma01:8080/sciformaprod/main.html#Login\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
         } 
-    });  
+    });
+    */  
             
             
 </script>

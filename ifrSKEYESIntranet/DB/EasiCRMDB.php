@@ -16,10 +16,9 @@ class EasiCRMDB {
     
     function connect() {
         try {
-           $this->conn = new PDO("sqlsrv:Server=" .$this->dbHost. ";Database=" .$this->easiCRMDB, $this->dbUser, $this->dbPwd, array(
-    			PDO::ATTR_PERSISTENT => true));
+           $this->conn = new PDO("sqlsrv:Server=" .$this->dbHost. ";Database=" .$this->easiCRMDB, $this->dbUser, $this->dbPwd);
            $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-		   echo "You're now connected to ". $this->dbHost ." SQL Server.<br />";
+		   //echo "You're now connected to ". $this->dbHost ." SQL Server.<br />";
         }
         catch(Exception $e) {
             echo 'Error while connecting to ' .$this->easiCRMDB. ' database : ' . $e->getMessage();

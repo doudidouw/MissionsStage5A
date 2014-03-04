@@ -6,10 +6,12 @@ if (isset($_REQUEST['method'])) {
 
     $service = new SoapClient("http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/EasiCRMWS.wsdl");
 
-    if ($_REQUEST['method'] == 'login' && isset($_REQUEST['username'], $_REQUEST['password'])) {
-        $res = $service->login($_REQUEST['username'], $_REQUEST['password']);
+    if ($_REQUEST['method'] == 'getOnGoingOpportunities' /*&& isset($_REQUEST['username'], $_REQUEST['password'])*/) {
+        $res = $service->getOnGoingOpportunities();
         echo json_encode($res);
-        
-    } 
+    } else if($_REQUEST['method'] == 'getCompaniesForUser'){
+        $res = $service->getCompaniesForUser();
+        echo json_encode($res);
+    }
 }
 ?>

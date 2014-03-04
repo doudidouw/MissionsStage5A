@@ -188,7 +188,7 @@
 
                 <li class="light-blue">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="assets/avatars/avatar2.png" alt="Dounia's Photo" />
+                        <img class="nav-user-photo" src="assets/avatars/avatar2.png" alt="avatar" />
                         <span class="user-info">
                             <small>Bonjour,</small>
                             Dounia

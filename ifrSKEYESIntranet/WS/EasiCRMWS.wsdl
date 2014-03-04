@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<definitions name="EasiCRMWS" targetNamespace="http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/EasiCRMWS.php"
+             xmlns:tns="http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/EasiCRMWS.php"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" 
+             xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+             xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+             xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+    <message name="getNewsTitles" />
+    <message name="getNewsTitlesResponse">
+        <part name="getNewsTitlesReturn" />
+    </message>
+    
+    <message name="getOnGoingOpportunities" />
+    <message name="getOnGoingOpportunitiesResponse">
+        <part name="getOnGoingOpportunitiesReturn" />
+    </message>
+    
+    <message name="getCompaniesForUser" />
+    <message name="getCompaniesForUserResponse">
+        <part name="getCompaniesForUserReturn" />
+    </message>
+    
+    <portType name="EasiCRMWSPortType">
+        <operation name="getNewsTitles">
+            <input message="typens:getNewsTitles" />
+            <output message="typens:getNewsTitlesResponse" />
+        </operation>
+        
+        <operation name="getOnGoingOpportunities">
+            <input message="typens:getOnGoingOpportunities" />
+            <output message="typens:getOnGoingOpportunitiesResponse" />
+        </operation>
+        
+        <operation name="getCompaniesForUser">
+            <input message="typens:getCompaniesForUser" />
+            <output message="typens:getCompaniesForUserResponse" />
+        </operation>
+    </portType>    
+
+    <binding name="EasiCRMWSBinding" type="typens:EasiCRMWSPortType">
+        <soap:binding style="rpc"
+                              transport="http://schemas.xmlsoap.org/soap/http" />
+
+        <operation name="getNewsTitles">
+            <soap:operation soapAction="urn:getNewsTitlesAction" />
+            <input>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        
+        <operation name="getOnGoingOpportunities">
+            <soap:operation soapAction="urn:getOnGoingOpportunitiesAction" />
+            <input>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        
+        <operation name="getCompaniesForUser">
+            <soap:operation soapAction="urn:getCompaniesForUserAction" />
+            <input>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+
+    <service name="EasiCRMWSService">
+        <port name="EasiCRMWSPort" binding="typens:EasiCRMWSBinding">
+            <soap:address location="http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/EasiCRMWS.php"/>			
+        </port>
+    </service>
+</definitions>

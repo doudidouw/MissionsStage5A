@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Intranet ifrSKEYES - Accueil</title>
+		<title>Intranet ifrSKEYES - Actualités</title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -74,9 +74,9 @@
 						<ul class="breadcrumb" id="context-nav-bar">
 							<li>
 								<i class="icon-home home-icon"></i>
-								<a href="#">Portail</a>
+								<a href="#">Accueil</a>
 							</li>
-							<li class="active">Accueil</li>
+                            <li class="active">Actualités</li>
 						</ul><!-- .breadcrumb -->
 
 						<?php include("navsearch.php"); ?>
@@ -95,26 +95,21 @@
 							<div class="col-xs-12">
                                         <!-- PAGE CONTENT BEGINS -->
 
-                                    <div class="alert alert-block alert-success">
+                                    <div class="alert alert-block alert-info">
                                         <button type="button" class="close" data-dismiss="alert">
                                             <i class="icon-remove"></i>
                                         </button>
 
-                                        <i class="icon-ok green"></i>
+                                        <i class="icon-info-sign blue"></i>
 
-                                        Bienvenue sur la nouvelle version de votre Intranet
-                                        <strong class="blue">
-                                            ifrSKEYES
-                                        </strong>
-                                        ,
-                                        plus riche, plus facile d'utilisation et d'accès.
+                                        Retrouvez ici toutes vos actualités.
                                     </div>
 
                                     <div class="row">
                                         
                                     <div class="space-6"></div>
                                         
-                                    <div class="col-sm-7">
+                                    <div class="col-xs-12">
 
                                         <div class="widget-box transparent" id="recent-box">
                                             <div class="widget-header">
@@ -145,46 +140,13 @@
                                             </div><!-- comments -->
 
                                             <div class="hr hr8"></div>
-
-                                            <div class="center">
-                                                <i class="icon-comments-alt icon-2x green"></i>
-
-                                                &nbsp;
-                                                <a href="actualites.php">
-                                                    Toutes les actualités&nbsp;
-                                                    <i class="icon-arrow-right"></i>
-                                                </a>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="vspace-sm"></div>
                                     
-                                    <div class="col-sm-5" >
-                                        <div class="widget-box">
-                                            <div class="widget-header widget-header-flat widget-header-small">
-                                                <h5>
-                                                    <i class="icon-globe"></i>
-                                                    Météo Locale
-                                                </h5>
-                                            </div>
-
-                                            <div class="widget-body">
-                                                <div class="widget-main">
-    <a href="http://www.accuweather.com/fr/fr/toulouse/135244/weather-forecast/135244" class="aw-widget-legal">
-<!--
-By accessing and/or using this code snippet, you agree to AccuWeather’s terms and conditions (in English) which can be found at http://www.accuweather.com/en/free-weather-widgets/terms and AccuWeather’s Privacy Statement (in English) which can be found at http://www.accuweather.com/en/privacy.
--->
-</a><div id="awcc1392978295160" class="aw-widget-current"  data-locationkey="" data-unit="c" data-language="fr" data-useip="true" data-uid="awcc1392978295160"></div><script type="text/javascript" src="http://oap.accuweather.com/launch.js"></script>
-                                                </div><!-- /widget-main -->
-                                            </div><!-- /widget-body -->
-                                        </div><!-- /widget-box -->
-                                    </div>
-                                    
 								</div><!-- /row -->
-                                
-                                <?php include("easiPreview.php"); ?>
-                                
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
 						</div><!-- /.row -->
@@ -221,30 +183,33 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
             
             req.done(function(res) {
                 res = $.parseJSON(res);
+                var htmlNewsContent = "";
                 if (res != null) {
-                    var htmlNewsContent = "<div class=\"itemdiv commentdiv\">"
+                    
+                    for(var i=0; i < res["newsList"].length; i++){
+                        htmlNewsContent = htmlNewsContent + "<div class=\"itemdiv commentdiv\">"
 
                                           + "        <div class=\"body\">"
                                           + "             <div class=\"name\">"
                                           + "                 <a href=\"#\" id=\"newsTitle\">" 
-                                                        + res["newsList"][0]["DIGEST"]+ "</a>"
+                                                        + res["newsList"][i]["DIGEST"]+ "</a>"
                                           + "             </div>"
 
                                           + "             <div class=\"time\">"
                                           + "                 <i class=\"icon-time\"></i>"
                                           + "                 <span class=\"green\" id=\"newsDate\">" 
-                                                        + res["newsList"][0]["PUBLISHING_DATE_CONVERTED"]+ "</span>"
+                                                        + res["newsList"][i]["PUBLISHING_DATE_CONVERTED"]+ "</span>"
                                           + "             </div>"
 
                                           + "             <div class=\"text\" id=\"article\">"
                                           + "                 <i class=\"icon-quote-left\"></i>" 
-                                                        + res["newsList"][0]["CONTENT"]
+                                                        + res["newsList"][i]["CONTENT"]
                                           + "             </div>"
                                           + "         </div>"
                                           + "     </div>";
+                    }
                     
                     document.getElementById("vdocNewsSection").innerHTML = htmlNewsContent;
-                    
                 } 
             });
             

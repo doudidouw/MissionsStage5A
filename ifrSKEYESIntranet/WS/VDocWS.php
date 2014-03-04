@@ -7,12 +7,34 @@
         function getNewsTitles(){
             $vdocDB = VDocDB::getInstance();
 
-            $sql = "SELECT * FROM NWS2_JDO_NEWS WHERE DIGEST LIKE 'Voici la trame 2014 des entretiens annuels !'";
+            $sql = "SELECT DIGEST, PUBLISHING_DATE, CONVERT(char(10), PUBLISHING_DATE, 103) AS PUBLISHING_DATE_CONVERTED, CONTENT FROM         NWS2_JDO_NEWS ORDER BY PUBLISHING_DATE DESC";
             $stmt = $vdocDB->select($sql);
 
-            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $i = 0;
+            $newsList = array("newsList" => array());
 
-            return $row;
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $newsList["newsList"][$i] = $row;
+                $i++;
+            }
+
+            return $newsList;
+
+        }
+        
+        function getContacts(){
+            $vdocDB = VDocDB::getInstance();
+
+            $sql = "SELECT login, first_name, last_name, email FROM vdp_users";   
+            $stmt = $vdocDB->select($sql);
+
+            $contacts = array();
+
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $contacts[] = $row;
+            }
+
+            return $contacts;
 
         }
 
