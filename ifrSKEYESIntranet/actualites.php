@@ -7,45 +7,9 @@
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- basic styles -->
-
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-
-		<!--[if IE 7]>
-		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
-
-		<!-- page specific plugin styles -->
-
-		<!-- fonts -->
-
-		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
-
-		<!-- ace styles -->
-
-		<link rel="stylesheet" href="assets/css/uncompressed/ace.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
-
-		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- inline styles related to this page -->
-
-		<!-- ace settings handler -->
-
-		<script src="assets/js/ace-extra.min.js"></script>
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
-        
-        <script src="js/checkIfMobileScript.js"></script>
+        <?php include("basicScriptsAndStyles.php"); ?>
+        <link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.custom.min.css" />
+		<link rel="stylesheet" href="assets/css/jquery.gritter.css" />
 	</head>
 
 	<body>
@@ -104,6 +68,7 @@
 
                                         Retrouvez ici toutes vos actualités.
                                     </div>
+                                
 
                                     <div class="row">
                                         
@@ -117,6 +82,14 @@
                                                     <i class="icon-rss orange"></i>
                                                     Actualités
                                                 </h4>
+                                            </div>
+                                            
+                                            <div class="space-6" style="heigh:10px; display:inline-block"></div>
+                                            
+                                            <div id="loading" class="alert alert-block alert-warning">
+
+                                                <i class="icon-retweet yellow"></i>
+                                                En cours de chargement...
                                             </div>
 
                                             <div class="comments" id="vdocNewsSection">
@@ -165,6 +138,12 @@
         
 
 		<!-- inline scripts related to this page -->
+    
+        <?php include("scriptGoTo.php"); ?>
+        <script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+    <script src="assets/js/bootbox.min.js"></script>
+        <script src="assets/js/jquery.gritter.min.js"></script>
 
 		<script type="text/javascript">
             $.getScript('conf/conf.js');
@@ -173,11 +152,19 @@
             ----------------  START On page loading functions  ----------------
             --------------------------------------------*/
             
+            $('#mesActualites').addClass('active');
+            
             var req = $.ajax({
-                    url: VDOCDB_OPERATIONS,
-                    data: {
-                        method: GET_NEWS
-                    }
+                url: VDOCDB_OPERATIONS,
+                data: {
+                    method: GET_NEWS
+                },
+                beforeSend:function(){
+                    $("#loading").show();
+                },
+                success:function(){
+                    $("#loading").hide();
+                }                
             });
 
             
@@ -186,24 +173,25 @@
                 var htmlNewsContent = "";
                 if (res != null) {
                     
-                    for(var i=0; i < res["newsList"].length; i++){
+                    
+                    for(var i=0; i < res.length; i++){
                         htmlNewsContent = htmlNewsContent + "<div class=\"itemdiv commentdiv\">"
 
                                           + "        <div class=\"body\">"
                                           + "             <div class=\"name\">"
                                           + "                 <a href=\"#\" id=\"newsTitle\">" 
-                                                        + res["newsList"][i]["DIGEST"]+ "</a>"
+                                                        + res[i]["DIGEST"]+ "</a>"
                                           + "             </div>"
 
                                           + "             <div class=\"time\">"
                                           + "                 <i class=\"icon-time\"></i>"
                                           + "                 <span class=\"green\" id=\"newsDate\">" 
-                                                        + res["newsList"][i]["PUBLISHING_DATE_CONVERTED"]+ "</span>"
+                                                        + res[i]["PUBLISHING_DATE_CONVERTED"]+ "</span>"
                                           + "             </div>"
 
                                           + "             <div class=\"text\" id=\"article\">"
                                           + "                 <i class=\"icon-quote-left\"></i>" 
-                                                        + res["newsList"][i]["CONTENT"]
+                                                        + res[i]["CONTENT"]
                                           + "             </div>"
                                           + "         </div>"
                                           + "     </div>";

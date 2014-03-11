@@ -12,6 +12,12 @@ if (isset($_REQUEST['method'])) {
     } else if($_REQUEST['method'] == 'getCompaniesForUser'){
         $res = $service->getCompaniesForUser();
         echo json_encode($res);
-    }
+    } else if($_REQUEST['method'] == 'getContacts'){
+        $res = $service->getContacts();
+        echo json_encode($res);
+    } else if($_REQUEST['method'] == 'getMesRelances'){
+        $res = $service->getMesRelances();
+        echo json_encode($res);
+    } 
 }
 ?>

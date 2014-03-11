@@ -222,6 +222,34 @@
             
             return $companies;
         }
+        
+        function getMesRelances(){
+            $companies = $this->getCompanies();
+            $contacts = $this->getContacts();
+            $easiDB = EasiCRMDB::getInstance();
+            
+            $sql = "SELECT CONVERT(varchar, XDate, 103) AS XJour, CONVERT(varchar, XDate, 108) AS XHeure, XLibell, XNEWSoci, XContac3 FROM S_CRM_Activits WHERE 
+                    (XCrpar = 'Florian DUSSOULIER') AND (XTypedac = 2)";
+            
+            $stmt = $easiDB->select($sql);
+
+            $relances = array();
+
+            while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                $relances[] = $row;
+            }
+            
+            $stmt->closeCursor();
+            
+            foreach($relances as &$relance){
+                $relance['XNEWSoci'] = $this->getCompanyNameFromId($companies, $relance['XNEWSoci']);
+                $relance['XContac3'] = $this->getContactFromId($contacts, $relance['XContac3']);
+            }
+            unset($relance);
+            
+            return $relances;
+            
+        }
 
     }
 
@@ -236,6 +264,9 @@
 
 //    $easiCrm = new EasiCRMWS();
 //    var_dump($easiCrm->getCompaniesForUser());
+
+//    $easiCrm = new EasiCRMWS();
+//    var_dump($easiCrm->getMesRelances());
     
 	
 ?>

@@ -116,7 +116,7 @@
 										<div class="col-xs-12 col-sm-3 center">
 											<div>
 												<span class="profile-picture">
-													<img id="avatar" class="editable img-responsive" alt="Photo de profil" src="assets/avatars/profile-pic-dounia.JPG" />
+													<img id="avatar" class="editable img-responsive" alt="Photo de profil" src="/assets/avatars/profile-pic.jpg" />
 												</span>
 
 												<div class="space-4"></div>
@@ -126,7 +126,7 @@
 														<a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
 															<i class="icon-circle light-green middle"></i>
 															&nbsp;
-															<span class="white">Dounia Cherifi</span>
+															<span class="white">Florian DUSSOULIER</span>
 														</a>
 
 														<ul class="align-left dropdown-menu dropdown-caret dropdown-lighter">
@@ -189,7 +189,7 @@
 													<div class="profile-info-name"> Identifiant </div>
 
 													<div class="profile-info-value">
-														<span class="editable" id="username">doc</span>
+														<span class="editable" id="username">fdu</span>
 													</div>
 												</div>
 
@@ -207,7 +207,7 @@
 													<div class="profile-info-name"> Age </div>
 
 													<div class="profile-info-value">
-														<span class="editable" id="age">22</span>
+														<span class="editable" id="age"></span>
 													</div>
 												</div>
 
@@ -215,7 +215,7 @@
 													<div class="profile-info-name"> Date d'arrivée </div>
 
 													<div class="profile-info-value">
-														<span class="editable" id="signup">03/02/2014</span>
+														<span class="editable" id="signup"></span>
 													</div>
 												</div>
 
@@ -231,7 +231,7 @@
 													<div class="profile-info-name"> Fonction </div>
 
 													<div class="profile-info-value">
-														<span class="editable" id="about">Stagiaire au service SI</span>
+														<span class="editable" id="about">Chargé SI</span>
 													</div>
 												</div>
 											</div>
@@ -526,6 +526,8 @@
 		<script src="assets/js/ace.min.js"></script>
 
 		<!-- inline scripts related to this page -->
+    
+        <?php include("scriptGoTo.php"); ?>
 
 		<script type="text/javascript">
 			jQuery(function($) {

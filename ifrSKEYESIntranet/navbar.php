@@ -5,7 +5,6 @@
 
     <div class="navbar-container" id="navbar-container">
         
-        
         <div class="navbar-header pull-left">
             <div class="carousel slide pull-left" data-ride="carousel">
                 <div class="carousel-inner">
@@ -24,16 +23,15 @@
             <a href="index.php" class="navbar-brand">
                 <small>
                     <i class="icon-lock"></i>
-                    ifrSKEYES Intranet
+                    <img alt="" src="assets/images/intranetLogo.png">
                 </small>
             </a><!-- /.brand -->
-            
            
         </div><!-- /.navbar-header -->
 
         <div class="navbar-header pull-right" role="navigation">
             <ul class="nav ace-nav">
-                <li class="grey">
+                <!--<li class="grey">
                     <a data-toggle="dropdown" class="dropdown-toggle" href="#">
                         <i class="icon-tasks"></i>
                         <span class="badge badge-grey">2</span>
@@ -184,14 +182,14 @@
                             </a>
                         </li>
                     </ul>
-                </li>
+                </li>-->
 
-                <li class="light-blue">
+                <li class="light-orange">
                     <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                         <img class="nav-user-photo" src="assets/avatars/avatar2.png" alt="avatar" />
                         <span class="user-info">
                             <small>Bonjour,</small>
-                            Dounia
+                            Florian
                         </span>
 
                         <i class="icon-caret-down"></i>

@@ -23,6 +23,16 @@
         <part name="getCompaniesForUserReturn" />
     </message>
     
+    <message name="getContacts" />
+    <message name="getContactsResponse">
+        <part name="getContactsReturn" />
+    </message>
+    
+    <message name="getMesRelances" />
+    <message name="getMesRelancesResponse">
+        <part name="getMesRelancesReturn" />
+    </message>
+    
     <portType name="EasiCRMWSPortType">
         <operation name="getNewsTitles">
             <input message="typens:getNewsTitles" />
@@ -37,6 +47,16 @@
         <operation name="getCompaniesForUser">
             <input message="typens:getCompaniesForUser" />
             <output message="typens:getCompaniesForUserResponse" />
+        </operation>
+        
+        <operation name="getContacts">
+            <input message="typens:getContacts" />
+            <output message="typens:getContactsResponse" />
+        </operation>
+        
+        <operation name="getMesRelances">
+            <input message="typens:getMesRelances" />
+            <output message="typens:getMesRelancesResponse" />
         </operation>
     </portType>    
 
@@ -70,6 +90,30 @@
         
         <operation name="getCompaniesForUser">
             <soap:operation soapAction="urn:getCompaniesForUserAction" />
+            <input>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        
+        <operation name="getContacts">
+            <soap:operation soapAction="urn:getContactsAction" />
+            <input>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:EasiCRMWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        
+        <operation name="getMesRelances">
+            <soap:operation soapAction="urn:getMesRelancesAction" />
             <input>
                 <soap:body namespace="urn:EasiCRMWS" use="encoded"
                                            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />

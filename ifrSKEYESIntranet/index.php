@@ -7,45 +7,9 @@
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-		<!-- basic styles -->
-
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-
-		<!--[if IE 7]>
-		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
-
-		<!-- page specific plugin styles -->
-
-		<!-- fonts -->
-
-		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
-
-		<!-- ace styles -->
-
-		<link rel="stylesheet" href="assets/css/uncompressed/ace.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
-
-		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- inline styles related to this page -->
-
-		<!-- ace settings handler -->
-
-		<script src="assets/js/ace-extra.min.js"></script>
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
         
-        <script src="js/checkIfMobileScript.js"></script>
+        <?php include("basicScriptsAndStyles.php"); ?>
+        
 	</head>
 
 	<body>
@@ -114,7 +78,7 @@
                                         
                                     <div class="space-6"></div>
                                         
-                                    <div class="col-sm-7">
+                                    <div class="col-xs-12">
 
                                         <div class="widget-box transparent" id="recent-box">
                                             <div class="widget-header">
@@ -122,6 +86,14 @@
                                                     <i class="icon-rss orange"></i>
                                                     Actualités
                                                 </h4>
+                                            </div>
+                                            
+                                            <div class="space-6" style="heigh:10px; display:inline-block"></div>
+                                            
+                                            <div id="loading" class="alert alert-block alert-warning">
+
+                                                <i class="icon-retweet yellow"></i>
+                                                En cours de chargement...
                                             </div>
 
                                             <div class="comments" id="vdocNewsSection">
@@ -158,9 +130,11 @@
                                         </div>
                                     </div>
 
-                                    <div class="vspace-sm"></div>
+                                    <div class="space-6" style="heigh:10px; display:inline-block"></div>
                                     
-                                    <div class="col-sm-5" >
+                                    <div class="hr hr-18 dotted hr-double"></div>
+                                    
+                                    <div class="col-sm-6" >
                                         <div class="widget-box">
                                             <div class="widget-header widget-header-flat widget-header-small">
                                                 <h5>
@@ -180,6 +154,24 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
                                             </div><!-- /widget-body -->
                                         </div><!-- /widget-box -->
                                     </div>
+                                        
+                                    <div class="col-sm-5" >
+                                    <div class="widget-box">
+                                        <div class="widget-header widget-header-flat widget-header-small">
+                                            <h5>
+                                                <i class="icon-globe"></i>
+                                                Twitter ifrSKEYES
+                                            </h5>
+                                        </div>
+
+                                        <div class="widget-body">
+                                            <div class="widget-main">
+                                                <a class="twitter-timeline" href="https://twitter.com/ifrSKEYES" data-widget-id="441845273191387136">Tweets de @ifrSKEYES</a>
+                                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                            </div><!-- /widget-main -->
+                                        </div><!-- /widget-body -->
+                                    </div><!-- /widget-box -->
+                                </div>
                                     
 								</div><!-- /row -->
                                 
@@ -200,9 +192,11 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
 			</a>
 		</div><!-- /.main-container -->
         
-        
+
 
 		<!-- inline scripts related to this page -->
+        
+        <?php include("scriptGoTo.php"); ?>
 
 		<script type="text/javascript">
             $.getScript('conf/conf.js');
@@ -211,11 +205,19 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
             ----------------  START On page loading functions  ----------------
             --------------------------------------------*/
             
+            $('#accueil').addClass('active');
+            
             var req = $.ajax({
                     url: VDOCDB_OPERATIONS,
                     data: {
                         method: GET_NEWS
-                    }
+                    },
+                    beforeSend:function(){
+                        $("#loading").show();
+                    },
+                    success:function(){
+                        $("#loading").hide();
+                    } 
             });
 
             
@@ -227,18 +229,18 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
                                           + "        <div class=\"body\">"
                                           + "             <div class=\"name\">"
                                           + "                 <a href=\"#\" id=\"newsTitle\">" 
-                                                        + res["newsList"][0]["DIGEST"]+ "</a>"
+                                                        + res[0]["DIGEST"]+ "</a>"
                                           + "             </div>"
 
                                           + "             <div class=\"time\">"
                                           + "                 <i class=\"icon-time\"></i>"
                                           + "                 <span class=\"green\" id=\"newsDate\">" 
-                                                        + res["newsList"][0]["PUBLISHING_DATE_CONVERTED"]+ "</span>"
+                                                        + res[0]["PUBLISHING_DATE_CONVERTED"]+ "</span>"
                                           + "             </div>"
 
                                           + "             <div class=\"text\" id=\"article\">"
                                           + "                 <i class=\"icon-quote-left\"></i>" 
-                                                        + res["newsList"][0]["CONTENT"]
+                                                        + res[0]["CONTENT"]
                                           + "             </div>"
                                           + "         </div>"
                                           + "     </div>";
@@ -251,6 +253,8 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
             /*-------------------------------------------
             ----------------  END On page loading functions  ----------------
             --------------------------------------------*/ 
+            
+            
             
             
 		</script>

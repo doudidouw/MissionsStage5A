@@ -2,13 +2,12 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Intranet ifrSKEYES - Page en construction</title>
+		<title>Intranet ifrSKEYES - Mes contacts affaires</title>
 
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<?php include("basicScriptsAndStyles.php"); ?>
-        
 	</head>
 
 	<body>
@@ -39,7 +38,7 @@
 								<i class="icon-home home-icon"></i>
 								<a href="#">Portail</a>
 							</li>
-							<li class="active">Page en construction</li>
+							<li class="active">Mes contacts affaires</li>
 						</ul><!-- .breadcrumb -->
 
 						<?php include("navsearch.php"); ?>
@@ -48,48 +47,36 @@
 					<div class="page-content" id="page-content">
 						<div class="page-header" id="page-header">
 							<h1>
-								Page en construction
+								Mes contacts affaires
 							</h1>
 						</div><!-- /.page-header -->
 
 						<div class="row">
-                            <div class="space-6"></div>
+                           <div class="space-6"></div>
                             
 							<div class="col-xs-12">
-                                <!-- PAGE CONTENT BEGINS -->
+                                        <!-- PAGE CONTENT BEGINS -->
 
-                                <div class="error-container">
-									<div class="well">
-										<h1 class="grey lighter smaller">
-											<span class="blue bigger-125">
-												<i class="icon-random"></i>
-												Vous êtes-vous perdu?
-											</span>
-										</h1>
+                                    <div class="alert alert-block alert-success">
+                                        <button type="button" class="close" data-dismiss="alert">
+                                            <i class="icon-remove"></i>
+                                        </button>
 
-										<hr />
-										<h3 class="lighter smaller">
-											Cette page est en construction!
-                                            <i class="icon-wrench icon-animated-wrench bigger-125"></i>
-										</h3>
+                                        <i class="icon-ok green"></i>
+                                        Retrouvez sur cette page toutes vos contacts affaires.
+                                    </div>
+                                
+                                <?php 
 
-										<div class="space"></div>
+                                include("tableauContactsAffaires.php");
 
-										<div>
-											<h4 class="lighter smaller">Ne vous inquiétez pas, nous mettons tout en oeuvre pour qu'elle soit mise en ligne dès que possible.</h4>
-										</div>
-
-										<hr />
-										<div class="space"></div>
-
-										<div class="center">
-											<a href="index.php" class="btn btn-primary">
-												<i class="icon-arrow-left"></i>
-												Retour à l'accueil
-											</a>
-										</div>
-									</div>
-								</div>
+                                ?>
+                                
+								<!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+                                    
+								</div><!-- /row -->
+                                
                                 
 								<!-- PAGE CONTENT ENDS -->
 							</div><!-- /.col -->
@@ -109,12 +96,12 @@
         
 
 		<!-- inline scripts related to this page -->
+            
         <?php include("scriptGoTo.php"); ?>
 
 		<script type="text/javascript">
-            $.getScript('conf/conf.js');
-            
-           
+            document.getElementById('menuAffaires').style.display = 'block';
+            $('#mesContactsAffaires').addClass('active');
             
 		</script>
 	</body>

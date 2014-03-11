@@ -11,13 +11,18 @@
             $stmt = $vdocDB->select($sql);
 
             $i = 0;
-            $newsList = array("newsList" => array());
+            $newsList = array();
 
             while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                $newsList["newsList"][$i] = $row;
+                $newsList[$i] = $row;
                 $i++;
             }
-
+            
+            foreach($newsList as &$news){
+                $news['CONTENT'] = preg_replace('/src="(.*?)"/', 'src="http://srvvdocged.ifrfrance.com/vdoc/\1"', $news['CONTENT']);
+            }
+            unset($news);
+            
             return $newsList;
 
         }
