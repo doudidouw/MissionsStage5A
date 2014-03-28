@@ -41,7 +41,6 @@
 							<li class="active">Mes Relances</li>
 						</ul><!-- .breadcrumb -->
 
-						<?php include("navsearch.php"); ?>
 					</div>
 
 					<div class="page-content" id="page-content">
@@ -95,6 +94,8 @@
 
 		<script type="text/javascript">
             $.getScript('conf/conf.js');
+            $.getScript('js/getUserPicAndFirstName.js');
+            
             document.getElementById('menuAffaires').style.display = 'block';
             $('#mesRelances').addClass('active');
                         

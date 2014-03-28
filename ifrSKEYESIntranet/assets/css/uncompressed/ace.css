@@ -1543,7 +1543,8 @@
 	margin:-4px 8px 0 0;
 	border-radius:100%;
 	border:2px solid #FFF;
-	max-width:40px
+	max-width:40px;
+    max-height: 40px
 }
 .ace-nav li:last-child a [class^="icon-"]
 {
@@ -9957,7 +9958,7 @@
 .profile-info-name
 {
 	position:absolute;
-	width:130px;
+	width:220px;
 	text-align:right;
 	padding:6px 10px 6px 0;
 	left:0;
@@ -9971,7 +9972,7 @@
 .profile-info-value
 {
 	padding:6px 4px 6px 6px;
-	margin-left:120px;
+	margin-left:210px;
 	border-top:1px dotted #d5e4f1
 }
 .profile-info-value>span+span:before

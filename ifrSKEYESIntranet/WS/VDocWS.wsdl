@@ -17,6 +17,13 @@
     <message name="getContactsResponse">
         <part name="getContactsReturn" />
     </message>
+    
+    <message name="getUserProfileRequest">
+        <part name="login" type="xsd:string"/>
+    </message>
+    <message name="getUserProfileResponse">
+        <part name="getUserProfileReturn" />
+    </message>
 
     <portType name="VDocWSPortType">
         <operation name="getNewsTitles">
@@ -27,6 +34,11 @@
          <operation name="getContacts">
             <input message="typens:getContacts" />
             <output message="typens:getContactsResponse" />
+        </operation>
+        
+        <operation name="getUserProfile">
+            <input message="typens:getUserProfileRequest" />
+            <output message="typens:getUserProfileResponse" />
         </operation>
     </portType>
 
@@ -48,6 +60,18 @@
         
         <operation name="getContacts">
             <soap:operation soapAction="urn:getContactsAction" />
+            <input>
+                <soap:body namespace="urn:VDocWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body namespace="urn:VDocWS" use="encoded"
+                                           encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+        
+        <operation name="getUserProfile">
+            <soap:operation soapAction="urn:getUserProfileAction" />
             <input>
                 <soap:body namespace="urn:VDocWS" use="encoded"
                                            encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />

@@ -41,7 +41,6 @@
 							<li class="active">Mes contacts affaires</li>
 						</ul><!-- .breadcrumb -->
 
-						<?php include("navsearch.php"); ?>
 					</div>
 
 					<div class="page-content" id="page-content">
@@ -100,6 +99,9 @@
         <?php include("scriptGoTo.php"); ?>
 
 		<script type="text/javascript">
+            $.getScript('conf/conf.js');
+            $.getScript('js/getUserPicAndFirstName.js');
+            
             document.getElementById('menuAffaires').style.display = 'block';
             $('#mesContactsAffaires').addClass('active');
             

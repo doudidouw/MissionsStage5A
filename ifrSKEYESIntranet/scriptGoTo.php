@@ -77,6 +77,27 @@
         }*/ 
     });     
     
+    $('#goToVdocOM').click(function(event){
+        event.preventDefault();
+        $('#mesDepartsEnMissions').addClass('active');
+        console.log("Clicked VDoc Départs en missions!");
+        window.open ('pageEnCours.php','_self',false);
+        /*document.getElementById("context-nav-bar").innerHTML = "<li>" 
+                + "<i class=\"icon-home home-icon\"></i>"
+                + "<a href=\"#\">Portail</a>"
+                + "</li>"
+                + "<li class=\"active\">Mes départs de missions</li>";
+        if(checkIfMobile() == false){
+            console.log("No mobile VDoc!");
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
+
+        } else if(checkIfMobile() == true){
+            console.log("Mobile VDoc!");
+            document.getElementById("page-content").innerHTML = "<iframe style=\"top:0;left:0;float:left;z-index:1;\" width=\"100%\" height=\"2000px\"src=\"about:blank\" name=\"iframe\" frameBorder=\"0\" id=\"iframe\"></iframe>";
+        }*/ 
+    }); 
+    
+    
     $('#goToSIRH').click(function(event){
         event.preventDefault();
         $('#mesDossiersDuPersonnel').addClass('active');

@@ -42,7 +42,6 @@
 							<li class="active">Page en construction</li>
 						</ul><!-- .breadcrumb -->
 
-						<?php include("navsearch.php"); ?>
 					</div>
 
 					<div class="page-content" id="page-content">
@@ -76,7 +75,7 @@
 										<div class="space"></div>
 
 										<div>
-											<h4 class="lighter smaller">Ne vous inquiétez pas, nous mettons tout en oeuvre pour qu'elle soit mise en ligne dès que possible.</h4>
+											<h4 class="lighter smaller">Ne vous inquiétez pas, elle sera mise en ligne prochainement.</h4>
 										</div>
 
 										<hr />
@@ -113,6 +112,7 @@
 
 		<script type="text/javascript">
             $.getScript('conf/conf.js');
+            $.getScript('js/getUserPicAndFirstName.js');
             
            
             

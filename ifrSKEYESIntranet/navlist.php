@@ -17,7 +17,7 @@
                 <i class="icon-cogs"></i>
             </button>-->
 
-            <button onclick="window.location.href='collegues.php'" class="btn btn-warning">
+            <button onclick="window.location.href='collegues.php'" class="btn btn-warning" title="Mes collègues">
                 <i class="icon-group"></i>
             </button>
         </div>
@@ -73,11 +73,25 @@
                     <span class="menu-text"> Mes notes de frais </span>
                 </a>
             </li>
+            
+            <li id ="mesDepartsEnMissions" >
+                <a href="#" id="goToVdocOM">
+                    <i class="icon-folder-open-alt"></i>
+                    <span class="menu-text"> Mes départs en missions </span>
+                </a>
+            </li>
 
             <li id ="mesAbsences" >
                 <a href="#" id="goToKelio">
                     <i class="icon-calendar"></i>
                     <span class="menu-text"> Mes absences </span>
+                </a>
+            </li>
+            
+            <li id ="mesAbsences" >
+                <a href="monDossierPersonnel.php" id="">
+                    <i class="icon-calendar"></i>
+                    <span class="menu-text"> Mon dossier personnel </span>
                 </a>
             </li>
 
@@ -111,7 +125,7 @@
                     
                     <li id ="mesRelances" >
                         <a href="mesRelances.php" id="">
-                            <i class="icon-sitemap"></i>
+                            <i class="icon-exchange"></i>
                             <span class="menu-text"> Mes relances</span>
                         </a>
                     </li>

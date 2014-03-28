@@ -185,11 +185,11 @@
                 </li>-->
 
                 <li class="light-orange">
-                    <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                        <img class="nav-user-photo" src="assets/avatars/avatar2.png" alt="avatar" />
+                    <a data-toggle="dropdown" href="#" class="dropdown-toggle" id="profileBox">
+                        <img class="nav-user-photo" src="" alt="avatar" />
                         <span class="user-info">
-                            <small>Bonjour,</small>
-                            Florian
+                            <small>Bonjour</small>
+                            
                         </span>
 
                         <i class="icon-caret-down"></i>
@@ -225,4 +225,5 @@
         </div><!-- /.navbar-header -->
     </div><!-- /.container -->
 </div>
+
 

@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
-		<title>Compte utilisateur - Ace Admin</title>
+		<title>Intranet ifrSKEYES - Profil</title>
 
 		<meta name="description" content="3 styles with inline editable feature" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,7 @@
 
 		<!-- ace styles -->
 
-		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/uncompressed/ace.css" />
 		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
 		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
 
@@ -77,20 +77,15 @@
 								<i class="icon-home home-icon"></i>
 								<a href="#">Portail</a>
 							</li>
-							<li class="active">Compte utilisateur</li>
+							<li class="active">Profil</li>
 						</ul><!-- .breadcrumb -->
 
-						<?php include("navsearch.php"); ?>
 					</div>
 
 					<div class="page-content">
 						<div class="page-header">
 							<h1>
-								Compte utilisateur
-								<small>
-									<i class="icon-double-angle-right"></i>
-									3 styles aux choix
-								</small>
+								Profil
 							</h1>
 						</div><!-- /.page-header -->
 
@@ -105,7 +100,7 @@
 										</button>
 
 										<i class="icon-edit bigger-120 blue"></i>
-										Cliquez sur votre photo ou sur 'Editer' pour la changer. 
+										Cliquez sur 'Editer' pour modifier vos informations. 
 									</div>
 								</div>
 
@@ -115,47 +110,19 @@
 									<div id="user-profile-1" class="user-profile row">
 										<div class="col-xs-12 col-sm-3 center">
 											<div>
-												<span class="profile-picture">
-													<img id="avatar" class="editable img-responsive" alt="Photo de profil" src="/assets/avatars/profile-pic.jpg" />
+												<span class="profile-picture" id="profilePic">
+													<img id="avatar" class="editable img-responsive" alt="Photo de profil" src="" />
 												</span>
 
 												<div class="space-4"></div>
 
 												<div class="width-80 label label-info label-xlg arrowed-in arrowed-in-right">
 													<div class="inline position-relative">
-														<a href="#" class="user-title-label dropdown-toggle" data-toggle="dropdown">
+														<a href="#" class="user-title-label" >
 															<i class="icon-circle light-green middle"></i>
 															&nbsp;
-															<span class="white">Florian DUSSOULIER</span>
+															<span class="white" id="nomPrenom">-</span>
 														</a>
-
-														<ul class="align-left dropdown-menu dropdown-caret dropdown-lighter">
-															<li class="dropdown-header"> Changer votre statut </li>
-
-															<li>
-																<a href="#">
-																	<i class="icon-circle green"></i>
-																	&nbsp;
-																	<span class="green">Disponible</span>
-																</a>
-															</li>
-
-															<li>
-																<a href="#">
-																	<i class="icon-circle red"></i>
-																	&nbsp;
-																	<span class="red">Occupée</span>
-																</a>
-															</li>
-
-															<li>
-																<a href="#">
-																	<i class="icon-circle grey"></i>
-																	&nbsp;
-																	<span class="grey">Invisible</span>
-																</a>
-															</li>
-														</ul>
 													</div>
 												</div>
 											</div>
@@ -166,56 +133,41 @@
 										</div>
 
 										<div class="col-xs-12 col-sm-9">
-											<div class="center">
-												<span class="btn btn-app btn-sm btn-pink no-hover">
-													<span class="line-height-1 bigger-170"> 4 </span>
-
-													<br />
-													<span class="line-height-1 smaller-90"> Projets </span>
-												</span>
-
-												<span class="btn btn-app btn-sm btn-primary no-hover">
-													<span class="line-height-1 bigger-170"> 55 </span>
-
-													<br />
-													<span class="line-height-1 smaller-90"> Contacts </span>
-												</span>
-											</div>
 
 											<div class="space-12"></div>
 
 											<div class="profile-user-info profile-user-info-striped">
 												<div class="profile-info-row">
 													<div class="profile-info-name"> Identifiant </div>
-
+                                                    
 													<div class="profile-info-value">
-														<span class="editable" id="username">fdu</span>
+														<span class="editable" id="identifiant">-</span>
 													</div>
 												</div>
 
 												<div class="profile-info-row">
 													<div class="profile-info-name"> Lieu de résidence </div>
-
+                                                    
 													<div class="profile-info-value">
 														<i class="icon-map-marker light-orange bigger-110"></i>
-														<span class="editable" id="country">France</span>
-														<span class="editable" id="city">Toulouse</span>
+														<span class="editable" id="pays">-</span>
+														<span class="editable" id="ville">-</span>
 													</div>
 												</div>
 
 												<div class="profile-info-row">
-													<div class="profile-info-name"> Age </div>
-
+													<div class="profile-info-name"> Email </div>
+                                                    
 													<div class="profile-info-value">
-														<span class="editable" id="age"></span>
+														<span class="editable" id="email">-</span>
 													</div>
 												</div>
 
 												<div class="profile-info-row">
-													<div class="profile-info-name"> Date d'arrivée </div>
+													<div class="profile-info-name"> Date d'activation du compte </div>
 
 													<div class="profile-info-value">
-														<span class="editable" id="signup"></span>
+														<span class="editable" id="dateArrivee">-</span>
 													</div>
 												</div>
 
@@ -223,15 +175,15 @@
 													<div class="profile-info-name"> Dernière connexion </div>
 
 													<div class="profile-info-value">
-														<span class="editable" id="login">il y a une heure</span></span>
+														<span class="editable" id="derniereConnexion">-</span></span>
 													</div>
 												</div>
 
 												<div class="profile-info-row">
-													<div class="profile-info-name"> Fonction </div>
+													<div class="profile-info-name"> Type de contrat </div>
 
 													<div class="profile-info-value">
-														<span class="editable" id="about">Chargé SI</span>
+														<span class="editable" id="contrat">-</span>
 													</div>
 												</div>
 											</div>
@@ -257,7 +209,7 @@
 								<div class="hide">
 									<div id="user-profile-3" class="user-profile row">
 										<div class="col-sm-offset-1 col-sm-10">
-											<div class="well well-sm">
+											<!--<div class="well well-sm">
 												<button type="button" class="close" data-dismiss="alert">&times;</button>
 												&nbsp;
 												<div class="inline middle blue bigger-110"> Votre profil est complet à 70%</div>
@@ -297,21 +249,16 @@
 
 													<div class="tab-content profile-edit-tab-content">
 														<div id="edit-basic" class="tab-pane in active">
-															<h4 class="header blue bolder smaller">General</h4>
+															<h4 class="header blue bolder smaller">Général</h4>
 
 															<div class="row">
-																<div class="col-xs-12 col-sm-4">
-																	<input type="file" />
-																</div>
-
-																<div class="vspace-xs"></div>
 
 																<div class="col-xs-12 col-sm-8">
 																	<div class="form-group">
 																		<label class="col-sm-4 control-label no-padding-right" for="form-field-username">Identifiant</label>
 
 																		<div class="col-sm-8">
-																			<input class="col-xs-12 col-sm-10" type="text" id="form-field-username" placeholder="Username" value="doc" />
+																			<input class="col-xs-12 col-sm-10" type="text" id="form-field-username" placeholder="Username" value="" />
 																		</div>
 																	</div>
 
@@ -392,14 +339,6 @@
 														</div>
 
 														<div id="edit-settings" class="tab-pane">
-															<div class="space-10"></div>
-
-															<div>
-																<label class="inline">
-																	<input type="checkbox" name="form-field-checkbox" class="ace" />
-																	<span class="lbl"> Rendre mon profil public</span>
-																</label>
-															</div>
 
 															<div class="space-8"></div>
 
@@ -530,6 +469,21 @@
         <?php include("scriptGoTo.php"); ?>
 
 		<script type="text/javascript">
+            $.getScript('conf/conf.js');
+            $.getScript('js/getUserPicAndFirstName.js');
+            
+            
+            document.getElementById("profilePic").innerHTML = "<img id=\"avatar\" class=\"editable img-responsive\" alt=\"Photo de                                              profil\" src=\"" + localStorage.getItem("profilePic") + "\" />";
+            document.getElementById("identifiant").innerHTML = localStorage.getItem("login");
+            document.getElementById("email").innerHTML = localStorage.getItem("email");
+            document.getElementById("derniereConnexion").innerHTML = localStorage.getItem("lastVisit");
+            document.getElementById("ville").innerHTML = localStorage.getItem("city");
+            document.getElementById("pays").innerHTML = localStorage.getItem("country");
+            document.getElementById("contrat").innerHTML = localStorage.getItem("contract");
+            document.getElementById("dateArrivee").innerHTML = localStorage.getItem("activationDate");
+            document.getElementById("nomPrenom").innerHTML = localStorage.getItem("lastName") + " " + localStorage.getItem("firstName");
+                    
+            
 			jQuery(function($) {
 			
 				//editables on first profile page

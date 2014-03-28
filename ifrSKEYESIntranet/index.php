@@ -43,7 +43,6 @@
 							<li class="active">Accueil</li>
 						</ul><!-- .breadcrumb -->
 
-						<?php include("navsearch.php"); ?>
 					</div>
 
 					<div class="page-content" id="page-content">
@@ -70,8 +69,7 @@
                                         <strong class="blue">
                                             ifrSKEYES
                                         </strong>
-                                        ,
-                                        plus riche, plus facile d'utilisation et d'accès.
+                                        , plus facile d'utilisation et d'accès.
                                     </div>
 
                                     <div class="row">
@@ -200,6 +198,8 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
 
 		<script type="text/javascript">
             $.getScript('conf/conf.js');
+            $.getScript('js/getUserPicAndFirstName.js');
+            
             
             /*-------------------------------------------
             ----------------  START On page loading functions  ----------------
@@ -249,6 +249,29 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
                     
                 } 
             });
+            
+//            var reqProfilePic = $.ajax({
+//                    url: VDOCDB_OPERATIONS,
+//                    data: {
+//                        method: GET_PROFILE_PIC,
+//                        login : sessionStorage.getItem("login")
+//                    } 
+//            });
+//            
+//            reqProfilePic.done(function(res) {
+//                res = $.parseJSON(res);
+//                var htmlProfileBoxContent = "<img class=\"nav-user-photo\" src=\""+ res["PHOTO"] + "\" alt=\"avatar\" />"
+//                                               + "<span class=\"user-info\">"
+//                                               +     "<small>Bonjour,</small>"
+//                                               +     res["FIRSTNAME"]
+//                                               + "</span>"
+//
+//                                               + "<i class=\"icon-caret-down\"></i>";
+//                
+//                document.getElementById("profileBox").innerHTML = htmlProfileBoxContent;
+//            });
+            
+            
             
             /*-------------------------------------------
             ----------------  END On page loading functions  ----------------

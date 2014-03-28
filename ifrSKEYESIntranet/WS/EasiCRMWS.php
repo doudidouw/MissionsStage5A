@@ -116,7 +116,7 @@
             
             $easiDB = EasiCRMDB::getInstance();
 
-            $sql = "SELECT XCode, XIddelas, XIdConta, XLibell, XProgici, XProjet, XTotalHT, XCAresta, XRestefa, XRestant FROM S_CRM_Opportun                          WHERE XCrpar = 'Florian DUSSOULIER' AND XStatut=0";
+            $sql = "SELECT XCode, XIddelas, XIdConta, XChargda, XLibell, XDevise, XProgici, XProjet, XTotalHT, XCAresta, XCARalis, XCAfactu, XPCAHT, XFAE, XAAE, XRestefa, XRestant, XCrpar, CONVERT(varchar, XCrle, 120) AS XCrle_Converted, XModifip, CONVERT(varchar, XModifil, 120) AS XModifil_Converted FROM S_CRM_Opportun WHERE XCrpar = 'Florian DUSSOULIER' AND XStatut=0";
             $stmt = $easiDB->select($sql);
 
             $opportunList = array();
@@ -141,6 +141,29 @@
 
             return $opportunList;
 
+        }
+        
+        function getOpportunFromXCode($xCode){
+            $companies = $this->getCompanies();
+            $contacts = $this->getContacts();
+            $progici = $this->getProgici();
+            $projets = $this->getProjets();
+            
+            $easiDB = EasiCRMDB::getInstance();
+
+            $sql = "SELECT XCode, XIddelas, XIdConta, XChargda, XDevise, XLibell, XProgici, XProjet, XTotalHT, XCAresta, XCARalis, XCAfactu, XPCAHT, XFAE, XAAE, XRestefa, XRestant, XCrpar, CONVERT(varchar, XCrle, 120) AS XCrle_Converted, XModifip, CONVERT(varchar, XModifil, 120) AS XModifil_Converted FROM S_CRM_Opportun WHERE XCode='" .$xCode. "'";
+            $stmt = $easiDB->select($sql);
+
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            
+            $stmt->closeCursor();
+            
+            $row['XIddelas'] = $this->getCompanyNameFromId($companies, $row['XIddelas']);
+            $row['XIdConta'] = $this->getContactFromId($contacts, $row['XIdConta']);
+            $row['XProgici'] = $this->getProgiciFromXCode($progici, $row['XProgici']);
+            $row['XProjet'] = $this->getProjectFromXCode($projets, $row['XProjet']);
+            
+            return $row;
         }
         
         function getOrigins(){

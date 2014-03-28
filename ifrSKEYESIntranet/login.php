@@ -275,10 +275,22 @@
 		<!-- inline scripts related to this page -->
 
 		<script type="text/javascript">
+             $.getScript('conf/conf.js');
+            
 			function show_box(id) {
 			 jQuery('.widget-box.visible').removeClass('visible');
 			 jQuery('#'+id).addClass('visible');
 			}
+            
+            function setLocalStorageItemIfNotNull(itemName, item){
+                var itemValue = "";
+                if(!item){
+                    itemValue = "-";
+                } else {
+                    itemValue = item;
+                }
+                localStorage.setItem(itemName, itemValue);
+            }
             
             
             $('#editProfile').on('click', function(e){
@@ -307,11 +319,40 @@
                     req.done(function(res) {
                         res = $.parseJSON(res);
                         if(res == 1){
-                            alert("Welcome " + $('#login').val() + "!"); 
-                            window.open("index.php","_self");
+                            var reqProfilePic = $.ajax({
+                                    url: VDOCDB_OPERATIONS,
+                                    data: {
+                                        method: GET_PROFILE,
+                                        login : $('#login').val()
+                                    } 
+                            });
+
+                            reqProfilePic.done(function(res) {
+                                res = $.parseJSON(res);
+                                if(!res['PHOTO']){
+                                    localStorage.setItem("profilePic", "assets/avatars/profile-pic.jpg");
+                                } else {
+                                    localStorage.setItem("profilePic", res['PHOTO']);
+                                }
+                                setLocalStorageItemIfNotNull("firstName", res['FIRSTNAME']);
+                                setLocalStorageItemIfNotNull("lastName", res['LASTNAME']);
+                                setLocalStorageItemIfNotNull("login", $('#login').val());
+                                setLocalStorageItemIfNotNull("activationDate", res['ACTIVATION_DATE_CONVERTED']);
+                                setLocalStorageItemIfNotNull("lastVisit", res['LAST_VISIT_CONVERTED']);
+                                setLocalStorageItemIfNotNull("email", res['EMAIL']);
+                                setLocalStorageItemIfNotNull("city", res['CITY']);
+                                setLocalStorageItemIfNotNull("country", res['COUNTRY']);
+                                setLocalStorageItemIfNotNull("contract", res['CONTRACT_TYPE']);
+                                window.open("index.php","_self");
+                            });
+                            
                         } else {
                             alert("Sorry, we couldn't log you in. Try again or contact the support team.")   
                         }
+                        
+                        
+                        
+                        
                     });
                 }
             });

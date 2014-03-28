@@ -43,7 +43,7 @@
                     projet = res[i]['XProjet'];
                 }
 
-                mesAffaireEnCoursGrid[i] = {code:res[i]['XCode'], societe:res[i]['XIddelas'], contact:res[i]['XIdConta'], intitule:res[i]['XLibell'], progiciel:res[i]['XProgici'], projet:projet, totalHT:Math.abs(res[i]['XTotalHT']).toFixed(2), CARestant:Math.abs(res[i]['XCAresta']).toFixed(2), ResteAFacturer:Math.abs(res[i]['XRestefa']).toFixed(2), RestantDuTTC:Math.abs(res[i]['XRestant']).toFixed(2)};
+                mesAffaireEnCoursGrid[i] = {code:res[i]['XCode'], societe:res[i]['XIddelas'], contact:res[i]['XIdConta'], intitule:res[i]['XLibell'], progiciel:res[i]['XProgici'], projet:projet, totalHT:Math.abs(res[i]['XTotalHT']).toFixed(2), CARestant:Math.abs(res[i]['XCAresta']).toFixed(2), ResteAFacturer:Math.abs(res[i]['XRestefa']).toFixed(2), RestantDuTTC:Math.abs(res[i]['XRestant']).toFixed(2), chargeDaffaire:res[i]['XChargda'], devise:res[i]['XDevise'], CARealise:Math.abs(res[i]['XCARalis']).toFixed(2), CAfactu:Math.abs(res[i]['XCAfactu']).toFixed(2), PCA:Math.abs(res[i]['XPCA']).toFixed(2), FAE:Math.abs(res[i]['XFAE']).toFixed(2), AAE:Math.abs(res[i]['XAAE']).toFixed(2), resteAFacturer:Math.abs(res[i]['XRestefa']).toFixed(2), creePar:res[i]['XCrpar'], creeLe:res[i]['XCrle_Converted'], modifiePar:res[i]['XModifip'], modifieLe:res[i]['XModifil_Converted']};
             }
 
         }
@@ -58,7 +58,7 @@
                 data: mesAffaireEnCoursGrid,
                 datatype: "local",
                 height: 250,
-                colNames:[' ', 'Code','Société','Contact', 'Intitulé', 'Progiciel', 'Projet', 'Total HT', 'CA Restant', 'Reste à <br /> facturer', 'Restant  <br />du TTC'],
+                colNames:[' ', 'Code','Société','Contact', 'Intitulé', 'Progiciel', 'Projet', 'Total HT', 'CA Restant', 'Reste à <br /> facturer', 'Restant  <br />dû TTC', 'Chargé <br />d\'affaire', 'Devise', 'CA Réalisé HT', 'CA facturé', 'PCA', 'FAE', 'AAE', 'Reste à <br />facturer HT', 'Créé par', 'Créé le', 'Modifié par', 'Modifié le'],
                 colModel:[
                     {name:'myac',index:'', width:65, fixed:true, sortable:false, resize:false,
                         formatter:'actions', 
@@ -69,7 +69,7 @@
                             //editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
                         }
                     },
-                    {name:'code',index:'code', width:70, editable: true},
+                    {name:'code',index:'code', width:70, editable: true, hidden: true},
                     {name:'societe',index:'societe',width:90, editable:true},
                     {name:'contact',index:'contact', width:100, editable: true},
                     {name:'intitule',index:'intitule', width:90, editable: true},
@@ -78,7 +78,19 @@
                     {name:'totalHT',index:'totalHT', width:100, sorttype:"int",editable: true},
                     {name:'CARestant',index:'CARestant', width:100, sorttype:"int",editable: true},
                     {name:'ResteAFacturer',index:'ResteAFacturer', sorttype:"int",width:90, editable: true},
-                    {name:'RestantDuTTC',index:'RestantDuTTC', sorttype:"int",width:90, editable: true}
+                    {name:'RestantDuTTC',index:'RestantDuTTC', sorttype:"int",width:90, editable: true},
+                    {name:'chargeDaffaire',index:'chargeDaffaire', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'devise',index:'devise', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'CARealise',index:'CARealise', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'CAfactu',index:'CAfactu', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'PCA',index:'PCA', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'FAE',index:'FAE', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'AAE',index:'AAE', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'resteAFacturer',index:'resteAFacturer', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'creePar',index:'creePar', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'creeLe',index:'creeLe', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'modifiePar',index:'modifiePar', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}},
+                    {name:'modifieLe',index:'modifieLe', sorttype:"int",width:90, editable: true, hidden: true, viewable: true,editrules:{edithidden:true}}
                 ], 
 
                 viewrecords : true,
@@ -102,8 +114,16 @@
                         enableTooltips(table);
                     }, 0);
                 },
+                
+//                onCellSelect: function (rowid, iCol, cellcontent) {
+//                    if(iCol == 2){
+//                        $('#affaireModal').modal('show');
+//                        $(".modal-dialog").css("width", "1000px");
+//                        console.log('Selected ' + rowid + ' and column ' + iCol);
+//                    }
+//                },
 
-                editurl: $path_base+"/dummy.html",//nothing is saved
+                editurl: $path_base+"/dummy.html", //nothing is saved
                 caption: "Mes affaires en cours",
                 autowidth: true
 

@@ -50,7 +50,6 @@
 							<li class="active">Mes collègues</li>
 						</ul><!-- .breadcrumb -->
 
-						<?php include("navsearch.php"); ?>
 					</div>
 
 					<div class="page-content" id="page-content">
@@ -112,6 +111,8 @@
         <?php include("scriptGoTo.php"); ?>
 
 		<script type="text/javascript">
+            $.getScript('conf/conf.js');
+            $.getScript('js/getUserPicAndFirstName.js');
             
             var req = $.ajax({
                 url: VDOCDB_OPERATIONS,
@@ -126,11 +127,10 @@
                 res = $.parseJSON(res);
                 if (res != null) {
                     for(var i=0; i < res.length; i++){
-                        mesColleguesGrid[i] = {trigramme:res[i]['login'], nom:res[i]['last_name'], prenom:res[i]['first_name'], email:res[i]['email']};
+                        mesColleguesGrid[i] = {trigramme:res[i]['LOGIN'], nom:res[i]['LASTNAME'], prenom:res[i]['FIRSTNAME'], email:res[i]['EMAIL'], telephone:res[i]['MOBILE_PHONE_NUMBER']};
                     }
 
                 }
-                console.log(mesColleguesGrid);
                 
                 jQuery(function($) {
                     var grid_selector = "#grid-table";
@@ -142,7 +142,7 @@
                         data: mesColleguesGrid,
                         datatype: "local",
                         height: 250,
-                        colNames:[' ', 'Trigramme','Nom','Prénom', 'Email'],
+                        colNames:[' ', 'Trigramme','Nom','Prénom', 'Email', 'Téléphone'],
                         colModel:[
                             {name:'myac',index:'', width:80, fixed:true, sortable:false, resize:false,
                                 formatter:'actions', 
@@ -153,10 +153,11 @@
                                     //editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
                                 }
                             },
-                            {name:'trigramme',index:'trigramme', width:60, editable: true},
+                            {name:'trigramme',index:'trigramme', width:60, editable: true, hidden:true},
                             {name:'nom',index:'nom',width:90, editable:true},
                             {name:'prenom',index:'prenom', width:90, editable: true},
-                            {name:'email',index:'email', width:90, editable: true}
+                            {name:'email',index:'email', width:90, editable: true},
+                            {name:'telephone',index:'telephone', width:90, editable: true}
                         ], 
 
                         viewrecords : true,

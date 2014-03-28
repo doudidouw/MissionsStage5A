@@ -6,12 +6,15 @@ if (isset($_REQUEST['method'])) {
 
     $service = new SoapClient("http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/VDocWS.wsdl");
 
-    if ($_REQUEST['method'] == 'getNewsTitles' /*&& isset($_REQUEST['username'], $_REQUEST['password'])*/) {
+    if ($_REQUEST['method'] == 'getNewsTitles') {
         $res = $service->getNewsTitles();
         echo json_encode($res);
     } else if($_REQUEST['method'] == 'getContacts'){
         $res = $service->getContacts();
         echo json_encode($res);
-    }
+    } else if(($_REQUEST['method'] == 'getUserProfile') && isset($_REQUEST['login'])){
+        $res = $service->getUserProfile($_REQUEST['login']);
+        echo json_encode($res);
+    } 
 }
 ?>

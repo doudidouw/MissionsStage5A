@@ -30,7 +30,9 @@
         function getContacts(){
             $vdocDB = VDocDB::getInstance();
 
-            $sql = "SELECT login, first_name, last_name, email FROM vdp_users";   
+            $sql = "SELECT EMAIL, FIRSTNAME, LASTNAME, LOGIN, MOBILE_PHONE_NUMBER, DIR_USER_ID 
+            FROM DIR_USER 
+            WHERE (FIRSTNAME NOT LIKE '%prd%') AND (FIRSTNAME NOT LIKE '%unknown%') AND (FIRSTNAME NOT LIKE '%test%') AND (FIRSTNAME NOT LIKE '%ystem%') AND (FIRSTNAME NOT LIKE '%ext%') AND (FIRSTNAME NOT LIKE '%Anonymous%') AND (FIRSTNAME NOT LIKE '%tomcat%') AND (FIRSTNAME NOT LIKE '%tlm%')";   
             $stmt = $vdocDB->select($sql);
 
             $contacts = array();
@@ -41,6 +43,23 @@
 
             return $contacts;
 
+        }
+        
+        function getUserProfile($login){
+            $url = "http://srvvdocged.ifrfrance.com/vdoc/portal/action/SimpleDownloadActionEvent/oid/";
+            $vdocDB = VDocDB::getInstance();
+
+            $sql = "SELECT LASTNAME, FIRSTNAME, LOGIN, PHOTO, CONVERT(char(10), ACTIVATION_DATE, 103) AS ACTIVATION_DATE_CONVERTED, CITY, COUNTRY, CONTRACT_TYPE, EMAIL, CONVERT(char(10), LAST_VISITE, 103) AS LAST_VISIT_CONVERTED FROM DIR_USER 
+            WHERE LOGIN LIKE '" .$login. "'";   
+            $stmt = $vdocDB->select($sql);
+
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            if($row['PHOTO'] != null){
+                $row['PHOTO'] = $url.$row['PHOTO'];
+            } 
+
+            return $row;
+            
         }
 
     }
@@ -55,6 +74,6 @@
     $serversoap->handle();
 
 //    $vdocWS = new VDocWS();
-//    var_dump($vdocWS->getNewsTitles());
+//    var_dump($vdocWS->getUserProfile("fdu"));
 	
 ?>

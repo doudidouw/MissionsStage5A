@@ -49,7 +49,7 @@
 					<div class="page-content" id="page-content">
 						<div class="page-header" id="page-header">
 							<h1>
-								Accueil
+								Mes actualités
 							</h1>
 						</div><!-- /.page-header -->
 
@@ -147,6 +147,7 @@
 
 		<script type="text/javascript">
             $.getScript('conf/conf.js');
+            $.getScript('js/getUserPicAndFirstName.js');
             
             /*-------------------------------------------
             ----------------  START On page loading functions  ----------------
