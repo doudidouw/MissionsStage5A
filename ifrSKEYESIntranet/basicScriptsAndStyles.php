@@ -48,19 +48,19 @@
 
 <!-- basic scripts -->
 
-<!--[if !IE]> -->
+<!--[if !IE]> 
 
 <script type="text/javascript">
     window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
-</script>
+</script>-->
 
 <!-- <![endif]-->
 
-<!--[if IE]>
+<!--[if IE]>-->
 <script type="text/javascript">
  window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
 </script>
-<![endif]-->
+<!--[endif]-->
 
 <script type="text/javascript">
     if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
@@ -73,6 +73,8 @@
 <script src="assets/js/date-time/bootstrap-datepicker.min.js"></script>
 <script src="assets/js/jqGrid/jquery.jqGrid.min.js"></script>
 <script src="assets/js/jqGrid/i18n/grid.locale-fr.js"></script>
+<script src="assets/js/jquery-ui-1.10.3.full.min.js"></script>
+<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
 
 <!-- ace scripts -->
 

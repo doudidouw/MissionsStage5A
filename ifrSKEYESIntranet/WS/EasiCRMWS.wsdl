@@ -13,12 +13,18 @@
         <part name="getNewsTitlesReturn" />
     </message>
     
-    <message name="getOnGoingOpportunities" />
+    <message name="getOnGoingOpportunitiesRequest">
+        <part name="firstname" type="xsd:string"/>
+        <part name="lastname" type="xsd:string"/>
+    </message>
     <message name="getOnGoingOpportunitiesResponse">
         <part name="getOnGoingOpportunitiesReturn" />
     </message>
     
-    <message name="getCompaniesForUser" />
+    <message name="getCompaniesForUserRequest" >
+        <part name="firstname" type="xsd:string"/>
+        <part name="lastname" type="xsd:string"/>
+    </message>
     <message name="getCompaniesForUserResponse">
         <part name="getCompaniesForUserReturn" />
     </message>
@@ -28,7 +34,10 @@
         <part name="getContactsReturn" />
     </message>
     
-    <message name="getMesRelances" />
+    <message name="getMesRelancesRequest" >
+        <part name="firstname" type="xsd:string"/>
+        <part name="lastname" type="xsd:string"/>
+    </message>
     <message name="getMesRelancesResponse">
         <part name="getMesRelancesReturn" />
     </message>
@@ -40,12 +49,12 @@
         </operation>
         
         <operation name="getOnGoingOpportunities">
-            <input message="typens:getOnGoingOpportunities" />
+            <input message="typens:getOnGoingOpportunitiesRequest" />
             <output message="typens:getOnGoingOpportunitiesResponse" />
         </operation>
         
         <operation name="getCompaniesForUser">
-            <input message="typens:getCompaniesForUser" />
+            <input message="typens:getCompaniesForUserRequest" />
             <output message="typens:getCompaniesForUserResponse" />
         </operation>
         
@@ -55,7 +64,7 @@
         </operation>
         
         <operation name="getMesRelances">
-            <input message="typens:getMesRelances" />
+            <input message="typens:getMesRelancesRequest" />
             <output message="typens:getMesRelancesResponse" />
         </operation>
     </portType>    

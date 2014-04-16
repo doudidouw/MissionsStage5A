@@ -91,7 +91,7 @@
                                             <div id="loading" class="alert alert-block alert-warning">
 
                                                 <i class="icon-retweet yellow"></i>
-                                                En cours de chargement...
+                                                Chargement en cours...
                                             </div>
 
                                             <div class="comments" id="vdocNewsSection">
@@ -151,25 +151,42 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
                                                 </div><!-- /widget-main -->
                                             </div><!-- /widget-body -->
                                         </div><!-- /widget-box -->
+                                        
+                                        <div class="space-6" style="heigh:10px; display:inline-block"></div>
+                                        
+                                        <div class="widget-box">
+                                            <div class="widget-header widget-header-flat widget-header-small">
+                                                <h5>
+                                                    <i class="icon-globe"></i>
+                                                    Horoscope du jour
+                                                </h5>
+                                            </div>
+
+                                            <div class="widget-body">
+                                                <div class="widget-main">
+                                                    <script type="text/javascript" src="http://vivget.com/viv/loader/dailyhoroscopecompact/locale/FR/pid/12921/rel/nofollow/loader.js"></script>
+                                                </div><!-- /widget-main -->
+                                            </div><!-- /widget-body -->
+                                        </div><!-- /widget-box -->
                                     </div>
                                         
                                     <div class="col-sm-5" >
-                                    <div class="widget-box">
-                                        <div class="widget-header widget-header-flat widget-header-small">
-                                            <h5>
-                                                <i class="icon-globe"></i>
-                                                Twitter ifrSKEYES
-                                            </h5>
-                                        </div>
+                                        <div class="widget-box">
+                                            <div class="widget-header widget-header-flat widget-header-small">
+                                                <h5>
+                                                    <i class="icon-globe"></i>
+                                                    Twitter ifrSKEYES
+                                                </h5>
+                                            </div>
 
-                                        <div class="widget-body">
-                                            <div class="widget-main">
-                                                <a class="twitter-timeline" href="https://twitter.com/ifrSKEYES" data-widget-id="441845273191387136">Tweets de @ifrSKEYES</a>
-                                                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-                                            </div><!-- /widget-main -->
-                                        </div><!-- /widget-body -->
-                                    </div><!-- /widget-box -->
-                                </div>
+                                            <div class="widget-body">
+                                                <div class="widget-main">
+                                                    <a class="twitter-timeline" href="https://twitter.com/ifrSKEYES" data-widget-id="441845273191387136">Tweets de @ifrSKEYES</a>
+                                                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                                                </div><!-- /widget-main -->
+                                            </div><!-- /widget-body -->
+                                        </div><!-- /widget-box -->
+                                    </div>
                                     
 								</div><!-- /row -->
                                 
@@ -248,29 +265,7 @@ By accessing and/or using this code snippet, you agree to AccuWeather’s terms 
                     document.getElementById("vdocNewsSection").innerHTML = htmlNewsContent;
                     
                 } 
-            });
-            
-//            var reqProfilePic = $.ajax({
-//                    url: VDOCDB_OPERATIONS,
-//                    data: {
-//                        method: GET_PROFILE_PIC,
-//                        login : sessionStorage.getItem("login")
-//                    } 
-//            });
-//            
-//            reqProfilePic.done(function(res) {
-//                res = $.parseJSON(res);
-//                var htmlProfileBoxContent = "<img class=\"nav-user-photo\" src=\""+ res["PHOTO"] + "\" alt=\"avatar\" />"
-//                                               + "<span class=\"user-info\">"
-//                                               +     "<small>Bonjour,</small>"
-//                                               +     res["FIRSTNAME"]
-//                                               + "</span>"
-//
-//                                               + "<i class=\"icon-caret-down\"></i>";
-//                
-//                document.getElementById("profileBox").innerHTML = htmlProfileBoxContent;
-//            });
-            
+            });            
             
             
             /*-------------------------------------------

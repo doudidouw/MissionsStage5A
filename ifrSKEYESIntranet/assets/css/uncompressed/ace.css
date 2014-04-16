@@ -1,9 +1,19 @@
-	html
+@font-face {
+  font-family: Philosopher;
+  src: url('../../font/Philosopher-Regular.ttf')
+}
+
+@font-face {
+  font-family: Cheddar-Jack;
+  src: url('../../font/Cheddar jack.ttf');
+}
+
+html
 {
 	min-height:100%;
 	position:relative
 }
-	body
+body
 {
 	padding-bottom:0;
 	background-color:#e4e6e9;
@@ -13,11 +23,11 @@
 	color:#393939;
 	line-height:1.5
 }
-	body.navbar-fixed
+body.navbar-fixed
 {
 	padding-top:45px
 }
-	body.breadcrumbs-fixed
+body.breadcrumbs-fixed
 {
 	padding-top:86px
 }
@@ -207,6 +217,24 @@
 	h6.block
 {
 	margin-bottom:16px
+}
+	h7
+{
+	font-size:11px;
+	font-weight:normal;
+	font-family:"Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif
+}
+	h7.smaller
+{
+	font-size:10px
+}
+	h7.bigger
+{
+	font-size:12px
+}
+	h7.block
+{
+	margin-bottom:14px
 }
 	ul,ol
 {
@@ -15724,7 +15752,43 @@
 
 }
 
+#Intranet
+{
+    font-family: Cheddar-Jack;
+    font-size: 100%;
+    line-height: 17px;
+    text-shadow: none;
+    color: #FFF;
+    -moz-box-sizing: border-box; 
+}
 
+#ifrSKEYES
+{
+    font-family: Philosopher;
+    font-size: 100%;
+    line-height: 17px;
+    text-shadow: none;
+    color: #FFF;
+    -moz-box-sizing: border-box; 
+}
+
+#IntranetLogin
+{
+    font-family: Cheddar-Jack;
+    font-size: 120%;
+    line-height: 20px;
+    text-shadow: none;
+    -moz-box-sizing: border-box; 
+}
+
+#ifrSKEYESLogin
+{
+    font-family: Philosopher;
+    font-size: 140%;
+    line-height: 20px;
+    text-shadow: none;
+    -moz-box-sizing: border-box; 
+}
 
    
 

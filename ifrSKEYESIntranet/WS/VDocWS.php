@@ -7,7 +7,7 @@
         function getNewsTitles(){
             $vdocDB = VDocDB::getInstance();
 
-            $sql = "SELECT DIGEST, PUBLISHING_DATE, CONVERT(char(10), PUBLISHING_DATE, 103) AS PUBLISHING_DATE_CONVERTED, CONTENT FROM         NWS2_JDO_NEWS ORDER BY PUBLISHING_DATE DESC";
+            $sql = "SELECT DIGEST, PUBLISHING_DATE, CONVERT(char(10), PUBLISHING_DATE, 103) AS PUBLISHING_DATE_CONVERTED, CONTENT FROM         NWS2_JDO_NEWS WHERE STATE=4 ORDER BY PUBLISHING_DATE DESC";
             $stmt = $vdocDB->select($sql);
 
             $i = 0;
@@ -30,9 +30,9 @@
         function getContacts(){
             $vdocDB = VDocDB::getInstance();
 
-            $sql = "SELECT EMAIL, FIRSTNAME, LASTNAME, LOGIN, MOBILE_PHONE_NUMBER, DIR_USER_ID 
+            $sql = "SELECT DISTINCT EMAIL, FIRSTNAME, LASTNAME, LOGIN, MOBILE_PHONE_NUMBER, DIR_USER_ID 
             FROM DIR_USER 
-            WHERE (FIRSTNAME NOT LIKE '%prd%') AND (FIRSTNAME NOT LIKE '%unknown%') AND (FIRSTNAME NOT LIKE '%test%') AND (FIRSTNAME NOT LIKE '%ystem%') AND (FIRSTNAME NOT LIKE '%ext%') AND (FIRSTNAME NOT LIKE '%Anonymous%') AND (FIRSTNAME NOT LIKE '%tomcat%') AND (FIRSTNAME NOT LIKE '%tlm%')";   
+            WHERE (IS_CONNECTION_ALLOWED = 'True') AND (FIRSTNAME NOT LIKE '%prd%') AND (FIRSTNAME NOT LIKE '%unknown%') AND (FIRSTNAME NOT LIKE '%test%') AND (FIRSTNAME NOT LIKE '%ystem%') AND (FIRSTNAME NOT LIKE '%ext%') AND (FIRSTNAME NOT LIKE '%Anonymous%') AND (FIRSTNAME NOT LIKE '%tomcat%') AND (FIRSTNAME NOT LIKE '%tlm%') AND (FIRSTNAME NOT LIKE '%pcg%') AND (FIRSTNAME NOT LIKE '%vdoc%') AND (FIRSTNAME NOT LIKE '%nom%') AND (FIRSTNAME NOT LIKE '%migread%') AND (FIRSTNAME NOT LIKE '%nemis%') AND (FIRSTNAME NOT LIKE '%ifr%') AND (FIRSTNAME NOT LIKE '%demo%') AND (FIRSTNAME NOT LIKE '%Client%') AND (FIRSTNAME NOT LIKE '%marilyn%') AND (FIRSTNAME NOT LIKE '%kelio%') AND (FIRSTNAME NOT LIKE '%hudson%')";   
             $stmt = $vdocDB->select($sql);
 
             $contacts = array();

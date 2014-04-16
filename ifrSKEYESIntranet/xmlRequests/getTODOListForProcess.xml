@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns:vw1="http://www.axemble.com/vdoc/view">
+     <header>
+          <scopes>
+              <catalog/>
+          </scopes>
+          <pager offset="0" count="10" />
+          <include name="labels" value="false" />
+     </header>
+</view>

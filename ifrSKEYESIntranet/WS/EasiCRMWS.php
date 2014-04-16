@@ -108,7 +108,7 @@
             }
         }
 
-        function getOnGoingOpportunities(){
+        function getOnGoingOpportunities($firstname, $lastname){
             $companies = $this->getCompanies();
             $contacts = $this->getContacts();
             $progici = $this->getProgici();
@@ -116,7 +116,7 @@
             
             $easiDB = EasiCRMDB::getInstance();
 
-            $sql = "SELECT XCode, XIddelas, XIdConta, XChargda, XLibell, XDevise, XProgici, XProjet, XTotalHT, XCAresta, XCARalis, XCAfactu, XPCAHT, XFAE, XAAE, XRestefa, XRestant, XCrpar, CONVERT(varchar, XCrle, 120) AS XCrle_Converted, XModifip, CONVERT(varchar, XModifil, 120) AS XModifil_Converted FROM S_CRM_Opportun WHERE XCrpar = 'Florian DUSSOULIER' AND XStatut=0";
+            $sql = "SELECT XCode, XIddelas, XIdConta, XChargda, XLibell, XDevise, XProgici, XProjet, XTotalHT, XCAresta, XCARalis, XCAfactu, XPCAHT, XFAE, XAAE, XRestefa, XRestant, XCrpar, CONVERT(varchar, XCrle, 120) AS XCrle_Converted, XModifip, CONVERT(varchar, XModifil, 120) AS XModifil_Converted FROM S_CRM_Opportun WHERE XCrpar = '".$firstname. " " .$lastname. "' AND XStatut=0";
             $stmt = $easiDB->select($sql);
 
             $opportunList = array();
@@ -219,13 +219,13 @@
             }
         }
         
-        function getCompaniesForUser(){
+        function getCompaniesForUser($firstname, $lastname){
             $localisations = $this->getLocalisations();
             $origins = $this->getOrigins();
             $easiDB = EasiCRMDB::getInstance();
 
             $sql = "SELECT XSocit, XTrigram, XTrigra2, XPays, XContine, XDevisep, XOrigine FROM S_CRM_Socitscl WHERE
-                (XRespons = 'Florian DUSSOULIER')";
+                (XRespons = '".$firstname. " " .$lastname. "')";
             $stmt = $easiDB->select($sql);
 
             $companies = array();
@@ -246,13 +246,13 @@
             return $companies;
         }
         
-        function getMesRelances(){
+        function getMesRelances($firstname, $lastname){
             $companies = $this->getCompanies();
             $contacts = $this->getContacts();
             $easiDB = EasiCRMDB::getInstance();
             
             $sql = "SELECT CONVERT(varchar, XDate, 103) AS XJour, CONVERT(varchar, XDate, 108) AS XHeure, XLibell, XNEWSoci, XContac3 FROM S_CRM_Activits WHERE 
-                    (XCrpar = 'Florian DUSSOULIER') AND (XTypedac = 2)";
+                    (XCrpar = '".$firstname. " " .$lastname. "') AND (XTypedac = 2)";
             
             $stmt = $easiDB->select($sql);
 

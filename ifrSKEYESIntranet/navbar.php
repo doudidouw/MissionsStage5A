@@ -21,9 +21,12 @@
             </div>
             
             <a href="index.php" class="navbar-brand">
-                <small>
+                <small id="ifrSKEYES">
                     <i class="icon-lock"></i>
-                    <img alt="" src="assets/images/intranetLogo.png">
+                    ifrSKEYES | 
+                </small>
+                <small id="Intranet">
+                    Intranet 
                 </small>
             </a><!-- /.brand -->
            
@@ -196,12 +199,12 @@
                     </a>
 
                     <ul class="user-menu pull-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-                        <li>
+                        <!--<li>
                             <a href="#">
                                 <i class="icon-cog"></i>
                                 Paramètres
                             </a>
-                        </li>
+                        </li>-->
 
                         <li>
                             <a href="profile.php">
@@ -213,7 +216,7 @@
                         <li class="divider"></li>
 
                         <li>
-                            <a href="#">
+                            <a href="login.php">
                                 <i class="icon-off"></i>
                                 Déconnexion
                             </a>

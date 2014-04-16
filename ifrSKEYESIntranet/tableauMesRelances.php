@@ -24,7 +24,9 @@
     var req = $.ajax({
         url: EASICRMDB_OPERATIONS,
         data: {
-            method: GET_MES_RELANCES
+            method: GET_MES_RELANCES,
+            firstname : localStorage.getItem("firstName"),
+            lastname : localStorage.getItem("lastName") 
         }
     });
 

@@ -6,17 +6,17 @@ if (isset($_REQUEST['method'])) {
 
     $service = new SoapClient("http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/EasiCRMWS.wsdl");
 
-    if ($_REQUEST['method'] == 'getOnGoingOpportunities' /*&& isset($_REQUEST['username'], $_REQUEST['password'])*/) {
-        $res = $service->getOnGoingOpportunities();
+    if (($_REQUEST['method'] == 'getOnGoingOpportunities') && (isset($_REQUEST['firstname'], $_REQUEST['lastname']))) {
+        $res = $service->getOnGoingOpportunities($_REQUEST['firstname'], $_REQUEST['lastname']);
         echo json_encode($res);
-    } else if($_REQUEST['method'] == 'getCompaniesForUser'){
-        $res = $service->getCompaniesForUser();
+    } else if(($_REQUEST['method'] == 'getCompaniesForUser')&& (isset($_REQUEST['firstname'], $_REQUEST['lastname']))){
+        $res = $service->getCompaniesForUser($_REQUEST['firstname'], $_REQUEST['lastname']);
         echo json_encode($res);
     } else if($_REQUEST['method'] == 'getContacts'){
         $res = $service->getContacts();
         echo json_encode($res);
-    } else if($_REQUEST['method'] == 'getMesRelances'){
-        $res = $service->getMesRelances();
+    } else if(($_REQUEST['method'] == 'getMesRelances') && (isset($_REQUEST['firstname'], $_REQUEST['lastname']))){
+        $res = $service->getMesRelances($_REQUEST['firstname'], $_REQUEST['lastname']);
         echo json_encode($res);
     } 
 }

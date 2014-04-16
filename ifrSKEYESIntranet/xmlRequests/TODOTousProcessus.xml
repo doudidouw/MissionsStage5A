@@ -1,0 +1,304 @@
+<view xmlns:vw1="http://www.axemble.com/vdoc/view">
+  <body>
+    <catalog id="jj2zyry9fmqj0x5iscq9" name="adm" label="Administratifs" protocol-uri="resource:/process/catalogs/jj2zyry9fmqj0x5iscq9" is-confidential="true" is-system="false">
+      <workflowcontainer id="km07fsi7qmn558mvc5vw" name="DemandeDAvanceSurFrais" label="Demande d&apos;avance sur frais" protocol-uri="resource:/process/versionGroups/km07fsi7qmn558mvc5vw">
+        <view id="d6w3h3k052iubp4nrr3ie" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3ie"/>
+        <view id="d6w3h3k052iubp4nrr3ig" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3ig"/>
+        <view id="d6w3h3k052iubp4nrr3i7" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3i7"/>
+        <view id="d6w3h3k052iubp4nrr3ii" name="Vue" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3ii"/>
+        <workflow id="km07fsi7qmn558mvard3" name="DemandeDAvanceSurFrais_1.0" label="" protocol-uri="resource:/process/treatmentClasses/km07fsi7qmn558mvard3"/>
+      </workflowcontainer>
+      <workflowcontainer id="km07fsi7qmn558mvarog" name="NoteDeFrais" label="Note de frais" protocol-uri="resource:/process/versionGroups/km07fsi7qmn558mvarog">
+        <view id="d6w3h3k052iubp4nrr40a" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr40a"/>
+        <view id="d6w3h3k052iubp4nrr40c" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr40c"/>
+        <view id="d6w3h3k052iubp4nrr403" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr403"/>
+        <view id="43d8400qpi9axw10btgf6q" name="TousLesDocuments" label="Toutes les notes de frais" protocol-uri="resource:/process/views/43d8400qpi9axw10btgf6q"/>
+        <workflow id="43d8400qpi9axw10btgf19" name="NoteDeFrais_3.0" label="" protocol-uri="resource:/process/treatmentClasses/43d8400qpi9axw10btgf19"/>
+      </workflowcontainer>
+      <workflowcontainer id="km07fsi7qmn558mvarvk" name="DemandeDeRecuperation" label="Demande de récupération" protocol-uri="resource:/process/versionGroups/km07fsi7qmn558mvarvk">
+        <view id="d6w3h3k052iubp4nrr3ps" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3ps"/>
+        <view id="d6w3h3k052iubp4nrr3pu" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3pu"/>
+        <view id="d6w3h3k052iubp4nrr3pl" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3pl"/>
+        <view id="d6w3h3k052iubp4nrr3pw" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3pw"/>
+        <workflow id="km07fsi7qmn558mvarxm" name="DemandeDeRecuperation_1.0" label="" protocol-uri="resource:/process/treatmentClasses/km07fsi7qmn558mvarxm"/>
+      </workflowcontainer>
+      <workflowcontainer id="km07fsi7qmn558mvariz" name="BonDeServiceRendu" label="Bon de service rendu" protocol-uri="resource:/process/versionGroups/km07fsi7qmn558mvariz">
+        <view id="d6w3h3k052iubp4nrr3fg" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3fg"/>
+        <view id="d6w3h3k052iubp4nrr3fi" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3fi"/>
+        <view id="d6w3h3k052iubp4nrr3f9" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3f9"/>
+        <view id="d6w3h3k052iubp4nrr3fk" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3fk"/>
+        <workflow id="km07fsi7qmn558mvarkx" name="BonDeServiceRendu_1.0" label="" protocol-uri="resource:/process/treatmentClasses/km07fsi7qmn558mvarkx"/>
+      </workflowcontainer>
+      <workflowcontainer id="km07fsi7qmn558mvaway" name="DemandeDAvanceSurSalaire" label="Demande d&apos;avance sur salaire" protocol-uri="resource:/process/versionGroups/km07fsi7qmn558mvaway">
+        <view id="d6w3h3k052iubp4nrr3ju" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3ju"/>
+        <view id="d6w3h3k052iubp4nrr3jw" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3jw"/>
+        <view id="d6w3h3k052iubp4nrr3jn" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3jn"/>
+        <view id="d6w3h3k052iubp4nrr3l2" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3l2"/>
+        <workflow id="24377xknh7z06a19uba2d" name="DemandeDAvanceSurSalaire_2.0" label="" protocol-uri="resource:/process/treatmentClasses/24377xknh7z06a19uba2d"/>
+      </workflowcontainer>
+      <workflowcontainer id="1qt1xtqv9fwc264ymj01" name="DemandeAccesInformationPersonnelles" label="Demande d&apos;accès aux informations personnelles" protocol-uri="resource:/process/versionGroups/1qt1xtqv9fwc264ymj01">
+        <view id="d6w3h3k052iubp4nrr3gy" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3gy"/>
+        <view id="d6w3h3k052iubp4nrr3h0" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3h0"/>
+        <view id="d6w3h3k052iubp4nrr3gr" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3gr"/>
+        <view id="d6w3h3k052iubp4nrr3h2" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3h2"/>
+        <workflow id="1qt1xtqv9fwc264ymj2f" name="DemandeAccesInformationPersonnelles_1.0" label="" protocol-uri="resource:/process/treatmentClasses/1qt1xtqv9fwc264ymj2f"/>
+      </workflowcontainer>
+      <workflowcontainer id="km07fsi7qmn558mvc0bm" name="ApprovisionnementSysteme" label="Approvisionnement système" protocol-uri="resource:/process/versionGroups/km07fsi7qmn558mvc0bm">
+        <view id="d6w3h3k052iubp4nrr3a2" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3a2"/>
+        <view id="d6w3h3k052iubp4nrr3a4" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3a4"/>
+        <view id="d6w3h3k052iubp4nrr39v" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr39v"/>
+        <view id="d6w3h3k052iubp4nrr3bg" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3bg"/>
+        <workflow id="1wywnbc0jgmczw157m7i41" name="ApprovisionnementSysteme_7.0" label="" protocol-uri="resource:/process/treatmentClasses/1wywnbc0jgmczw157m7i41"/>
+      </workflowcontainer>
+      <workflowcontainer id="km07fsi7qnu4u8z8urc4" name="DepartCollaborateur" label="Départ d&apos;un Collaborateur" protocol-uri="resource:/process/versionGroups/km07fsi7qnu4u8z8urc4">
+        <view id="d6w3h3k052iubp4nrr3re" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3re"/>
+        <view id="d6w3h3k052iubp4nrr3rg" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3rg"/>
+        <view id="d6w3h3k052iubp4nrr3r7" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3r7"/>
+        <view id="d6w3h3k052iubp4nrr3ri" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3ri"/>
+        <workflow id="4c1twv57sge33dy4xppstq" name="DepartCollaborateur_2.0" label="" protocol-uri="resource:/process/treatmentClasses/4c1twv57sge33dy4xppstq"/>
+      </workflowcontainer>
+      <workflowcontainer id="km07fsi7qmn558mvbevk" name="IntegrationDUnNouveauCollaborateur" label="Intégration d&apos;un Collaborateur" protocol-uri="resource:/process/versionGroups/km07fsi7qmn558mvbevk">
+        <view id="d6w3h3k052iubp4nrr3ti" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3ti"/>
+        <view id="d6w3h3k052iubp4nrr3tk" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3tk"/>
+        <view id="d6w3h3k052iubp4nrr3tb" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3tb"/>
+        <view id="d6w3h3k052iubp4nrr3ve" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3ve"/>
+        <workflow id="1qt1xtqv9fwc264ylchh" name="IntegrationDUnNouveauCollaborateur_5.0" label="" protocol-uri="resource:/process/treatmentClasses/1qt1xtqv9fwc264ylchh"/>
+      </workflowcontainer>
+      <workflowcontainer id="km07fsi7qmn558mvc0l3" name="RuptureDeContrat" label="Rupture de contrat" protocol-uri="resource:/process/versionGroups/km07fsi7qmn558mvc0l3">
+        <view id="d6w3h3k052iubp4nrr42y" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr42y"/>
+        <view id="d6w3h3k052iubp4nrr430" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr430"/>
+        <view id="d6w3h3k052iubp4nrr42r" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr42r"/>
+        <workflow id="24377xknh7yqstthd4e2a" name="RuptureDeContrat_3.0" label="" protocol-uri="resource:/process/treatmentClasses/24377xknh7yqstthd4e2a"/>
+      </workflowcontainer>
+      <workflowcontainer id="1qt1xtqv9ft01tzy33po" name="DemandeDeFormation" label="Demande de Formation" protocol-uri="resource:/process/versionGroups/1qt1xtqv9ft01tzy33po">
+        <view id="d6w3h3k052iubp4nrr3n0" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3n0"/>
+        <view id="d6w3h3k052iubp4nrr3n2" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3n2"/>
+        <view id="d6w3h3k052iubp4nrr3mt" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3mt"/>
+        <view id="d6w3h3k052iubp4nrr3oe" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr3oe"/>
+        <workflow id="1qt1xtqv9ft01tzy389e" name="DemandeDeFormation_2.0" label="" protocol-uri="resource:/process/treatmentClasses/1qt1xtqv9ft01tzy389e"/>
+      </workflowcontainer>
+      <workflowcontainer id="1wywnbc0jgmd09yrdt15z0" name="NouvelArrivant-PréparationSystème" label="Nouvel Arrivant - Préparation Système" protocol-uri="resource:/process/versionGroups/1wywnbc0jgmd09yrdt15z0">
+        <view id="1wywnbc0jgmd09yrdt1659" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/1wywnbc0jgmd09yrdt1659"/>
+        <view id="1wywnbc0jgmd09yrdt165b" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/1wywnbc0jgmd09yrdt165b"/>
+        <view id="1wywnbc0jgmd09yrdt1650" name="TODO" label="A traiter" protocol-uri="resource:/process/views/1wywnbc0jgmd09yrdt1650"/>
+        <view id="1wywnbc0jgmd09yrdt165d" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/1wywnbc0jgmd09yrdt165d"/>
+        <workflow id="1wywnbc0jgmd09yrdt1610" name="NouvelArrivant-PréparationSystème_1.0" label="" protocol-uri="resource:/process/treatmentClasses/1wywnbc0jgmd09yrdt1610"/>
+      </workflowcontainer>
+    </catalog>
+    <catalog id="24377xknh7yqstthd5bxg" name="commercial" label="Gérez vos Clients" protocol-uri="resource:/process/catalogs/24377xknh7yqstthd5bxg" is-confidential="false" is-system="false">
+      <workflowcontainer id="24377xknh7yqstthd5bxo" name="ACTco" label="Action commerciale" protocol-uri="resource:/process/versionGroups/24377xknh7yqstthd5bxo">/>
+        <view id="d6w3h3k052iubp4nrr46t" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr46t"/>
+        <view id="d6w3h3k052iubp4nrr46z" name="ParEtat" label="Par Etat" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr46z"/>
+        <view id="d6w3h3k052iubp4nrr46y" name="ParOrigine" label="Par Origine" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr46y"/>
+        <view id="d6w3h3k052iubp4nrr46x" name="ParType" label="Par Type" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr46x"/>
+        <view id="d6w3h3k052iubp4nrr46v" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr46v"/>
+        <view id="d6w3h3k052iubp4nrr46m" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr46m"/>
+        <workflow id="24377xknh7yqstthd5c6b" name="ACTco_1.0" label="" protocol-uri="resource:/process/treatmentClasses/24377xknh7yqstthd5c6b"/>
+      </workflowcontainer>
+      <workflowcontainer id="24377xknh7yqstthd5cfq" name="PACTCO" label="Demarrage client" protocol-uri="resource:/process/versionGroups/24377xknh7yqstthd5cfq">
+        <view id="d6w3h3k052iubp4nrr48b" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr48b"/>
+        <view id="d6w3h3k052iubp4nrr48d" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr48d"/>
+        <view id="d6w3h3k052iubp4nrr484" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr484"/>
+        <workflow id="24377xknh7yqstthd5cim" name="PACTCO_1.0" label="" protocol-uri="resource:/process/treatmentClasses/24377xknh7yqstthd5cim"/>
+      </workflowcontainer>
+    </catalog>
+    <catalog id="1wywnbc0jgmd2mggka3572" name="Comptabilite" label="Catalog:Comptabilite:label/fr" protocol-uri="resource:/process/catalogs/1wywnbc0jgmd2mggka3572" is-confidential="false" is-system="false">
+      <workflowcontainer id="1wywnbc0jgmd2mggka3579" name="BonAPayer" label="Comptabilite:VersionGroup:BonAPayer:label/fr" protocol-uri="resource:/process/versionGroups/1wywnbc0jgmd2mggka3579">
+        <view id="1wywnbc0jgmd2mggka35bi" name="MYDOCS" label="BonAPayer:VersionGroupView:MYDOCS:label/fr" protocol-uri="resource:/process/views/1wywnbc0jgmd2mggka35bi"/>
+        <view id="1wywnbc0jgmd2mggka35bk" name="TERMINATED" label="BonAPayer:VersionGroupView:TERMINATED:label/fr" protocol-uri="resource:/process/views/1wywnbc0jgmd2mggka35bk"/>
+        <view id="1wywnbc0jgmd2mggka35bb" name="TODO" label="BonAPayer:VersionGroupView:TODO:label/fr" protocol-uri="resource:/process/views/1wywnbc0jgmd2mggka35bb"/>
+        <workflow id="1wywnbc0jgmd2mggka3591" name="BonAPayer_1.0" label="" protocol-uri="resource:/process/treatmentClasses/1wywnbc0jgmd2mggka3591"/>
+      </workflowcontainer>
+    </catalog>
+    <catalog id="d6w3h3k052iubp4nrr5wt" name="delegationManagement" label="Gestion des délégations" protocol-uri="resource:/process/catalogs/d6w3h3k052iubp4nrr5wt" is-confidential="false" is-system="false">
+      <workflowcontainer id="d6w3h3k052iubp4nrr5x0" name="delegation" label="Demande de délégation" protocol-uri="resource:/process/versionGroups/d6w3h3k052iubp4nrr5x0">
+        <view id="d6w3h3k052iubp4nrr656" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr656"/>
+        <view id="d6w3h3k052iubp4nrr658" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr658"/>
+        <view id="d6w3h3k052iubp4nrr64z" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr64z"/>
+        <workflow id="d6w3h3k052iubp4nrr609" name="delegation_1.0" label="" protocol-uri="resource:/process/treatmentClasses/d6w3h3k052iubp4nrr609"/>
+      </workflowcontainer>
+      <view id="d6w3h3k052iubp4nrr65a" name="ToutesLesDelegations" label="Toutes les délégations" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr65a"/>
+      <view id="d6w3h3k052iubp4nrr65b" name="ToutesLesDelegationsParDemandeur" label="Toutes les délégations par demandeur" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr65b"/>
+    </catalog>
+    <catalog id="km07fsi7qmpzc4mwgdoc" name="Gerer_vos_actions" label="Gérez vos actions" protocol-uri="resource:/process/catalogs/km07fsi7qmpzc4mwgdoc" is-confidential="false" is-system="false">
+      <workflowcontainer id="km07fsi7qmpzc4mwgf2v" name="PACT" label="Plan d&apos;actions" protocol-uri="resource:/process/versionGroups/km07fsi7qmpzc4mwgf2v">
+        <view id="d6w3h3k052iubp4nrr4ih" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4ih
+        <view id="d6w3h3k052iubp4nrr4ij" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4ij"/>
+        <view id="d6w3h3k052iubp4nrr4ia" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4ia"/>
+        <workflow id="24377xknh7yzs91srn6lk" name="PACT_3.0" label="" protocol-uri="resource:/process/treatmentClasses/24377xknh7yzs91srn6lk"/>
+      </workflowcontainer>
+      <workflowcontainer id="km07fsi7qmpzc4mwgeio" name="ACT" label="Action" protocol-uri="resource:/process/versionGroups/km07fsi7qmpzc4mwgeio">
+        <view id="d6w3h3k052iubp4nrr4bh" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4bh"/>
+        <view id="d6w3h3k052iubp4nrr4bj" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4bj"/>
+        <view id="d6w3h3k052iubp4nrr4ba" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4ba"/>
+        <workflow id="wotnd7zpay2fpx3bltd0" name="ACT_4.0" label="" protocol-uri="resource:/process/treatmentClasses/wotnd7zpay2fpx3bltd0"/>
+      </workflowcontainer>
+    </catalog>
+    <catalog id="wotnd7zpaymilbes4lri" name="GestionFournisseurs" label="Gestion des Achats" protocol-uri="resource:/process/catalogs/wotnd7zpaymilbes4lri" is-confidential="false" is-system="false">
+      <workflowcontainer id="wotnd7zpayn8h51cepce" name="DemandeDApprovisionnement" label="Demande d&apos;approvisionnement" protocol-uri="resource:/process/versionGroups/wotnd7zpayn8h51cepce">
+        <view id="d6w3h3k052iubp4nrr4mm" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4mm"/>
+        <view id="d6w3h3k052iubp4nrr4mo" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4mo"/>
+        <view id="d6w3h3k052iubp4nrr4mf" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4mf"/>
+        <view id="d6w3h3k052iubp4nrr4mq" name="ToutesLesDemandesDAchat" label="Toutes les demandes d&apos;achat" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4mq"/>
+        <workflow id="1qt1xtqv9fwc264ym1r5" name="DemandeDApprovisionnement_3.0" label="" protocol-uri="resource:/process/treatmentClasses/1qt1xtqv9fwc264ym1r5"/>
+      </workflowcontainer>
+      <workflowcontainer id="wotnd7zpayn8h51cep4t" name="ReferencementFournisseur" label="Référencement fournisseur" protocol-uri="resource:/process/versionGroups/wotnd7zpayn8h51cep4t">
+        <view id="d6w3h3k052iubp4nrr4qk" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4qk"/>
+        <view id="d6w3h3k052iubp4nrr4qm" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4qm"/>
+        <view id="d6w3h3k052iubp4nrr4qd" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4qd"/>
+        <view id="d6w3h3k052iubp4nrr4qo" name="ToutsLesDocuments" label="Touts les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4qo"/>
+        <workflow id="1qt1xtqv9fwc264ym1lh" name="ReferencementFournisseur_4.0" label="" protocol-uri="resource:/process/treatmentClasses/1qt1xtqv9fwc264ym1lh"/>
+      </workflowcontainer>
+      <workflowcontainer id="wotnd7zpayn8h51ceopf" name="SuiviDePrestationFournisseur" label="Suivi de prestation Fournisseur" protocol-uri="resource:/process/versionGroups/wotnd7zpayn8h51ceopf">
+        <view id="d6w3h3k052iubp4nrr4va" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4va"/>
+        <view id="d6w3h3k052iubp4nrr4vc" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4vc"/>
+        <view id="d6w3h3k052iubp4nrr4v3" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4v3"/>
+        <view id="d6w3h3k052iubp4nrr4ve" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4ve"/>
+        <workflow id="wotnd7zpayn8h51ceoqw" name="SuiviDePrestationFournisseur_1.0" label="" protocol-uri="resource:/process/treatmentClasses/wotnd7zpayn8h51ceoqw"/>
+      </workflowcontainer>
+      <workflowcontainer id="wotnd7zpaymilbes4nl1" name="SuiviDesAchats" label="Suivi des achats" protocol-uri="resource:/process/versionGroups/wotnd7zpaymilbes4nl1">
+        <view id="d6w3h3k052iubp4nrr4wq" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4wq"/>
+        <view id="d6w3h3k052iubp4nrr4ws" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4ws"/>
+        <view id="d6w3h3k052iubp4nrr4wj" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4wj"/>
+        <workflow id="wotnd7zpaymilbes4nm4" name="SuiviDesAchats_1.0" label="" protocol-uri="resource:/process/treatmentClasses/wotnd7zpaymilbes4nm4"/>
+      </workflowcontainer>
+      <workflowcontainer id="wotnd7zpaymilbes4rq1" name="DemandeDAchat" label="Demande d&apos;achat" protocol-uri="resource:/process/versionGroups/wotnd7zpaymilbes4rq1">
+        <view id="d6w3h3k052iubp4nrr4l4" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4l4"/>
+        <view id="d6w3h3k052iubp4nrr4l6" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4l6"/>
+        <view id="d6w3h3k052iubp4nrr4kx" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4kx"/>
+        <view id="d6w3h3k052iubp4nrr4l8" name="ToutesLesDemandesDAchat" label="Toutes les demandes d&apos;achat" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4l8"/>
+        <workflow id="wotnd7zpaymilbes4rru" name="DemandeDAchat_1.0" label="" protocol-uri="resource:/process/treatmentClasses/wotnd7zpaymilbes4rru"/>
+      </workflowcontainer>
+      <workflowcontainer id="1wywnbc0jgmd302hmhjxys" name="DemandeDAchatDePrestations" label="Demande d&apos;achat de Prestations" protocol-uri="resource:/process/versionGroups/1wywnbc0jgmd302hmhjxys">
+        <view id="1wywnbc0jgmd302hmhjyfd" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/1wywnbc0jgmd302hmhjyfd"/>
+        <view id="1wywnbc0jgmd302hmhjyff" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/1wywnbc0jgmd302hmhjyff"/>
+        <view id="1wywnbc0jgmd302hmhjyf6" name="TODO" label="A traiter" protocol-uri="resource:/process/views/1wywnbc0jgmd302hmhjyf6"/>
+        <view id="1wywnbc0jgmd302hmhjyfh" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/1wywnbc0jgmd302hmhjyfh"/>
+        <workflow id="1wywnbc0jgmd302hmhjy3v" name="DemandeDAchatDePrestations_1.0" label="" protocol-uri="resource:/process/treatmentClasses/1wywnbc0jgmd302hmhjy3v"/>
+      </workflowcontainer>
+      <workflowcontainer id="43d8400qpi9axhmg3e134n" name="Demande d&apos;achat Matériel" label="Demande d&apos;achat Matériel" protocol-uri="resource:/process/versionGroups/43d8400qpi9axhmg3e134n">
+        <view id="43d8400qpi9axhmg3e13ee" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/43d8400qpi9axhmg3e13ee"/>
+        <view id="43d8400qpi9axhmg3e13eh" name="SEARCH" label="Recherche" protocol-uri="resource:/process/views/43d8400qpi9axhmg3e13eh"/>
+        <view id="43d8400qpi9axhmg3e13eg" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/43d8400qpi9axhmg3e13eg"/>
+        <view id="43d8400qpi9axhmg3e13e7" name="TODO" label="A traiter" protocol-uri="resource:/process/views/43d8400qpi9axhmg3e13e7"/>
+        <view id="3bcqaf7xov6llbwuwj6j0t" name="TousLesAchatsDeMateriel" label="Tous les achats de Matériel" protocol-uri="resource:/process/views/3bcqaf7xov6llbwuwj6j0t"/>
+        <workflow id="3bcqaf7xov6llglpdk11r9" name="Demande d&apos;achat Matériel_2.1" label="" protocol-uri="resource:/process/treatmentClasses/3bcqaf7xov6llglpdk11r9"/>
+      </workflowcontainer>
+    </catalog>
+    <catalog id="24377xknh7z0gazm6iqrd" name="HelpMe" label="Help me" protocol-uri="resource:/process/catalogs/24377xknh7z0gazm6iqrd" is-confidential="false" is-system="false">
+      <workflowcontainer id="1qt1xtqv9fvpw5c2bugy" name="DemandeDeSupportInterne" label="Ticket de Support Interne" protocol-uri="resource:/process/versionGroups/1qt1xtqv9fvpw5c2bugy">
+        <view id="d6w3h3k052iubp4nrr4y9" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4y9"/>
+        <view id="d6w3h3k052iubp4nrr4yb" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4yb"/>
+        <view id="d6w3h3k052iubp4nrr4y2" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4y2"/>
+        <view id="d6w3h3k052iubp4nrr4yd" name="TousLesDocuments" label="Tous les tickets de support" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr4yd"/>
+        <workflow id="3bcqaf7xov6ljoxd9z8ect" name="DemandeDeSupportInterne_9.0" label="" protocol-uri="resource:/process/treatmentClasses/3bcqaf7xov6ljoxd9z8ect"/>
+      </workflowcontainer>
+      <workflowcontainer id="1qt1xtqv9fvpw5c2brvf" name="SuiviDesDemandesDAmeliorationChezEditeur" label="Suivi des demandes d&apos;amélioration " protocol-uri="resource:/process/versionGroups/1qt1xtqv9fvpw5c2brvf">
+        <view id="d6w3h3k052iubp4nrr554" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr554"/>
+        <view id="d6w3h3k052iubp4nrr556" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr556"/>
+        <view id="d6w3h3k052iubp4nrr54x" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr54x"/>
+        <view id="d6w3h3k052iubp4nrr558" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr558"/>
+        <workflow id="1qt1xtqv9fxq4pmkfntb" name="SuiviDesDemandesDAmeliorationChezEditeur_2.0" label="" protocol-uri="resource:/process/treatmentClasses/1qt1xtqv9fxq4pmkfntb"/>
+      </workflowcontainer>
+      <workflowcontainer id="24377xknh7z0gazm6iqrl" name="DemandeDInterventionSi" label="Demande d&apos;intervention SI" protocol-uri="resource:/process/versionGroups/24377xknh7z0gazm6iqrl">
+        <view id="d6w3h3k052iubp4nrr53q" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr53q"/>
+        <view id="d6w3h3k052iubp4nrr53s" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr53s"/>
+        <view id="d6w3h3k052iubp4nrr53j" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr53j"/>
+        <view id="d6w3h3k052iubp4nrr53u" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr53u"/>
+        <workflow id="24377xknh7z0gazm6iqw8" name="DemandeDInterventionSi_1.0" label="" protocol-uri="resource:/process/treatmentClasses/24377xknh7z0gazm6iqw8"/>
+      </workflowcontainer>
+      <workflowcontainer id="1wywnbc0jgmd0pyx5ywaf1" name="DemandeDAccesAuxInformationsPersonelles" label="Demande d&apos;accès aux informations personelles" protocol-uri="resource:/process/versionGroups/1wywnbc0jgmd0pyx5ywaf1">
+        <view id="1wywnbc0jgmd0pyx5ywann" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/1wywnbc0jgmd0pyx5ywann"/>
+        <view id="1wywnbc0jgmd0pyx5ywanp" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/1wywnbc0jgmd0pyx5ywanp"/>
+        <view id="1wywnbc0jgmd0pyx5ywang" name="TODO" label="A traiter" protocol-uri="resource:/process/views/1wywnbc0jgmd0pyx5ywang"/>
+        <view id="1wywnbc0jgmd0pyx5ywanr" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/1wywnbc0jgmd0pyx5ywanr"/>
+        <workflow id="1wywnbc0jgmd0pyx5ywagy" name="DemandeDAccesAuxInformationsPersonelles_1.0" label="" protocol-uri="resource:/process/treatmentClasses/1wywnbc0jgmd0pyx5ywagy"/>
+      </workflowcontainer>
+    </catalog>
+    <catalog id="km07fsi7qmnbf79fsy69" name="hltest" label="Hot Line Test" protocol-uri="resource:/process/catalogs/km07fsi7qmnbf79fsy69" is-confidential="true" is-system="false">
+      <workflowcontainer id="km07fsi7qmnbf79fsy6h" name="Hotline" label="HotLine" protocol-uri="resource:/process/versionGroups/km07fsi7qmnbf79fsy6h">
+        <view id="d6w3h3k052iubp4nrr57q" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr57q"/>
+        <view id="d6w3h3k052iubp4nrr57s" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr57s"/>
+        <view id="d6w3h3k052iubp4nrr57j" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr57j"/>
+        <workflow id="km07fsi7qmnbf79fsyd3" name="Hotline_1.0" label="" protocol-uri="resource:/process/treatmentClasses/km07fsi7qmnbf79fsyd3"/>
+      </workflowcontainer>
+    </catalog>
+    <catalog id="km07fsi7qmn558mvasyg" name="Logistique" label="Logistique" protocol-uri="resource:/process/catalogs/km07fsi7qmn558mvasyg" is-confidential="false" is-system="false">
+      <workflowcontainer id="km07fsi7qmn558mvasyo" name="LogistiqueDeMission" label="(Ordre de mission) Logistique de mission" protocol-uri="resource:/process/versionGroups/km07fsi7qmn558mvasyo">
+        <view id="d6w3h3k052iubp4nrr5b3" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr5b3"/>
+        <view id="d6w3h3k052iubp4nrr5b5" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr5b5"/>
+        <view id="d6w3h3k052iubp4nrr5aw" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr5aw"/>
+        <view id="3n4b38011fj8x46isk3u1l" name="Vue" label="Vue" protocol-uri="resource:/process/views/3n4b38011fj8x46isk3u1l"/>
+        <workflow id="-1sogo8ka9h7yver39f70a7" name="LogistiqueDeMission_9.1" label="" protocol-uri="resource:/process/treatmentClasses/-1sogo8ka9h7yver39f70a7"/>
+        <workflow id="47bf0ui8x0q5a9jj0husco" name="LogistiqueDeMission_9.2" label="" protocol-uri="resource:/process/treatmentClasses/47bf0ui8x0q5a9jj0husco"/>
+      </workflowcontainer>
+      <workflowcontainer id="1qt1xtqv9fwc264yllkf" name="DemandeDeConferenceTelephonique" label="Demande de conférence téléphonique" protocol-uri="resource:/process/versionGroups/1qt1xtqv9fwc264yllkf">
+        <view id="d6w3h3k052iubp4nrr59b" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr59b"/>
+        <view id="d6w3h3k052iubp4nrr59d" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr59d"/>
+        <view id="d6w3h3k052iubp4nrr594" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr594"/>
+        <workflow id="1qt1xtqv9fwc264yllls" name="DemandeDeConferenceTelephonique_1.0" label="" protocol-uri="resource:/process/treatmentClasses/1qt1xtqv9fwc264yllls"/>
+      </workflowcontainer>
+      <workflowcontainer id="jj2zyry9fnwie1cilxg2" name="ReservationDeSalle" label="Réservation de salle" protocol-uri="resource:/process/versionGroups/jj2zyry9fnwie1cilxg2">
+        <view id="d6w3h3k052iubp4nrr5id" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr5id"/>
+        <view id="d6w3h3k052iubp4nrr5if" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr5if"/>
+        <view id="d6w3h3k052iubp4nrr5i6" name="TODO" label="A traiter" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr5i6"/>
+        <view id="d6w3h3k052iubp4nrr5ih" name="ToutesLesReservationDeSalles" label="Toutes les réservation de salles" protocol-uri="resource:/process/views/d6w3h3k052iubp4nrr5ih"/>
+        <workflow id="jj2zyry9fnx0me8ppqby" name="ReservationDeSalle_2.0" label="" protocol-uri="resource:/process/treatmentClasses/jj2zyry9fnx0me8ppqby"/>
+      </workflowcontainer>
+      <view id="-1sogo8ka9h7yver39f76xs" name="TousLesOm" label="Tous les OM" protocol-uri="resource:/process/views/-1sogo8ka9h7yver39f76xs"/>
+    </catalog>
+    <catalog id="43d8400qpi9awjux7c6i25" name="QualityManagement" label="Quality Management" protocol-uri="resource:/process/catalogs/43d8400qpi9awjux7c6i25" is-confidential="false" is-system="false">
+      <workflowcontainer id="43d8400qpi9awjux7c6i2c" name="FicheDeNonConformite" label="Fiche de Non Conformité" protocol-uri="resource:/process/versionGroups/43d8400qpi9awjux7c6i2c">
+        <view id="43d8400qpi9awjux7c6iiu" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/43d8400qpi9awjux7c6iiu"/>
+        <view id="43d8400qpi9awjux7c6iin" name="TODO" label="A traiter" protocol-uri="resource:/process/views/43d8400qpi9awjux7c6iin"/>
+        <view id="3bcqaf7xov6ljoxd9z8k90" name="TousLesDocuments" label="Toutes les non-conformités" protocol-uri="resource:/process/views/3bcqaf7xov6ljoxd9z8k90"/>
+        <workflow id="47bf0ui8x0q5b9s19d6biv" name="FicheDeNonConformite_4.0" label="" protocol-uri="resource:/process/treatmentClasses/47bf0ui8x0q5b9s19d6biv"/>
+      </workflowcontainer>
+      <workflowcontainer id="43d8400qpi9axw10bth42h" name="ActionCorrectiveEtOuPreventive" label="Action corrective / préventive" protocol-uri="resource:/process/versionGroups/43d8400qpi9axw10bth42h">
+        <view id="43d8400qpi9axw10bth47j" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/43d8400qpi9axw10bth47j"/>
+        <view id="43d8400qpi9axw10bth47c" name="TODO" label="A traiter" protocol-uri="resource:/process/views/43d8400qpi9axw10bth47c"/>
+        <view id="43d8400qpi9axw10bth4lb" name="ToutesLesActions" label="Toutes les Actions" protocol-uri="resource:/process/views/43d8400qpi9axw10bth4lb"/>
+        <workflow id="43d8400qpi9axw10bth43q" name="ActionCorrectiveEtOuPreventive_1.0" label="" protocol-uri="resource:/process/treatmentClasses/43d8400qpi9axw10bth43q"/>
+      </workflowcontainer>
+      <workflowcontainer id="43d8400qpi9axw10bth4m6" name="ProcessusFicheDeSuiviDesActionsCorrectivesEtPreventives" label="Fiche de suivi des actions correctives et préventives" protocol-uri="resource:/process/versionGroups/43d8400qpi9axw10bth4m6">
+        <view id="43d8400qpi9axw10bth4s9" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/43d8400qpi9axw10bth4s9"/>
+        <view id="43d8400qpi9axw10bth4sb" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/43d8400qpi9axw10bth4sb"/>
+        <view id="43d8400qpi9axw10bth4s2" name="TODO" label="A traiter" protocol-uri="resource:/process/views/43d8400qpi9axw10bth4s2"/>
+        <view id="43d8400qpi9axw10bth4sd" name="ToutesLesFichesDeSuivi" label="Toutes les fiches de suivi" protocol-uri="resource:/process/views/43d8400qpi9axw10bth4sd"/>
+        <workflow id="43d8400qpi9axw10bth4nz" name="ProcessusFicheDeSuiviDesActionsCorrectivesEtPreventives_1.0" label="" protocol-uri="resource:/process/treatmentClasses/43d8400qpi9axw10bth4nz"/>
+      </workflowcontainer>
+      <view id="43d8400qpi9axhmg3e1r7h" name="TousLesDocuments" label="Toutes les non-conformités" protocol-uri="resource:/process/views/43d8400qpi9axhmg3e1r7h"/>
+    </catalog>
+    <catalog id="4c1twv57sge33s7wy3luo4" name="ressourceshumaines" label="Mouvements Prestataires" protocol-uri="resource:/process/catalogs/4c1twv57sge33s7wy3luo4" is-confidential="true" is-system="false">
+      <workflowcontainer id="4c1twv57sge33s7wy3luob" name="DepCo" label="Départ Prestataire" protocol-uri="resource:/process/versionGroups/4c1twv57sge33s7wy3luob">
+        <view id="4c1twv57sge33s7wy3luzt" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/4c1twv57sge33s7wy3luzt"/>
+        <view id="4c1twv57sge33s7wy3luzv" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/4c1twv57sge33s7wy3luzv"/>
+        <view id="4c1twv57sge33s7wy3luzm" name="TODO" label="A traiter" protocol-uri="resource:/process/views/4c1twv57sge33s7wy3luzm"/>
+        <view id="4c1twv57sge33s7wy3luzx" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/4c1twv57sge33s7wy3luzx"/>
+        <workflow id="4c1twv57sge33s7wy3luuc" name="DepCo_1.0" label="" protocol-uri="resource:/process/treatmentClasses/4c1twv57sge33s7wy3luuc"/>
+      </workflowcontainer>
+      <workflowcontainer id="4c1twv57sge33s7wy3l694" name="NouvelArrivant" label="NouvelArrivant" protocol-uri="resource:/process/versionGroups/4c1twv57sge33s7wy3l694">
+        <view id="4c1twv57sge3447jpbrklk" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/4c1twv57sge3447jpbrklk"/>
+        <view id="4c1twv57sge3447jpbrklm" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/4c1twv57sge3447jpbrklm"/>
+        <view id="4c1twv57sge3447jpbrkld" name="TODO" label="A traiter" protocol-uri="resource:/process/views/4c1twv57sge3447jpbrkld"/>
+        <view id="4c1twv57sge3447jpbrklo" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/4c1twv57sge3447jpbrklo"/>
+        <workflow id="-4fxsw49sfj64tn8e9d4axp" name="NouvelArrivant_3.0" label="" protocol-uri="resource:/process/treatmentClasses/-4fxsw49sfj64tn8e9d4axp"/>
+      </workflowcontainer>
+      <workflowcontainer id="1wywnbc0jgmd09yrdt18oe" name="ArriveePrestataire" label="Arrivée Prestataire" protocol-uri="resource:/process/versionGroups/1wywnbc0jgmd09yrdt18oe">
+        <view id="1wywnbc0jgmd09yrdt18vc" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/1wywnbc0jgmd09yrdt18vc"/>
+        <view id="1wywnbc0jgmd09yrdt18ve" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/1wywnbc0jgmd09yrdt18ve"/>
+        <view id="1wywnbc0jgmd09yrdt18v5" name="TODO" label="A traiter" protocol-uri="resource:/process/views/1wywnbc0jgmd09yrdt18v5"/>
+        <view id="1wywnbc0jgmd09yrdt18vg" name="TousLesDocuments" label="Tous les documents" protocol-uri="resource:/process/views/1wywnbc0jgmd09yrdt18vg"/>
+        <workflow id="1wywnbc0jgmd0jyl4b14xa" name="ArriveePrestataire_2.0" label="" protocol-uri="resource:/process/treatmentClasses/1wywnbc0jgmd0jyl4b14xa"/>
+      </workflowcontainer>
+    </catalog>
+    <catalog id="o7fj5hktq0315gxttrofb" name="TheIdeaBox" label="THE IDEA BOX" protocol-uri="resource:/process/catalogs/o7fj5hktq0315gxttrofb" is-confidential="false" is-system="false">
+      <workflowcontainer id="o7fj5hktq0315gxttrofi" name="IdeaBox" label="TheIdeaBox:VersionGroup:IdeaBox:label/fr" protocol-uri="resource:/process/versionGroups/o7fj5hktq0315gxttrofi">
+        <view id="o7fj5hktq0315gxttrop4" name="MYDOCS" label="IdeaBox:VersionGroupView:MYDOCS:label/fr" protocol-uri="resource:/process/views/o7fj5hktq0315gxttrop4"/>
+        <view id="o7fj5hktq0315gxttrop6" name="TERMINATED" label="IdeaBox:VersionGroupView:TERMINATED:label/fr" protocol-uri="resource:/process/views/o7fj5hktq0315gxttrop6"/>
+        <view id="o7fj5hktq0315gxttroox" name="TODO" label="IdeaBox:VersionGroupView:TODO:label/fr" protocol-uri="resource:/process/views/o7fj5hktq0315gxttroox"/>
+        <workflow id="o7fj5hktq0315gxttrojj" name="IdeaBox_1.0" label="" protocol-uri="resource:/process/treatmentClasses/o7fj5hktq0315gxttrojj"/>
+      </workflowcontainer>
+    </catalog>
+  </body>
+</view>

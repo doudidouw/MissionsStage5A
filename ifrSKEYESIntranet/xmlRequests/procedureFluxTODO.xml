@@ -1,0 +1,98 @@
+Nous allons éxécuter les vues TODO présentent dans les processus, pour cela :
+
+1re étape : authentification : 
+
+http://localhost:8080/vdoc/navigation/sdk?Controller=com.axemble.vdoc.sdk.flow.Dispatcher&module=portal&cmd=authenticate
+
+<?xml version="1.0" encoding="UTF-8" ?>
+<authenticate>
+   <header login="user" password="password" timeout="30" />
+</authenticate>
+
+2me étape : récupérer les "protocol-uri" des vues TODO des processus :
+
+http://localhost:8080/vdoc/navigation/sdk?Controller=com.axemble.vdoc.sdk.flow.Dispatcher&module=workflow&cmd=view&_AuthenticationKey=43be6a51:1455016215f:-7e52
+
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns:vw1="http://www.axemble.com/vdoc/view">
+     <header>
+       <scopes>
+     <catalog protocol-uri="resource:/process/versionGroups/-552ll6xz241wfzvu4haoug"/>
+  </scopes>
+               <definition class="com.axemble.vdoc.sdk.interfaces.ICatalog" >
+                    <definition class="com.axemble.vdoc.sdk.interfaces.IWorkflowContainer" >
+                      <definition class="com.axemble.vdoc.sdk.interfaces.IWorkflow" >
+                         <definition class="com.axemble.vdoc.sdk.interfaces.IView"/>
+                    </definition></definition>
+               </definition>
+     </header>
+</view>
+
+Résultat : 
+
+<view 
+    xmlns:vw1="http://www.axemble.com/vdoc/view">
+    <body>
+        <catalog id="2usc8vbp9osl24j8xdmdvh" name="administrative" label="Processus administratifs" protocol-uri="resource:/process/catalogs/2usc8vbp9osl24j8xdmdvh" is-confidential="false" is-system="false">
+            <workflowcontainer id="2usc8vbp9osl24j8xdmdvo" name="id1" label="id1" protocol-uri="resource:/process/versionGroups/2usc8vbp9osl24j8xdmdvo">
+                <view id="2usc8vbp9osl24j8xdmdzn" name="ABORTED" label="Annulés" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzn"/>
+                <view id="2usc8vbp9osl24j8xdmdzg" name="DELAYED" label="En retard" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzg"/>
+                <view id="2usc8vbp9osl24j8xdmdzh" name="DELEGATED" label="Déléguées" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzh"/>
+                <view id="2usc8vbp9osl24j8xdmdzl" name="DRAFT" label="Brouillons" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzl"/>
+                <view id="2usc8vbp9osl24j8xdmdzj" name="IINTERVENED_ABORTED" label="Documents annulés" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzj"/>
+                <view id="2usc8vbp9osl24j8xdmdzi" name="IINTERVENED_ACTIVE" label="Documents en cours" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzi"/>
+                <view id="2usc8vbp9osl24j8xdmdzk" name="IINTERVENED_TERMINATED" label="Documents terminés" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzk"/>
+                <view id="2usc8vbp9osl24j8xdmdzm" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzm"/>
+                <view id="2usc8vbp9osl24j8xdmdzp" name="SEARCH" label="Recherche" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzp"/>
+                <view id="2usc8vbp9osl24j8xdmdzo" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzo"/>
+                <view id="2usc8vbp9osl24j8xdmdzf" name="TODO" label="A traiter" protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzf"/>
+                <workflow id="2usc8vbp9osl24j8xdmdxi" name="id1_1.0" label="" protocol-uri="resource:/process/treatmentClasses/2usc8vbp9osl24j8xdmdxi"/>
+            </workflowcontainer>
+        </catalog>
+        <catalog id="-552ll6xz241wfzvu4haoun" name="delegationManagement" label="Gestion des délégations" protocol-uri="resource:/process/catalogs/-552ll6xz241wfzvu4haoun" is-confidential="false" is-system="false">
+            <workflowcontainer id="-552ll6xz241wfzvu4haoug" name="delegation" label="Demande de délégation" protocol-uri="resource:/process/versionGroups/-552ll6xz241wfzvu4haoug">
+                <view id="-552ll6xz241wfzvu4haomb" name="ABORTED" label="Annulés" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haomb"/>
+                <view id="-552ll6xz241wfzvu4haomi" name="DELAYED" label="En retard" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haomi"/>
+                <view id="-552ll6xz241wfzvu4haomh" name="DELEGATED" label="Déléguées" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haomh"/>
+                <view id="-552ll6xz241wfzvu4haom6" name="DelegationEnCoursDeValidation" label="Délégation en cours de validation" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haom6"/>
+                <view id="-552ll6xz241wfzvu4haom5" name="DelegationsAcceptees" label="Délégations acceptées" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haom5"/>
+                <view id="-552ll6xz241wfzvu4haom4" name="DelegationsActives" label="Délégations actives" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haom4"/>
+                <view id="-552ll6xz241wfzvu4haom1" name="DelegationsAnnulees" label="Délégations annulées" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haom1"/>
+                <view id="-552ll6xz241wfzvu4haom3" name="DelegationsRefusees" label="Délégations refusées" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haom3"/>
+                <view id="-552ll6xz241wfzvu4haom2" name="DelegationsTerminees" label="Délégations terminées" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haom2"/>
+                <view id="-552ll6xz241wfzvu4haomd" name="DRAFT" label="Brouillons" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haomd"/>
+                <view id="-552ll6xz241wfzvu4haomf" name="IINTERVENED_ABORTED" label="Documents terminés" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haomf"/>
+                <view id="-552ll6xz241wfzvu4haomg" name="IINTERVENED_ACTIVE" label="Documents en cours" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haomg"/>
+                <view id="-552ll6xz241wfzvu4haome" name="IINTERVENED_TERMINATED" label="Documents annulés" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haome"/>
+                <view id="-552ll6xz241wfzvu4haomc" name="MYDOCS" label="En cours" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haomc"/>
+                <view id="-552ll6xz241wfzvu4haom9" name="SEARCH" label="Recherche dans les applications VDoc Process" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haom9"/>
+                <view id="-552ll6xz241wfzvu4haoma" name="TERMINATED" label="Terminés" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haoma"/>
+                <view id="-552ll6xz241wfzvu4haomj" name="TODO" label="A traiter" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haomj"/>
+                <workflow id="-552ll6xz241wfzvu4haor7" name="delegation_1.0" label="" protocol-uri="resource:/process/treatmentClasses/-552ll6xz241wfzvu4haor7"/>
+            </workflowcontainer>
+            <view id="-552ll6xz241wfzvu4haom8" name="ToutesLesDelegations" label="Toutes les délégations" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haom8"/>
+            <view id="-552ll6xz241wfzvu4haom7" name="ToutesLesDelegationsParDemandeur" label="Toutes les délégations par demandeur" protocol-uri="resource:/process/views/-552ll6xz241wfzvu4haom7"/>
+        </catalog>
+    </body>
+</view>
+
+Pour le procésus administratif (exemple ci dessus, on récupère la "protocol-uri" de la vue TODO : resource:/process/views/2usc8vbp9osl24j8xdmdzf
+
+3eme et dernière étape : on éxécute la vue TODO en question : 
+
+http://localhost:8080/vdoc/navigation/sdk?Controller=com.axemble.vdoc.sdk.flow.Dispatcher&module=workflow&cmd=view&_AuthenticationKey=17557d5e:1455096f0d0:-7f9d
+
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns:vw1="http://www.axemble.com/vdoc/view">
+     <header protocol-uri="resource:/process/views/2usc8vbp9osl24j8xdmdzf">
+          <scopes>
+              <catalog protocol-uri="resource:/process/catalogs/2usc8vbp9osl24j8xdmdvh"/>
+          </scopes>
+          <pager offset="0" count="10" />
+          <include name="labels" value="false" />
+     </header>
+</view>
+
+il ne faut pas oublier de mettre le catalog dans le scope.
+
+Vous aurez en réponse tous les documents à traiter de la personne pour le processus.

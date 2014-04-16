@@ -89,7 +89,7 @@
                                             <div id="loading" class="alert alert-block alert-warning">
 
                                                 <i class="icon-retweet yellow"></i>
-                                                En cours de chargement...
+                                                Chargement en cours...
                                             </div>
 
                                             <div class="comments" id="vdocNewsSection">

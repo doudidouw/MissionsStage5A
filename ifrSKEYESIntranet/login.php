@@ -8,44 +8,15 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 		<!-- basic styles -->
-
-		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
-
-		<!--[if IE 7]>
-		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
-		<![endif]-->
-
-		<!-- page specific plugin styles -->
-
-		<!-- fonts -->
-
-		<link rel="stylesheet" href="assets/css/ace-fonts.css" />
-
-		<!-- ace styles -->
-
-		<link rel="stylesheet" href="assets/css/uncompressed/ace.css" />
-		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
-
-		<!--[if lte IE 8]>
-		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
-		<![endif]-->
-
-		<!-- inline styles related to this page -->
-
-		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-
-		<!--[if lt IE 9]>
-		<script src="assets/js/html5shiv.js"></script>
-		<script src="assets/js/respond.min.js"></script>
-		<![endif]-->
         
-        <!-- javascript external files related to this page -->
-        <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
-        <script src="ressources/jquery-validation-1.11.1/dist/jquery.validate.js"></script>
+        <?php include("basicScriptsAndStyles.php"); ?>
+
+
+        
 	</head>
 
 	<body class="login-layout">
+        <?php include("modals.php"); ?>
 		<div class="main-container">
 			<div class="main-content">
 				<div class="row">
@@ -53,11 +24,11 @@
 						<div class="login-container">
 							<div class="center">
 								<h1>
-									<i class="icon-lock black"></i>
-                                    <span class="black">Intranet</span>
-									<span class="orange">ifrSKEYES</span>
+									<i class="icon-lock orange"></i>
+                                    <span class="orange" id="ifrSKEYESLogin">ifrSKEYES<br/></span>
+                                    <span class="blue" id="IntranetLogin"> Intranet</span>									
 								</h1>
-								<h5 class="blue">&copy; 2013, ifrSKEYES</h5>
+								<h7 class="blue">&copy; 2014, ifrSKEYES</h7>
 							</div>
 
 							<div class="space-6"></div>
@@ -139,7 +110,7 @@
 
 											<div class="space-6"></div>
 											<p>
-												Entrez votre adresse email pour recevoir les instructions
+												Entrez votre adresse mail 
 											</p>
 
 											<form>
@@ -175,11 +146,11 @@
 										<div class="widget-main">
 											<h4 class="header green lighter bigger">
 												<i class="icon-group blue"></i>
-												Contactez l'équipe support
+												Contactez le SI
 											</h4>
 
 											<div class="space-6"></div>
-											<p> Pour commencer, entrez les informations suivantes : </p>
+											<p> Pour commencer, remplissez le formulaire </p>
 
 											<form>
 												<fieldset>
@@ -197,7 +168,7 @@
 														</span>
 													</label>
 
-													<label class="block clearfix">
+													<!--<label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="password" class="form-control" placeholder="Mot de passe" />
 															<i class="icon-lock"></i>
@@ -209,12 +180,12 @@
 															<input type="password" class="form-control" placeholder="Entrez à nouveau votre mot de passe" />
 															<i class="icon-retweet"></i>
 														</span>
-													</label>
+													</label>-->
                                                     
                                                     <label class="block clearfix">
                                                         <span class="block input-icon input-icon-right">
 															<label for="form-field-11">Votre message :</label>
-															<textarea id="form-field-11" class="autosize-transition form-control" placeholder="Décrivez votre situation"></textarea>
+															<textarea id="form-field-11" class="autosize-transition form-control" placeholder="Décrivez votre problème"></textarea>
                                                             <i class="icon-envelope"></i>
                                                         </span>
                                                     </label>
@@ -298,19 +269,32 @@
 					$('#user-profile-3').parent().removeClass('hide');
             });
             
+            
+            //submit form on enter key pressed event in login field
+            $('#login').keydown(function(event){    
+                if(event.keyCode == 13){
+                   $('#submitLoginForm').trigger('click');
+                }
+            });
+            
+            //submit form on enter key pressed event in password field
+            $('#password').keydown(function(event){    
+                if(event.keyCode == 13){
+                   $('#submitLoginForm').trigger('click');
+                }
+            });
+            
             $('#submitLoginForm').on('click', function(e){
-                console.log("You just clicked 'Connexion'");
                 if((document.forms['frmLogin']['login'].value == "")&&(document.forms['frmLogin']['password'].value == "")){
                     $('#usernameError').removeClass('hide');
                     $('#passwordError').removeClass('hide');
                 } else if(document.forms['frmLogin']['password'].value == ""){
                     $('#passwordError').removeClass('hide');
                 } else {
-                    console.log("Ajax call...");
                     req = $.ajax({
-                        url: 'DB/checkUserIdentity.php',
+                        url: VDOCXML_OPERATIONS,
                         data: {
-                            action : 'login', 
+                            method : AUTHENTICATE, 
                             formData : $('#frmLogin').serialize()
                         }, 
                         type: 'post',                   
@@ -318,7 +302,9 @@
                     });
                     req.done(function(res) {
                         res = $.parseJSON(res);
-                        if(res == 1){
+                        if((res != -1) && (res != null)){
+                            localStorage.setItem("sessionKey", res);
+                            console.log("here is the session key : " + res);
                             var reqProfilePic = $.ajax({
                                     url: VDOCDB_OPERATIONS,
                                     data: {
@@ -347,7 +333,7 @@
                             });
                             
                         } else {
-                            alert("Sorry, we couldn't log you in. Try again or contact the support team.")   
+                            $('#invalidCredentialsModal').modal('show');
                         }
                         
                         

@@ -15,6 +15,23 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+<div class="modal fade" id="invalidCredentialsModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Echec de l'authentification</h4>
+      </div>
+      <div class="modal-body">
+        <p>Login et/ou mot de passe invalide(s). Veuillez vérifier vos identifiants.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+      </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+
 <div class="modal fade" id="sciformaModal">
   <div class="modal-dialog">
     <div class="modal-content">

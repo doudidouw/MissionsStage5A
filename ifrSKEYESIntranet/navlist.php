@@ -7,15 +7,15 @@
         <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
             <!--<button class="btn btn-success">
                 <i class="icon-signal"></i>
-            </button>
+            </button>-->
 
-            <button class="btn btn-info">
-                <i class="icon-pencil"></i>
+            <button onclick="window.location.href='todo.php'" class="btn btn-success" title="Mes TODO">
+                <i class="icon-tasks"></i>
             </button>
             
-            <button class="btn btn-danger">
-                <i class="icon-cogs"></i>
-            </button>-->
+            <button onclick="window.location.href='badgeuse.php'" class="btn btn-danger" title="Badgeuse">
+                <i class="icon-bell"></i>
+            </button>
 
             <button onclick="window.location.href='collegues.php'" class="btn btn-warning" title="Mes collègues">
                 <i class="icon-group"></i>
@@ -61,39 +61,75 @@
             </li>
             
             <li id ="mesTODOListes" >
-                <a href="#" id="goToVdocTODO">
+                <a href="todo.php" id="goToVdocTODO">
                     <i class="icon-folder-open-alt"></i>
                     <span class="menu-text"> Mes TODO listes </span>
                 </a>
             </li>
             
             <li id ="mesNotesDeFrais" >
-                <a href="#" id="goToVdocNotesDeFrais">
+                <a href="notesDeFrais.php" id="goToVdocNotesDeFrais">
                     <i class="icon-folder-open-alt"></i>
                     <span class="menu-text"> Mes notes de frais </span>
                 </a>
             </li>
             
-            <li id ="mesDepartsEnMissions" >
-                <a href="#" id="goToVdocOM">
+            <li id ="mesDepartsEnMission" >
+                <a href="OM.php" id="goToVdocOM">
                     <i class="icon-folder-open-alt"></i>
-                    <span class="menu-text"> Mes départs en missions </span>
+                    <span class="menu-text"> Mes départs en mission </span>
                 </a>
             </li>
 
             <li id ="mesAbsences" >
-                <a href="#" id="goToKelio">
+                <a href="#" id="" class="dropdown-toggle">
                     <i class="icon-calendar"></i>
                     <span class="menu-text"> Mes absences </span>
+                    <b class="arrow icon-angle-down"></b>
                 </a>
+                <ul class="submenu" id="menuAbsences">
+                    <li id ="badgeuse" >
+                        <a href="badgeuse.php" id="">
+                            <i class="icon-bell"></i>
+                            <span class="menu-text"> Badgeuse virtuelle </span>
+                        </a>
+                    </li>
+                    
+                    <li id ="accesDirectKelio" >
+                        <a href="" id="goToKelio">
+                            <i class="icon-calendar"></i>
+                            <span class="menu-text"> Accès direct à Kelio </span>
+                        </a>
+                    </li>
+                </ul>
             </li>
             
-            <li id ="mesAbsences" >
-                <a href="monDossierPersonnel.php" id="">
-                    <i class="icon-calendar"></i>
-                    <span class="menu-text"> Mon dossier personnel </span>
+            
+            <li>
+                <a href="#" class="dropdown-toggle">
+                    <i class="icon-bar-chart"></i>
+                    <span class="menu-text"> Mon espace personnel </span>
+                    <b class="arrow icon-angle-down"></b>
                 </a>
+                <ul class="submenu" id="menuPersonnel">
+                    <li id ="monDossierPersonnel" >
+                        <a href="monDossierPersonnel.php">
+                            <i class="icon-calendar"></i>
+                            <span class="menu-text"> Mon dossier personnel </span>
+                        </a>
+                    </li>
+                    
+                    <li id ="maFicheSalarie" >
+                        <a href="maFicheSalarie.php">
+                            <i class="icon-user"></i>
+                            <span class="menu-text"> Ma fiche salarié </span>
+                        </a>
+                    </li>
+                </ul>
+                
+                
             </li>
+                
 
             <li>
                 <a href="#" class="dropdown-toggle">
@@ -139,12 +175,12 @@
                 </ul>
             </li>
 
-            <li id ="mesDossiersDuPersonnel" >
+            <!--<li id ="mesDossiersDuPersonnel" >
                 <a href="#" id="goToSIRH">
                     <i class="icon-user"></i>
                     <span class="menu-text"> Mes dossiers du personnel </span>
                 </a>
-            </li>
+            </li>-->
             
             <li id ="mesMailsCalendriers" >
                 <a href="#" id="goToOutlook">

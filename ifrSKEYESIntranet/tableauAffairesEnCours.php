@@ -26,7 +26,9 @@
     var req = $.ajax({
             url: EASICRMDB_OPERATIONS,
             data: {
-                method: GET_ONGOING_OPPORTUN
+                method: GET_ONGOING_OPPORTUN,
+                firstname : localStorage.getItem("firstName"),
+                lastname : localStorage.getItem("lastName") 
             }
     });
 
@@ -43,7 +45,30 @@
                     projet = res[i]['XProjet'];
                 }
 
-                mesAffaireEnCoursGrid[i] = {code:res[i]['XCode'], societe:res[i]['XIddelas'], contact:res[i]['XIdConta'], intitule:res[i]['XLibell'], progiciel:res[i]['XProgici'], projet:projet, totalHT:Math.abs(res[i]['XTotalHT']).toFixed(2), CARestant:Math.abs(res[i]['XCAresta']).toFixed(2), ResteAFacturer:Math.abs(res[i]['XRestefa']).toFixed(2), RestantDuTTC:Math.abs(res[i]['XRestant']).toFixed(2), chargeDaffaire:res[i]['XChargda'], devise:res[i]['XDevise'], CARealise:Math.abs(res[i]['XCARalis']).toFixed(2), CAfactu:Math.abs(res[i]['XCAfactu']).toFixed(2), PCA:Math.abs(res[i]['XPCA']).toFixed(2), FAE:Math.abs(res[i]['XFAE']).toFixed(2), AAE:Math.abs(res[i]['XAAE']).toFixed(2), resteAFacturer:Math.abs(res[i]['XRestefa']).toFixed(2), creePar:res[i]['XCrpar'], creeLe:res[i]['XCrle_Converted'], modifiePar:res[i]['XModifip'], modifieLe:res[i]['XModifil_Converted']};
+                mesAffaireEnCoursGrid[i] = {
+                    code:res[i]['XCode'], 
+                    societe:res[i]['XIddelas'], 
+                    contact:res[i]['XIdConta'], 
+                    intitule:res[i]['XLibell'], 
+                    progiciel:res[i]['XProgici'], 
+                    projet:projet, 
+                    totalHT:Math.abs(res[i]['XTotalHT']).toFixed(2), 
+                    CARestant:Math.abs(res[i]['XCAresta']).toFixed(2), 
+                    ResteAFacturer:Math.abs(res[i]['XRestefa']).toFixed(2), 
+                    RestantDuTTC:Math.abs(res[i]['XRestant']).toFixed(2), 
+                    chargeDaffaire:res[i]['XChargda'], 
+                    devise:res[i]['XDevise'], 
+                    CARealise:Math.abs(res[i]['XCARalis']).toFixed(2), 
+                    CAfactu:Math.abs(res[i]['XCAfactu']).toFixed(2), 
+                    PCA:Math.abs(res[i]['XPCA']).toFixed(2), 
+                    FAE:Math.abs(res[i]['XFAE']).toFixed(2), 
+                    AAE:Math.abs(res[i]['XAAE']).toFixed(2), 
+                    resteAFacturer:Math.abs(res[i]['XRestefa']).toFixed(2), 
+                    creePar:res[i]['XCrpar'], 
+                    creeLe:res[i]['XCrle_Converted'], 
+                    modifiePar:res[i]['XModifip'], 
+                    modifieLe:res[i]['XModifil_Converted']
+                };
             }
 
         }

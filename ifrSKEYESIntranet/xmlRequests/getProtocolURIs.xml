@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view xmlns:vw1="http://www.axemble.com/vdoc/view">
+<header>
+    <scopes>
+        <catalog protocol-uri="resource:/process/versionGroups/-552ll6xz241wfzvu4haoug"/>
+    </scopes>
+    <definition class="com.axemble.vdoc.sdk.interfaces.ICatalog" >
+    <definition class="com.axemble.vdoc.sdk.interfaces.IWorkflowContainer" >
+    <definition class="com.axemble.vdoc.sdk.interfaces.IWorkflow" >
+    <definition class="com.axemble.vdoc.sdk.interfaces.IView"/>
+    </definition></definition>
+    </definition>
+</header>
+</view>
