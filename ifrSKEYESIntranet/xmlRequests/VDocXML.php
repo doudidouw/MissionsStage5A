@@ -3,9 +3,9 @@
 
 class xmlRequests {
     
-    private $authURL = "http://srvvdocged.ifrfrance.com/vdoc/navigation/sdk?Controller=com.axemble.vdoc.sdk.flow.Dispatcher&module=portal&cmd=authenticate";
+    private $authURL = "http://srvvdocged/vdoc/navigation/sdk?Controller=com.axemble.vdoc.sdk.flow.Dispatcher&module=portal&cmd=authenticate";
     
-    private $getTODOURL = "http://srvvdocged.ifrfrance.com/vdoc/navigation/sdk?Controller=com.axemble.vdoc.sdk.flow.Dispatcher&module=workflow&cmd=view&_AuthenticationKey=";      
+    private $getTODOURL = "http://srvvdocged/vdoc/navigation/sdk?Controller=com.axemble.vdoc.sdk.flow.Dispatcher&module=workflow&cmd=view&_AuthenticationKey=";      
 
     function makeRequest($url, $request){
         $server = $url;
@@ -26,8 +26,8 @@ class xmlRequests {
         
         if(curl_errno($ch)){
             print curl_error($ch);
-            echo("Une erreur s'est produite lors de l'authentification XML...");
-        }else{
+            echo("Une erreur s'est produite lors de la requete XML");
+        } else {
             curl_close($ch);
         }
         
@@ -40,9 +40,11 @@ class xmlRequests {
         $authXML->header->addAttribute('password', $pwd);
         $response = new SimpleXMLElement($this->makeRequest($this->authURL, $authXML->asXML()));
         if(strcmp($response['status'], "error") == 0){
-            return -1;   
+            echo -1;   
+            echo 'niah';
         } else {
-            return (string)$response->body->token['key'];
+            echo 'niah';
+            echo (string)$response->body->token['key'];
         }
     }
     
@@ -178,7 +180,9 @@ class xmlRequests {
 }
 
 
-//$requestsClass = new xmlRequests();
+$requestsClass = new xmlRequests();
+echo 'bam';
+var_dump($requestsClass->authenticate('fdu', 'beneditro'));
 ////echo($requestsClass->getTODOListForProcessAndUser('fdu'));
 ////var_dump($requestsClass->getProtocolURIs());
 //echo($requestsClass->getTODOListForProcessAndUser('-48fa588f%3A14564d5e090%3A-4b9d','resource:/process/catalogs/km07fsi7qmn558mvasyg', 'resource:/process/views/d6w3h3k052iubp4nrr5b3')->asXML());
