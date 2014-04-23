@@ -428,20 +428,29 @@
             $.getScript('conf/conf.js');
             $.getScript('js/getUserPicAndFirstName.js');
             
+            var reqProfile = $.ajax({
+                    url: VDOCDB_OPERATIONS,
+                    data: {
+                        method: GET_PROFILE,
+                        login : localStorage.getItem("login")
+                    } 
+            });
+
+            reqProfile.done(function(res) {
+                res = $.parseJSON(res);  
             
-            document.getElementById("profilePic").innerHTML = "<img id=\"avatar\" class=\"editable img-responsive\" alt=\"Photo de                                              profil\" src=\"" + localStorage.getItem("profilePic") + "\" />";
-            document.getElementById("identifiant").innerHTML = localStorage.getItem("login");
-            document.getElementById("email").innerHTML = localStorage.getItem("email");
-            document.getElementById("derniereConnexion").innerHTML = localStorage.getItem("lastVisit");
-            document.getElementById("ville").innerHTML = localStorage.getItem("city");
-            document.getElementById("pays").innerHTML = localStorage.getItem("country");
-            document.getElementById("contrat").innerHTML = localStorage.getItem("contract");
-            document.getElementById("dateArrivee").innerHTML = localStorage.getItem("activationDate");
-            document.getElementById("nomPrenom").innerHTML = localStorage.getItem("lastName") + " " + localStorage.getItem("firstName");
-                    
+                document.getElementById("profilePic").innerHTML = "<img id=\"avatar\" class=\"editable img-responsive\" alt=\"Photo de                                              profil\" src=\"" + localStorage.getItem("profilePic") + "\" />";
+                document.getElementById("identifiant").innerHTML = localStorage.getItem("login");
+                document.getElementById("email").innerHTML = res['EMAIL'];
+                document.getElementById("derniereConnexion").innerHTML = res['LAST_VISIT_CONVERTED'];
+                document.getElementById("ville").innerHTML = res['CITY'];
+                document.getElementById("pays").innerHTML = res['COUNTRY'];
+                document.getElementById("contrat").innerHTML = res['CONTRACT_TYPE'];
+                document.getElementById("dateArrivee").innerHTML = res['ACTIVATION_DATE_CONVERTED'];
+                document.getElementById("nomPrenom").innerHTML = res['LASTNAME'] + " " + res['FIRSTNAME'];
+            });
             
 			jQuery(function($) {
-			
 				//editables on first profile page
 				$.fn.editable.defaults.mode = 'inline';
 				$.fn.editableform.loading = "<div class='editableform-loading'><i class='light-blue icon-2x icon-spinner icon-spin'></i></div>";

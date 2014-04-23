@@ -19,7 +19,7 @@
             }
             
             foreach($newsList as &$news){
-                $news['CONTENT'] = preg_replace('/src="(.*?)"/', 'src="http://srvvdocged.ifrfrance.com/vdoc/\1"', $news['CONTENT']);
+                $news['CONTENT'] = preg_replace('/src="(.*?)"/', 'src="http://srvvdocged/vdoc/\1"', $news['CONTENT']);
             }
             unset($news);
             
@@ -46,7 +46,7 @@
         }
         
         function getUserProfile($login){
-            $url = "http://srvvdocged.ifrfrance.com/vdoc/portal/action/SimpleDownloadActionEvent/oid/";
+            $url = "http://srvvdocged/vdoc/portal/action/SimpleDownloadActionEvent/oid/";
             $vdocDB = VDocDB::getInstance();
 
             $sql = "SELECT LASTNAME, FIRSTNAME, LOGIN, PHOTO, CONVERT(char(10), ACTIVATION_DATE, 103) AS ACTIVATION_DATE_CONVERTED, CITY, COUNTRY, CONTRACT_TYPE, EMAIL, CONVERT(char(10), LAST_VISITE, 103) AS LAST_VISIT_CONVERTED FROM DIR_USER 
@@ -73,7 +73,7 @@
     $serversoap->setClass('VDocWS');
     $serversoap->handle();
 
-//    $vdocWS = new VDocWS();
-//    var_dump($vdocWS->getUserProfile("fdu"));
+//$vdocws = new VDocWS();
+//$vdocws->getNewsTitles();
 	
 ?>

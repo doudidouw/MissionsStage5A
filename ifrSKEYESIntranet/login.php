@@ -321,23 +321,13 @@
                                     localStorage.setItem("profilePic", res['PHOTO']);
                                 }
                                 setLocalStorageItemIfNotNull("firstName", res['FIRSTNAME']);
-                                setLocalStorageItemIfNotNull("lastName", res['LASTNAME']);
                                 setLocalStorageItemIfNotNull("login", $('#login').val());
-                                setLocalStorageItemIfNotNull("activationDate", res['ACTIVATION_DATE_CONVERTED']);
-                                setLocalStorageItemIfNotNull("lastVisit", res['LAST_VISIT_CONVERTED']);
-                                setLocalStorageItemIfNotNull("email", res['EMAIL']);
-                                setLocalStorageItemIfNotNull("city", res['CITY']);
-                                setLocalStorageItemIfNotNull("country", res['COUNTRY']);
-                                setLocalStorageItemIfNotNull("contract", res['CONTRACT_TYPE']);
                                 window.open("index.php","_self");
                             });
                             
                         } else {
                             $('#invalidCredentialsModal').modal('show');
                         }
-                        
-                        
-                        
                         
                     });
                 }
