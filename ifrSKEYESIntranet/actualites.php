@@ -43,7 +43,7 @@
                             <li class="active">Actualités</li>
 						</ul><!-- .breadcrumb -->
 
-						<?php include("navsearch.php"); ?>
+						<!--?php include("navsearch.php"); ?-->
 					</div>
 
 					<div class="page-content" id="page-content">

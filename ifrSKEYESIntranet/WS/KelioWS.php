@@ -175,7 +175,7 @@ class KelioWS {
                     <readerKey></readerKey>
                     <absenceTypeKey></absenceTypeKey>
                     <overtimeTypeKey></overtimeTypeKey>
-                    <employeeKey></employeeKey>
+                    <employeeKey>103</employeeKey>
                     <terminalKey></terminalKey>
                     <employeeBadgeCode></employeeBadgeCode>
                     <date>' .date("Y-m-d"). '</date>
@@ -192,10 +192,10 @@ class KelioWS {
                     <employeeIdentificationNumber></employeeIdentificationNumber>
                     <errorMessage></errorMessage>
                     <obtainingMode></obtainingMode>
-                    <employeeSurname>' .$lastName. '</employeeSurname>
+                    <employeeSurname>' .(string)$lastName. '</employeeSurname>
                     <timePosition></timePosition>
                     <geolocationPrecision></geolocationPrecision>
-                    <employeeFirstName>' .$firstName. '</employeeFirstName>
+                    <employeeFirstName>' .(string)$firstName. '</employeeFirstName>
                 </clockingsToImport>
                 </importPhysicalClockings>';
         
@@ -207,20 +207,22 @@ class KelioWS {
                                     'login'     => "wsuser",
                                     'password' => "wsbodet"));
         $params = new SoapVar($xmlRequest, XSD_ANYXML);
-        //$service->importPhysicalClockings($params);
-        return 1;
+        $res = $service->importPhysicalClockings($params);
+        $resToArray = $this->objectToArray($res);
+        return $resToArray['clockingsInError'];
     }
 	
 }
 	
 
 $kelioWS = new KelioWS();
+var_dump($kelioWS->importClocking('Marie-Amelie', 'SIRE', 2));
 //var_dump($kelioWS->exportClockingsByDateForEmployeeList('2014-02-01', '2014-02-30', 'Mauricio', 'ARTEAGA'));
 //var_dump($kelioWS->exportClockingsByDate('2014-03-10', '2014-03-20'));
 //var_dump($kelioWS->exportEmployeesPrivateData());
-//$kelioWS->exportPopulationDescriptions();
+//var_dump($kelioWS->exportPopulationDescriptions());
 //var_dump($kelioWS->exportEmployeesProfessionalData());
-//var_dump($kelioWS->getEmployeePrivateDataFromUser("Florian","DUSSOULIER"));
+//var_dump($kelioWS->getEmployeePrivateDataFromUser("Marie-Amelie","SIRE"));
 //var_dump($kelioWS->exportClockingsByDateForEmployeeList("Florian","DUSSOULIER"));
 
 

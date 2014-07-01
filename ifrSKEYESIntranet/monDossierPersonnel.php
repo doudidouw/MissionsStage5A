@@ -58,7 +58,7 @@
                                             <i class="icon-remove"></i>
                                         </button>
                                         <i class="icon-ok green"></i>
-                                        Les données affichées sur cette page étant obtenues via les Web Services de Kelio, il est possible qu'elles mettent quelques secondes à apparaître. 
+                                        Les données sur cette page étant obtenues via les Web Services de Kelio, il est possible qu'elles mettent quelques secondes à s'afficher. 
                                 </div>
 
 								<div>
@@ -256,7 +256,7 @@
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
 
-				<?php include("ace-settings.php");?>
+				<!--?php include("ace-settings.php");?-->
             
 			</div><!-- /.main-container-inner -->
 

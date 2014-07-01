@@ -35,10 +35,9 @@ class xmlRequests {
     }
 
     function authenticate($login, $pwd) {
-        $authXML = new SimpleXMLElement(file_get_contents('authenticate.xml'));
+        $authXML = new SimpleXMLElement(file_get_contents('authenticate.xml', true));
         $authXML->header->addAttribute('login', $login);
         $authXML->header->addAttribute('password', $pwd);
-        return $this->makeRequest($this->authURL, $authXML->asXML());
         $response = new SimpleXMLElement($this->makeRequest($this->authURL, $authXML->asXML()));
         if(strcmp($response['status'], "error") == 0){
             return -1;   
@@ -179,8 +178,8 @@ class xmlRequests {
 }
 
 
-$requestsClass = new xmlRequests();
-echo($requestsClass->authenticate('doc', 'documentqire'));
+//$requestsClass = new xmlRequests();
+//echo($requestsClass->authenticate('doc', 'documentqire'));
 ////echo($requestsClass->getTODOListForProcessAndUser('fdu'));
 ////var_dump($requestsClass->getProtocolURIs());
 //echo($requestsClass->getTODOListForProcessAndUser('-48fa588f%3A14564d5e090%3A-4b9d','resource:/process/catalogs/km07fsi7qmn558mvasyg', 'resource:/process/views/d6w3h3k052iubp4nrr5b3')->asXML());

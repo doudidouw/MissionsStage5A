@@ -13,9 +13,9 @@
                 <i class="icon-tasks"></i>
             </button>
             
-            <button onclick="window.location.href='badgeuse.php'" class="btn btn-danger" title="Badgeuse">
+            <!--<button onclick="window.location.href='badgeuse.php'" class="btn btn-danger" title="Badgeuse">
                 <i class="icon-bell"></i>
-            </button>
+            </button>-->
 
             <button onclick="window.location.href='collegues.php'" class="btn btn-warning" title="Mes collègues">
                 <i class="icon-group"></i>
@@ -60,6 +60,13 @@
                 </a>
             </li>
             
+            <li id ="quality" >
+                <a href="quality.php" id="goToQuality">
+                    <i class="icon-folder-open-alt"></i>
+                    <span class="menu-text"> Quality Gate </span>
+                </a>
+            </li>
+            
             <li id ="mesTODOListes" >
                 <a href="todo.php" id="goToVdocTODO">
                     <i class="icon-folder-open-alt"></i>
@@ -88,12 +95,12 @@
                     <b class="arrow icon-angle-down"></b>
                 </a>
                 <ul class="submenu" id="menuAbsences">
-                    <li id ="badgeuse" >
+                    <!--<li id ="badgeuse" >
                         <a href="badgeuse.php" id="">
                             <i class="icon-bell"></i>
                             <span class="menu-text"> Badgeuse virtuelle </span>
                         </a>
-                    </li>
+                    </li>-->
                     
                     <li id ="accesDirectKelio" >
                         <a href="" id="goToKelio">

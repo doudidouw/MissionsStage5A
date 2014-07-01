@@ -88,7 +88,7 @@
 														<a href="#" class="user-title-label" >
 															<i class="icon-coffee light-green middle"></i>
 															&nbsp;
-															<span class="white">Je vais manger</span>
+															<span class="white">Je vais manger / Je m'en vais</span>
 														</a>
 													</div>
 												</div>
@@ -146,7 +146,7 @@
                     </div>
                 </div><!-- #dialog-success -->
 
-				<?php include("ace-settings.php");?>
+				<!--?php include("ace-settings.php");?-->
             
 			</div><!-- /.main-container-inner -->
             
@@ -243,7 +243,7 @@
                                                 title_html: true,
                                                 buttons: [
                                                     {
-                                                        html: "<i class='icon-trash bigger-110'></i>&nbsp; OK",
+                                                        html: "<i class='icon-thumbs-up bigger-110'></i>&nbsp; OK",
                                                         "class" : "btn btn-danger btn-xs",
                                                         click: function() {
                                                             $( this ).dialog( "close" );
@@ -305,7 +305,7 @@
                                                 title_html: true,
                                                 buttons: [
                                                     {
-                                                        html: "<i class='icon-trash bigger-110'></i>&nbsp; OK",
+                                                        html: "<i class='icon-thumbs-up bigger-110'></i>&nbsp; OK",
                                                         "class" : "btn btn-danger btn-xs",
                                                         click: function() {
                                                             $( this ).dialog( "close" );

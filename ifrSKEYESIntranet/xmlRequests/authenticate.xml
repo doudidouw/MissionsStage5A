@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <authenticate>
-   <header timeout="30" />
+   <header timeout="6000" />
 </authenticate>

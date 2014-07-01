@@ -53,7 +53,7 @@
 							<div class="col-xs-12">
 								<!-- PAGE CONTENT BEGINS -->
 
-								<div class="clearfix">
+								<!--<div class="clearfix">
 									<div class="pull-left alert alert-success no-margin">
 										<button type="button" class="close" data-dismiss="alert">
 											<i class="icon-remove"></i>
@@ -62,7 +62,7 @@
 										<i class="icon-edit bigger-120 blue"></i>
 										Cliquez sur 'Editer' pour modifier vos informations. 
 									</div>
-								</div>
+								</div>-->
 
 								<div class="hr dotted"></div>
 
@@ -154,14 +154,14 @@
 
 											<div class="space-6"></div>
 
-											<div class="center">
+											<!--<div class="center">
 												<a href="#" class="btn btn-sm btn-primary">
 													<i class="icon-rss bigger-150 middle"></i>
 													<span class="bigger-110" id="editProfile">Editer</span>
 
 													<i class="icon-on-right icon-arrow-right"></i>
 												</a>
-											</div>
+											</div>-->
 										</div>
 									</div>
 								</div>
@@ -367,7 +367,7 @@
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
 
-				<?php include("ace-settings.php");?>
+				
             
 			</div><!-- /.main-container-inner -->
 
@@ -524,6 +524,7 @@
 					$('.user-profile').parent().addClass('hide');
 					$('#user-profile-'+which).parent().removeClass('hide');
 				});
+                
                 
                 ////////////////////
 				//edit profile (user-profile-1)
