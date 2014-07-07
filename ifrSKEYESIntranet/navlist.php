@@ -181,13 +181,6 @@
                     </li>
                 </ul>
             </li>
-
-            <!--<li id ="mesDossiersDuPersonnel" >
-                <a href="#" id="goToSIRH">
-                    <i class="icon-user"></i>
-                    <span class="menu-text"> Mes dossiers du personnel </span>
-                </a>
-            </li>-->
             
             <li id ="mesMailsCalendriers" >
                 <a href="#" id="goToOutlook">
@@ -231,7 +224,6 @@
     </script>
 </div>
 
-<!-- other scripts -->
 
 
 

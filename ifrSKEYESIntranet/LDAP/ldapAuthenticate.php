@@ -11,7 +11,6 @@ if (($_REQUEST['method'] == 'authenticate') && (isset($_REQUEST['formData']))){
     $ldapServer = "srvad";
     $ldapServerPort = 389;
     $mdpVDoc="vdocadmin";
-    $mdpKelio = "ifrkeliousr";
     $dnVDoc = "CN=Compte VDOC,OU=Services,OU=Systeme,OU=Utilisateurs,OU=siege,DC=ifrskeyes,DC=intra";
 
     //connection to LDAP server
@@ -23,7 +22,7 @@ if (($_REQUEST['method'] == 'authenticate') && (isset($_REQUEST['formData']))){
     //if connection successfull
     if ($bindVDocToServerLDAP) {
         // Find the user's DN
-        $query = "sAMAccountName=" .$$userData['login'];
+        $query = "sAMAccountName=" .$userData['login'];
         $search_status = ldap_search($conn, $baseDN, $query, array('dn'));
         if ($search_status === FALSE) {
             echo json_encode("Search on LDAP failed");
@@ -47,7 +46,7 @@ if (($_REQUEST['method'] == 'authenticate') && (isset($_REQUEST['formData']))){
         }
 
         // Authenticate with the newly found DN and user-provided password
-        $auth_status = ldap_bind($conn, $userdn, $$userData['password']);
+        $auth_status = ldap_bind($conn, $userdn, $userData['password']);
         if ($auth_status === FALSE) {
             echo json_encode("Couldn't bind to LDAP as user!");
             return -1;

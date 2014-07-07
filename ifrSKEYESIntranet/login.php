@@ -301,23 +301,22 @@
                         res = $.parseJSON(res);
                         if((res == "Success") && (res != null)){
                                                         
-                            reqXMLAuth = $.ajax({
-                                url: VDOCXML_OPERATIONS,
-                                data: {
-                                    method: XML_AUTHENTICATE,
-                                    formData: $('#frmLogin').serialize()
-                                },
-                                type: 'post',                   
-                                async: true
-                            });
+//                            reqXMLAuth = $.ajax({
+//                                url: VDOCXML_OPERATIONS,
+//                                data: {
+//                                    method: XML_AUTHENTICATE,
+//                                    formData: $('#frmLogin').serialize()
+//                                },
+//                                type: 'post',                   
+//                                async: true
+//                            });
 
-                            reqXMLAuth.done(function(res) {
-                                res = $.parseJSON(res);
-                                console.log("here is the session key : NUUULLL");
-                                if(res != null){
-                                    console.log("here is the session key : " + res);
-                                    localStorage.setItem("sessionKey", res);
-                                }    
+//                            reqXMLAuth.done(function(res) {
+//                                res = $.parseJSON(res);
+//                                if(res != null){
+//                                    //console.log("here is the session key : " + res);
+//                                    localStorage.setItem("sessionKey", res);
+//                                }    
                                 
                                 
                                 reqProfilePic = $.ajax({
@@ -341,7 +340,7 @@
                                     window.open("index.php","_self");
                                 });
                                 
-                            });
+//                            });
                             
                         } else {
                             $('#invalidCredentialsModal').modal('show');
