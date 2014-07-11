@@ -216,7 +216,7 @@ class KelioWS {
 	
 
 $kelioWS = new KelioWS();
-var_dump($kelioWS->importClocking('Marie-Amelie', 'SIRE', 2));
+//var_dump($kelioWS->importClocking('Marie-Amelie', 'SIRE', 2));
 //var_dump($kelioWS->exportClockingsByDateForEmployeeList('2014-02-01', '2014-02-30', 'Mauricio', 'ARTEAGA'));
 //var_dump($kelioWS->exportClockingsByDate('2014-03-10', '2014-03-20'));
 //var_dump($kelioWS->exportEmployeesPrivateData());

@@ -1,62 +1,65 @@
 <div class="modal fade" id="ifrWebsiteModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Ouverture de la page</h4>
-      </div>
-      <div class="modal-body">
-        <p>La page www.ifrskeyes.com sera affichée dans un nouvel onglet.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="openIFRWebsite()">OK</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Ouverture de la page</h4>
+            </div>
+            <div class="modal-body">
+                <p>La page www.ifrskeyes.com sera affichée dans un nouvel onglet.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="openIFRWebsite()">OK</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal ifrWebsiteModal-->
 
 <div class="modal fade" id="invalidCredentialsModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Echec de l'authentification</h4>
-      </div>
-      <div class="modal-body">
-        <p>Login et/ou mot de passe invalide(s). Veuillez vérifier vos identifiants.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Echec de l'authentification</h4>
+            </div>
+            <div class="modal-body">
+                <p>Login et/ou mot de passe invalide(s). Veuillez vérifier vos identifiants.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">OK</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal invalidCredentialsModal-->
 
 <div class="modal fade" id="sciformaModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title">Lancement de Sciforma</h4>
-      </div>
-      <div class="modal-body">
-        <p>Par mesure de sécurité, Sciforma sera lancé dans un nouvel onglet.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal" onclick="openSciforma()">OK</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Lancement de Sciforma</h4>
+            </div>
+            <div class="modal-body">
+                <p>Par mesure de sécurité, Sciforma sera lancé dans un nouvel onglet.</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal" onclick="openSciforma()">OK</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal sciformaModal-->
 
+
+<!--                CURRENTLY NOT USED              -->
 
 <div id="affaireModal" class="modal">
     <div class="modal-dialog">
         <div class="modal-content">
+            
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
                 <h4 class="blue bigger">Détails de l'affaire</h4>
-            </div>
+            </div><!-- /.modal-header -->
 
             <div class="modal-body overflow-visible">
                 <div class="row">
@@ -121,8 +124,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!-- /span -->
-                    
+                    </div><!-- /col-sm-4 -->
+
                     <div class="col-sm-4">
                         <div class="widget-box">
                             <div class="widget-header">
@@ -189,8 +192,8 @@
                                 </div>
                             </div>
                         </div>
-                    </div><!-- /span -->
-                    
+                    </div><!-- /col-sm-4 -->
+
                     <div class="col-sm-4">
                         <div class="widget-box">
                             <div class="widget-header">
@@ -242,31 +245,28 @@
             <div class="modal-footer">
                 <button class="btn btn-sm" data-dismiss="modal">
                     <i class="icon-remove"></i>
-                    Cancel
-                </button>
-
-                <button class="btn btn-sm btn-primary">
-                    <i class="icon-ok"></i>
-                    Save
+                    Fermer
                 </button>
             </div>
         </div>
     </div>
-</div>
+</div> <!-- /affaireModal -->
+
+<!--                /.CURRENTLY NOT USED              -->
 
 
 
 
 <script type="text/javascript">
-    
+
     function openIFRWebsite(){
         window.open("http://www.ifrskeyes.com",'_blank');
     };
-    
+
     function openSciforma(){
         window.open("http://srvsciforma01:8080/sciformaprod/main.html#Login",'_blank');
     };
-    
-    
-    
+
+
+
 </script>

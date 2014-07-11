@@ -1,69 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>Intranet ifrSKEYES - Mes notes de frais</title>
+    <head>
+        <meta charset="utf-8" />
+        <title>Intranet ifrSKEYES - Mes notes de frais</title>
 
-		<meta name="description" content="overview &amp; stats" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="description" content="overview &amp; stats" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        
-        
-		<!-- page specific plugin styles -->
+        <!-- page specific plugin styles -->
 
-		<link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.full.min.css" />
-		<link rel="stylesheet" href="assets/css/datepicker.css" />
-		<link rel="stylesheet" href="assets/css/ui.jqgrid.css" />
+        <link rel="stylesheet" href="assets/css/jquery-ui-1.10.3.full.min.css" />
+        <link rel="stylesheet" href="assets/css/datepicker.css" />
+        <link rel="stylesheet" href="assets/css/ui.jqgrid.css" />
 
         <?php include("basicScriptsAndStyles.php"); ?>
-		
-	</head>
 
-	<body>
+    </head>
+
+    <body>
         <?php include("modals.php"); ?>
         <?php include("navbar.php"); ?>
 
-		<div class="main-container" id="main-container">
-			<script type="text/javascript">
-				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
-			</script>
+        <div class="main-container" id="main-container">
+            <script type="text/javascript">
+                try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+            </script>
 
-			<div class="main-container-inner">
-				<a class="menu-toggler" id="menu-toggler" href="#">
-					<span class="menu-text"></span>
-				</a>
+            <div class="main-container-inner">
+                <a class="menu-toggler" id="menu-toggler" href="#">
+                    <span class="menu-text"></span>
+                </a>
 
                 <?php include("navlist.php"); ?>
 
-				<div class="main-content">
-                    
-					<div class="breadcrumbs" id="breadcrumbs">
-						<script type="text/javascript">
-							try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
-						</script>
+                <div class="main-content">
 
-						<ul class="breadcrumb" id="context-nav-bar">
-							<li>
-								<i class="icon-home home-icon"></i>
-								<a href="#">Portail</a>
-							</li>
-							<li class="active">Mes notes de frais</li>
-						</ul><!-- .breadcrumb -->
+                    <div class="breadcrumbs" id="breadcrumbs">
+                        <script type="text/javascript">
+                            try{ace.settings.check('breadcrumbs' , 'fixed')}catch(e){}
+                        </script>
 
-					</div>
+                        <ul class="breadcrumb" id="context-nav-bar">
+                            <li>
+                                <i class="icon-home home-icon"></i>
+                                <a href="#">Portail</a>
+                            </li>
+                            <li class="active">Mes notes de frais</li>
+                        </ul>
 
-					<div class="page-content" id="page-content">
-						<div class="page-header" id="page-header">
-							<h1>
-								Mes notes de frais
-							</h1>
-						</div><!-- /.page-header -->
+                    </div><!-- .breadcrumbs -->
 
-						<div class="row">
+                    <div class="page-content" id="page-content">
+                        <div class="page-header" id="page-header">
+                            <h1>
+                                Mes notes de frais
+                            </h1>
+                        </div><!-- /.page-header -->
+
+                        <div class="row">
                             <div class="space-6"></div>
-                            
-							<div class="col-xs-10">
-                            <!-- PAGE CONTENT BEGINS -->
+
+                            <div class="col-xs-10">
 
                                 <div class="alert alert-block alert-success">
                                     <button type="button" class="close" data-dismiss="alert">
@@ -73,9 +70,9 @@
                                     <i class="icon-ok green"></i>
                                     Retrouvez rapidement les principaux détails de vos notes de frais.
                                 </div>
-                                
+
                                 <div class="space-6" style="heigh:10px; display:inline-block"></div>
-                                            
+
                                 <div id="loading" class="alert alert-block alert-warning">
 
                                     <i class="icon-retweet yellow"></i>
@@ -84,34 +81,34 @@
 
                                 <div class="row">
 
-                                   <div class="col-xs-12" id="vdocNotesDeFraisSection">
+                                    <div class="col-xs-12" id="vdocNotesDeFraisSection">
                                     </div>
 
                                 </div><!-- /.row -->
                             </div><!-- /.col -->
-						  </div><!-- /.row -->
-					   </div><!-- /.page-content -->
-                    </div><!-- /.main-content -->
+                        </div><!-- /.row -->
+                    </div><!-- /.page-content -->
+                </div><!-- /.main-content -->
 
-				<!--?php include("ace-settings.php");?--> 
-                
-			</div><!-- /.main-container-inner -->
+            </div><!-- /.main-container-inner -->
 
-			<a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
-				<i class="icon-double-angle-up icon-only bigger-110"></i>
-			</a>
-		</div><!-- /.main-container -->
-        
+            <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
+                <i class="icon-double-angle-up icon-only bigger-110"></i>
+            </a>
 
-		<!-- inline scripts related to this page -->
+        </div><!-- /.main-container -->
+
+
+        <!-- inline scripts related to this page -->
+
         <?php include("scriptGoTo.php"); ?>
 
-		<script type="text/javascript">
+        <script type="text/javascript">
             $.getScript('conf/conf.js');
             $.getScript('js/getUserPicAndFirstName.js');
-            
+
             $('#mesNotesDeFrais').addClass('active');
-            
+
             var req = $.ajax({
                 url: VDOCXML_OPERATIONS,
                 data: {
@@ -125,47 +122,42 @@
                     $("#loading").hide();
                 } 
             });
-            
+
             req.done(function(res) {
                 res = $.parseJSON(res);
                 var htmlTabs = "<div class=\"tabbable\">"
-                            + "<ul class=\"nav nav-tabs\" id=\"myTab\">";
-                            +        "<li class=\"active\">"
-                            +            "<a data-toggle=\"tab\" href=\"#tab\">"
-                            +                "<i class=\"green icon-tasks bigger-110\"></i>"
-                            +                "Mes notes de frais"
-                            +            "</a>"
-                            +        "</li>"
-                            +    "</ul>";
-                
+                + "<ul class=\"nav nav-tabs\" id=\"myTab\">";
+                +        "<li class=\"active\">"
+                +            "<a data-toggle=\"tab\" href=\"#tab\">"
+                +                "<i class=\"green icon-tasks bigger-110\"></i>"
+                +                "Mes notes de frais"
+                +            "</a>"
+                +        "</li>"
+                +    "</ul>";
+
                 var htmlTabsContent = "<div class=\"tab-content\">"
-                        + "<div id=\"tab\" class=\"tab-pane in active\">";
-                
+                + "<div id=\"tab\" class=\"tab-pane in active\">";
+
                 if (res != null) {
                     for(var k=0; k < res.length; k++){
                         htmlTabsContent = htmlTabsContent 
-                                +"<p>"
-                                    +"<b>Titre : </b>" + res[k]['titre'] 
-                                    +"<br/><b>Intervenants : </b>" + res[k]['intervenants'] 
-                                    +"<br/><b>Etape : </b>" + res[k]['etape']      
-                                    +"<br/><b>Etat du document : </b>" + res[k]['etat']      
-                                + "</p>";
+                        +"<p>"
+                        +"<b>Titre : </b>" + res[k]['titre'] 
+                        +"<br/><b>Intervenants : </b>" + res[k]['intervenants'] 
+                        +"<br/><b>Etape : </b>" + res[k]['etape']      
+                        +"<br/><b>Etat du document : </b>" + res[k]['etat']      
+                        + "</p>";
                     }
                     htmlTabsContent = htmlTabsContent 
-                            +"</div>"
-                        +"</div>"
+                    +"</div>"
+                    +"</div>"
                     +"</div>";
-                    
+
                     document.getElementById("vdocNotesDeFraisSection").innerHTML = htmlTabs + htmlTabsContent;
 
                 }
             });
-            
-            
-            
-            
-            
-           
-		</script>
-	</body>
+
+        </script>
+    </body>
 </html>

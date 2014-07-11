@@ -1,21 +1,21 @@
 <div class="hr hr-18 dotted hr-double"></div>
-    <div class="row">
+<div class="row">
 
-           <div class="col-xs-12">
-                <!-- PAGE CONTENT BEGINS -->
+    <div class="col-xs-12">
+        <!-- PAGE CONTENT BEGINS -->
 
-                <table id="grid-table"></table>
+        <table id="grid-table"></table>
 
-                <div id="grid-pager"></div>
+        <div id="grid-pager"></div>
 
-                <script type="text/javascript">
-                    var $path_base = "/";//this will be used in gritter alerts containing images
-                </script>
+        <script type="text/javascript">
+            var $path_base = "/";//this will be used in gritter alerts containing images
+        </script>
 
-                <!-- PAGE CONTENT ENDS -->
-            </div><!-- /.col -->
+        <!-- PAGE CONTENT ENDS -->
+    </div><!-- /.col -->
 
-    </div>
+</div>
 </div>
 
 <script src="conf/conf.js"></script>
@@ -24,16 +24,16 @@
     $.getScript('conf/conf.js');
 
     var req = $.ajax({
-            url: EASICRMDB_OPERATIONS,
-            data: {
-                method: GET_ONGOING_OPPORTUN,
-                firstname : localStorage.getItem("firstName"),
-                lastname : localStorage.getItem("lastName") 
-            }
+        url: EASICRMDB_OPERATIONS,
+        data: {
+            method: GET_ONGOING_OPPORTUN,
+            firstname : localStorage.getItem("firstName"),
+            lastname : localStorage.getItem("lastName") 
+        }
     });
 
     var mesAffaireEnCoursGrid = new Array();
-            
+
     req.done(function(res) {
         res = $.parseJSON(res);
         var projet = "";
@@ -78,22 +78,12 @@
             var pager_selector = "#grid-pager";
 
             jQuery(grid_selector).jqGrid({
-                //direction: "rtl",
 
                 data: mesAffaireEnCoursGrid,
                 datatype: "local",
                 height: 250,
-                colNames:[' ', 'Code','Société','Contact', 'Intitulé', 'Progiciel', 'Projet', 'Total HT', 'CA Restant', 'Reste à <br /> facturer', 'Restant  <br />dû TTC', 'Chargé <br />d\'affaire', 'Devise', 'CA Réalisé HT', 'CA facturé', 'PCA', 'FAE', 'AAE', 'Reste à <br />facturer HT', 'Créé par', 'Créé le', 'Modifié par', 'Modifié le'],
+                colNames:['Code','Société','Contact', 'Intitulé', 'Progiciel', 'Projet', 'Total HT', 'CA Restant', 'Reste à <br /> facturer', 'Restant  <br />dû TTC', 'Chargé <br />d\'affaire', 'Devise', 'CA Réalisé HT', 'CA facturé', 'PCA', 'FAE', 'AAE', 'Reste à <br />facturer HT', 'Créé par', 'Créé le', 'Modifié par', 'Modifié le'],
                 colModel:[
-                    {name:'myac',index:'', width:65, fixed:true, sortable:false, resize:false,
-                        formatter:'actions', 
-                        formatoptions:{ 
-                            keys:true,
-
-                            delOptions:{recreateForm: true, beforeShowForm:beforeDeleteCallback},
-                            //editformbutton:true, editOptions:{recreateForm: true, beforeShowForm:beforeEditCallback}
-                        }
-                    },
                     {name:'code',index:'code', width:70, editable: true, hidden: true},
                     {name:'societe',index:'societe',width:90, editable:true},
                     {name:'contact',index:'contact', width:100, editable: true},
@@ -123,10 +113,7 @@
                 rowList:[10,20,30],
                 pager : pager_selector,
                 altRows: true,
-                //toppager: true,
-
                 multiselect: true,
-                //multikey: "ctrlKey",
                 multiboxonly: true,
 
                 loadComplete : function() {
@@ -139,122 +126,117 @@
                         enableTooltips(table);
                     }, 0);
                 },
-                
-//                onCellSelect: function (rowid, iCol, cellcontent) {
-//                    if(iCol == 2){
-//                        $('#affaireModal').modal('show');
-//                        $(".modal-dialog").css("width", "1000px");
-//                        console.log('Selected ' + rowid + ' and column ' + iCol);
-//                    }
-//                },
 
-                editurl: $path_base+"/dummy.html", //nothing is saved
+                onCellSelect: function (rowid, iCol, cellcontent) {
+                    if(iCol == 2){
+                        $('#affaireModal').modal('show');
+                        $(".modal-dialog").css("width", "1000px");
+                        console.log('Selected ' + rowid + ' and column ' + iCol);
+                    }
+                },
                 caption: "Mes affaires en cours",
                 autowidth: true
 
             });
 
-            //enable search/filter toolbar
-            //jQuery(grid_selector).jqGrid('filterToolbar',{defaultSearch:true,stringResult:true})
-
             //switch element when editing inline
             function aceSwitch( cellvalue, options, cell ) {
                 setTimeout(function(){
                     $(cell) .find('input[type=checkbox]')
-                            .wrap('<label class="inline" />')
-                        .addClass('ace ace-switch ace-switch-5')
-                        .after('<span class="lbl"></span>');
+                    .wrap('<label class="inline" />')
+                    .addClass('ace ace-switch ace-switch-5')
+                    .after('<span class="lbl"></span>');
                 }, 0);
             }
 
             //navButtons
             jQuery(grid_selector).jqGrid('navGrid',pager_selector,
-                { 	//navbar options
-                    edit: true,
-                    editicon : 'icon-pencil blue',
-                    add: false,
-                    addicon : 'icon-plus-sign purple',
-                    del: false,
-                    delicon : 'icon-trash red',
-                    search: true,
-                    searchicon : 'icon-search orange',
-                    refresh: true,
-                    refreshicon : 'icon-refresh green',
-                    view: true,
-                    viewicon : 'icon-zoom-in grey',
-                },
-                {
-                    //edit record form
-                    //closeAfterEdit: true,
-                    recreateForm: true,
-                    beforeShowForm : function(e) {
-                        var form = $(e[0]);
-                        form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
-                        style_edit_form(form);
-                    }
-                },
-                {
-                    //new record form
-                    closeAfterAdd: true,
-                    recreateForm: true,
-                    viewPagerButtons: false,
-                    beforeShowForm : function(e) {
-                        var form = $(e[0]);
-                        form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
-                        style_edit_form(form);
-                    }
-                },
-                {
-                    //delete record form
-                    recreateForm: true,
-                    beforeShowForm : function(e) {
-                        var form = $(e[0]);
-                        if(form.data('styled')) return false;
+                                         { 	//navbar options
+                                             edit: false,
+                                             editicon : 'icon-pencil blue',
+                                             add: false,
+                                             addicon : 'icon-plus-sign purple',
+                                             del: false,
+                                             delicon : 'icon-trash red',
+                                             search: true,
+                                             searchicon : 'icon-search orange',
+                                             refresh: false,
+                                             refreshicon : 'icon-refresh green',
+                                             view: true,
+                                             viewicon : 'icon-zoom-in grey',
+                                         },
+                                         {
+                                             //edit record form
+                                             //closeAfterEdit: true,
+                                             recreateForm: true,
+                                             beforeShowForm : function(e) {
+                                                 var form = $(e[0]);
+                                                 form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                                                 style_edit_form(form);
+                                             }
+                                         },
+                                         {
+                                             //new record form
+                                             closeAfterAdd: true,
+                                             recreateForm: true,
+                                             viewPagerButtons: false,
+                                             beforeShowForm : function(e) {
+                                                 var form = $(e[0]);
+                                                 form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                                                 style_edit_form(form);
+                                             }
+                                         },
+                                         {
+                                             //delete record form
+                                             recreateForm: true,
+                                             beforeShowForm : function(e) {
+                                                 var form = $(e[0]);
+                                                 if(form.data('styled')) return false;
 
-                        form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
-                        style_delete_form(form);
+                                                 form.closest('.ui-jqdialog').find('.ui-jqdialog-titlebar').wrapInner('<div class="widget-header" />')
+                                                 style_delete_form(form);
 
-                        form.data('styled', true);
-                    },
-                    onClick : function(e) {
-                        alert(1);
-                    }
-                },
-                {
-                    //search form
-                    recreateForm: true,
-                    afterShowSearch: function(e){
-                        var form = $(e[0]);
-                        form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
-                        style_search_form(form);
-                    },
-                    afterRedraw: function(){
-                        style_search_filters($(this));
-                    }
-                    ,
-                    multipleSearch: true,
-                    /**
+                                                 form.data('styled', true);
+                                             },
+                                             onClick : function(e) {
+                                                 alert(1);
+                                             }
+                                         },
+                                         {
+                                             //search form
+                                             recreateForm: true,
+                                             afterShowSearch: function(e){
+                                                 var form = $(e[0]);
+                                                 form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                                                 style_search_form(form);
+                                             },
+                                             afterRedraw: function(){
+                                                 style_search_filters($(this));
+                                             }
+                                             ,
+                                             multipleSearch: true,
+                                             /**
                     multipleGroup:true,
                     showQuery: true
                     */
                 },
-                {
-                    //view record form
-                    recreateForm: true,
-                    beforeShowForm: function(e){
-                        var form = $(e[0]);
-                        form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
-                    }
-                }
-            )
+                                         {
+                                             //view record form
+                                             recreateForm: true,
+                                             beforeShowForm: function(e){
+                                                 var form = $(e[0]);
+                                                 form.closest('.ui-jqdialog').find('.ui-jqdialog-title').wrap('<div class="widget-header" />')
+                                             }
+                                         }
+                                        )
 
 
 
             function style_edit_form(form) {
                 //enable datepicker on "sdate" field and switches for "stock" field
                 form.find('input[name=sdate]').datepicker({format:'yyyy-mm-dd' , autoclose:true})
-                    .end().find('input[name=stock]')
-                          .addClass('ace ace-switch ace-switch-5').wrap('<label class="inline" />').after('<span class="lbl"></span>');
+                .end().find('input[name=stock]')
+                .addClass('ace ace-switch ace-switch-5').wrap('<label class="inline" />').after('<span class="lbl"></span>');
 
                 //update buttons classes
                 var buttons = form.next().find('.EditButton .fm-button');
@@ -311,7 +293,7 @@
             //it may be possible to have some custom formatter to do this as the grid is being created to prevent this
             //or go back to default browser checkbox styles for the grid
             function styleCheckbox(table) {
-            /**
+                /**
                 $(table).find('input:checkbox').addClass('ace')
                 .wrap('<label />')
                 .after('<span class="lbl align-top" />')
@@ -346,12 +328,12 @@
             //replace icons with FontAwesome icons like above
             function updatePagerIcons(table) {
                 var replacement = 
-                {
-                    'ui-icon-seek-first' : 'icon-double-angle-left bigger-140',
-                    'ui-icon-seek-prev' : 'icon-angle-left bigger-140',
-                    'ui-icon-seek-next' : 'icon-angle-right bigger-140',
-                    'ui-icon-seek-end' : 'icon-double-angle-right bigger-140'
-                };
+                    {
+                        'ui-icon-seek-first' : 'icon-double-angle-left bigger-140',
+                        'ui-icon-seek-prev' : 'icon-angle-left bigger-140',
+                        'ui-icon-seek-next' : 'icon-angle-right bigger-140',
+                        'ui-icon-seek-end' : 'icon-double-angle-right bigger-140'
+                    };
                 $('.ui-pg-table:not(.navtable) > tbody > tr > .ui-pg-button > .ui-icon').each(function(){
                     var icon = $(this);
                     var $class = $.trim(icon.attr('class').replace('ui-icon', ''));
@@ -370,7 +352,7 @@
 
         });
     });
-           
+
 
 
 </script>

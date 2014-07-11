@@ -95,8 +95,6 @@
 						</div><!-- /.row -->
 					</div><!-- /.page-content -->
 				</div><!-- /.main-content -->
-
-				<!--?php include("ace-settings.php");?--> 
                 
 			</div><!-- /.main-container-inner -->
 

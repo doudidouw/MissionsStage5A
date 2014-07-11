@@ -4,7 +4,7 @@
     </script>
 
     <div class="navbar-container" id="navbar-container">
-        
+
         <div class="navbar-header pull-left">
             <div class="carousel slide pull-left" data-ride="carousel">
                 <div class="carousel-inner">
@@ -19,7 +19,7 @@
                     </div>
                 </div>
             </div>
-            
+
             <a href="index.php" class="navbar-brand">
                 <i class="icon-lock orange"></i>
                 <small id="Intranet">                    
@@ -28,10 +28,10 @@
                 <small id="ifrSKEYES">
                     ifrSKEYES 
                 </small>
-                
+
             </a><!-- /.brand -->
-           
-        </div><!-- /.navbar-header -->
+
+        </div><!-- /.navbar-header left-->
 
         <div class="navbar-header pull-right" role="navigation">
             <ul class="nav ace-nav">
@@ -40,7 +40,7 @@
                         <img class="nav-user-photo" src="" alt="avatar" />
                         <span class="user-info">
                             <small>Bonjour</small>
-                            
+
                         </span>
 
                         <i class="icon-caret-down"></i>
@@ -66,8 +66,8 @@
                 </li>
             </ul><!-- /.ace-nav -->
 
-        </div><!-- /.navbar-header -->
-    </div><!-- /.container -->
-</div>
+        </div><!-- /.navbar-header right-->
+    </div><!-- /.navbar-container -->
+</div><!-- /.navbar navbar-default -->
 
 

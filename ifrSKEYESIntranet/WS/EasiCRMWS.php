@@ -276,13 +276,18 @@
 
     }
 
+
     /* * ** Serveur SOAP *** */
 
 
     ini_set('soap.wsdl_cache_enabled', 0);
 
+    /* PARTIE A CHANGER */
     $serversoap = new SoapServer("http://localhost/MissionsStage5A/ifrSKEYESIntranet/WS/EasiCRMWS.wsdl");
     $serversoap->setClass('EasiCRMWS');
+    /* FIN PARTIE A CHANGER */
+
+
     $serversoap->handle();
 
 //    $easiCrm = new EasiCRMWS();
